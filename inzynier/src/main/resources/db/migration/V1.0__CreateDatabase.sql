@@ -465,3 +465,166 @@ CREATE TABLE Uzytkownik(
     Polozenie VARCHAR(100) NOT NULL,
     PRIMARY KEY(Login)
 );
+
+CREATE TABLE WygladPostaci(
+    Id INT NOT NULL AUTO_INCREMENT,
+    Nazwa VARCHAR(50) NOT NULL,
+    Klasa VARCHAR(50) NOT NULL,
+    Plik VARCHAR(50) NOT NULL,
+    Kategoria VARCHAR(1) NOT NULL,
+    PRIMARY KEY(Id);
+);
+
+INSERT INTO WygladPostaci VALUES(1, 'Blond Wojowniczka', 'wojownik', 'blondWojowniczka.png', 'K');
+INSERT INTO WygladPostaci VALUES(2, 'Ruda Wojowniczka', 'wojownik', 'rudaWojowniczka.png', 'K');
+INSERT INTO WygladPostaci VALUES(3, 'Brunetka Wojowniczka', 'wojownik', 'brunetkaWojowniczka.png', 'K');
+INSERT INTO WygladPostaci VALUES(4, 'Szatynka Wojowniczka', 'wojownik', 'szatynkaWojowniczka.png', 'K');
+INSERT INTO WygladPostaci VALUES(5, 'Blond Wojownik', 'wojownik', 'blondWojownik.png', 'M');
+INSERT INTO WygladPostaci VALUES(6, 'Rudy Wojownik', 'wojownik', 'rudyWojownik.png', 'M');
+INSERT INTO WygladPostaci VALUES(7, 'Brunet Wojownik', 'wojownik', 'brunetWojownik.png', 'M' );
+INSERT INTO WygladPostaci VALUES(8, 'Szatyn Wojownik', 'wojownik', 'szatynWojownik.png', 'M');
+INSERT INTO WygladPostaci VALUES(9, 'Blond Lotrzyca', 'lotrzyk', 'blondLotrzyca.png', 'K');
+INSERT INTO WygladPostaci VALUES(10, 'Ruda Lotrzyca', 'lotrzyk', 'rudaLotrzyca.png', 'K');
+INSERT INTO WygladPostaci VALUES(11, 'Brunetka Lotrzyca', 'lotrzyk', 'brunetkaLotrzyca.png', 'K');
+INSERT INTO WygladPostaci VALUES(12, 'Szatynka Lotrzyca', 'lotrzyk', 'szatynkaLotrzyca.png', 'K');
+INSERT INTO WygladPostaci VALUES(13, 'Blond Lotrzyk', 'lotrzyk', 'blondLotrzyk.png', 'M');
+INSERT INTO WygladPostaci VALUES(14, 'Rudy Lotrzyk', 'lotrzyk', 'rudyLotrzyk.png', 'M');
+INSERT INTO WygladPostaci VALUES(15, 'Brunet Lotrzyk', 'lotrzyk', 'brunetLotrzyk.png', 'M');
+INSERT INTO WygladPostaci VALUES(16, 'Szatyn Lotrzyk', 'lotrzyk', 'szatynLotrzyk.png', 'M');
+INSERT INTO WygladPostaci VALUES(17, 'Blond Czarodziejka', 'mag', 'blondCzarodziejka.png', 'K');
+INSERT INTO WygladPostaci VALUES(18, 'Ruda Czarodziejka', 'mag', 'rudaCzarodziejka.png', 'K');
+INSERT INTO WygladPostaci VALUES(19, 'Brunetka Czarodziejka', 'mag', 'brunetkaCzarodziejka.png', 'K');
+INSERT INTO WygladPostaci VALUES(20, 'Szatynka Czarodziejka', 'mag', 'szatynkaCzarodziejka.png', 'K');
+INSERT INTO WygladPostaci VALUES(21, 'Blond Mag', 'mag', 'blondMag.png', 'M');
+INSERT INTO WygladPostaci VALUES(22, 'Rudy Mag', 'mag', 'rudyMag.png', 'M');
+INSERT INTO WygladPostaci VALUES(23, 'Brunet Mag', 'mag', 'brunetMag.png', 'M');
+INSERT INTO WygladPostaci VALUES(24, 'Szatyn Mag', 'mag', 'szatynMag.png', 'M');
+
+CREATE TABLE Zadania(
+    Nazwa VARCHAR(50) NOT NULL,
+    Tresc VARCHAR(200) NOT NULL,
+    Postać VARCHAR(50) NOT NULL,
+    Nagroda VARCHAR(50) NOT NULL,
+    PRIMARY KEY(Nazwa);
+);
+
+INSERT INTO Zadania VALUES('Biblioteka', 'Coz za piekna bilioteka! I ile ksiazek! Przeczytaj je wszystkie a na pewno zdobedziesz duzo doswiadczenia. Mozesz takze odsprzedac posiadane przez Ciebie ksiazki bibliotekarzowi', 'Bibliotekarz', '10Doswiadczenia,50Zlota');
+INSERT INTO Zadania VALUES('Bog Klamstwa', 'Loki, Odyn i Hoenir wpadli w tarapaty. Niechcacy zabili czwlowieka przemienionego w wydre. Za kare bogowie maja mu przyniesc cos drogocennego. Loki prosi Cie o zdobycie periscienia Andvariego.', 'Loki', '1000Doswiadczenia,-100Zlota');
+INSERT INTO Zadania VALUES('Duchy', 'Mala Asia siedzi przerazona w domu. Podejrzewa, ze u niej na strychu grasuja duchy! Przepedz duchy a czeka Cie mila niespodzianka', 'Mala Asia', '1Lalka,1JagodoweCiasto');
+INSERT INTO Zadania VALUES('Gra', 'W kacie Twojego ulubionego baru siedzi tajemniczy jegomosc. Zaprasza Cie do gry. Wygraj z nim a otrzymasz rownie tajemnicza nagrode', 'Pokerzysta', '20Doswiadczenia,1JajoSmoka,1Karta');
+INSERT INTO Zadania VALUES('Jagody', 'Jagmy Stara Wiedzma Jagma nie jest juz tak sprawna jak kiedys. Pomoz jej pozbierac niezbedne jagody a czeka Cie wspaniala nagroda!', 'Wiedzma Jagma', '50Doswiadczenia,1EliksirWitalnosci');
+INSERT INTO Zadania VALUES('Jedzonko dla Chomika', 'Maly glodny chomik siedzi na lace. Jest bardzo glodny bo wiewiorki zabraly mu cale zapasy. Znajdz dla niego troszke jedzenia', 'Chomik', '100Doswiadczenia,MaxPotrzeby');
+INSERT INTO Zadania VALUES('Osikowy Kolek', 'Zdabadz troche drzewa i zelaza bym lesnik mogl Ci wyrzezbic osikowy kolek. Tylko nim mozesz pokonac Wampira', 'Lesnik', '100Doswiadczenia');
+INSERT INTO Zadania VALUES('Pajaki', 'Zrospaczony Sindri szuka brata. Podjerzewa, ze porwaly go pajaki. Uwolnij Brokka a na pewno czeka Cie wspaniala nagroda.', 'Sindri', '100Doswiadczenia,1Mjonir');
+INSERT INTO Zadania VALUES('Palantir', 'Palantir to przyzad dzieki ktoremu magowie moga sie porozumiec na odleglosc. Niestaty nasz stary mag gdzies zgubil swoj. Odszukaj go dla niego', 'Mag', '100Doswiadczenia,1LaskaMaga');
+INSERT INTO Zadania VALUES('Przyjecie u Diabla', 'Nasza stara znajmowa - Malgosia - jest zaproszona na bal do Diabla. Nie moze sie jednak pokazac w takim stanie. Zdobadz dla niej tajemnicza masc', 'Malgosia', '100Doswiadczenia,1SztabkaZlota');
+INSERT INTO Zadania VALUES('Samouczek', 'Jestes nowy w tej krainie. Podarzaj za medrcem by poznac panujace tu zasady. Po przejsciu samouczka bedziesz juz wiedzial jak poruszac sie po swiecie. Powodzenia!', 'Medrzec', '10Doswiadczenia,100Zlota');
+INSERT INTO Zadania VALUES('Slub', 'Alez ten Thor pieknie wyglada. Dobra teraz czas na odyzskanie mlota. Pomoz Thorowi zabic Thryma', 'Thor', '1000Doswiadczenia,100Zloto,1RekawiceThora');
+INSERT INTO Zadania VALUES('Spojrz w Gwiazdy', 'Nasz Astrolog moze przepowiedziec Ci przyszlosc! Do tego jest mu potrzebna tylko luneta. Stara spadla z iezy astronomicznej i sie potlukala. Zdobadz dla niego nowa', 'Astrolog', '10Doswiadczenia,1KsiazkaZWrozbami');
+INSERT INTO Zadania VALUES('Suknia slubna', 'Nazbieraj odpowienie kwiaty i zpalac troche pieniedzy by szwaczki mogl dla Ciebie zrobic suknie slubna i bukiecik', 'Szwaczka', '10Doswiadczenia,-100Zloto');
+INSERT INTO Zadania VALUES('Tajemniczy pierscien', 'Pierscien Andvariego jest bardzo cenny. Wszystko co zostanie nim dotchniete natychmiast zamienia sie w zloto. Andvari nie chce oddac do za darmo. Mozesz zaplacic mu 1000 sztuk zlota lub go zabic.', 'Andvari', '1000Doswiadczenia');
+INSERT INTO Zadania VALUES('Wampir', 'Na starym cmentarzystku zadomowil sie wampir. Od tej pory nikt nie czuje sie bezpiecznie. Pozbadz sie go a czeka Cie sowiata zaplata', 'Burmistrz', '1000Doswiadczenia,1PelerynaWampira');
+INSERT INTO Zadania VALUES('Wandale w lesie', 'Podrozni przybywajacy do naszego baru wydaja sie zaniepokojeni. Okazalo sie, ze w naszym lesie grasuja wandale: smieca i podpalaja drzewa,napadaja na podroznych. Pozbadz sie ich', 'Lesnik', '100Doswiadczenia,1Luneta');
+INSERT INTO Zadania VALUES('Wilki w Lesie', 'W lesie grasuja wilki, ktore zjadaja zwierzeta hodowlane i strasza podroznych. Przez nie nasza wioska upada! Pomoz w pozbyciu sie ich', 'Burmistrz Miasta', '100Doswiadczenia,100Zlota');
+INSERT INTO Zadania VALUES('Wspaniala kolekcja', 'W naszej wiosce mieszka znany na caly swiat kolekcjoner! Ma najwieksza na swiecie kolekcje lalek. Pomoz mu poszerzyc ja o kolejna sztuke', 'Kolekcjoner', '10Doswiadczenia,100Zlota');
+INSERT INTO Zadania VALUES('Zagadka', 'Loki moze dla Ciebie zdobyc Palantir ale musisz odpowiedziec na jego prosta zagadke', 'Loki', '10Doswiadczenia,1Palantir');
+INSERT INTO Zadania VALUES('Zaginiony Mjonir', 'Thor zaginal Mjonir. Niedlugo pozniej dostal list od Thryma-to on go ukradl. W ramach okupu chce slub z piekna Freya. Moze by tak przebrac Thora za panne mloda? Zdobadz suknie slubna', 'Thor', '100Doswiadczenia');
+INSERT INTO Zadania VALUES('Zatopiony skarb', 'Kraza pogloski, ze w naszej rzeczce jest zatopiony skarb. W rzece sa jednak topielce. Ale dla smialka czeka niewyobrazalna nagroda', 'Wetkarz', '1000Doswiadczenia,1HelmTopielcow');
+INSERT INTO Zadania VALUES('Ziola', 'Pomoz starej zielarce uwarzyc eliksir zdrowia, ktory uleczy plage choroby. Choroba ta trawi Twoja kraine. Pozbieraj odpowiednie ziola.', 'Zielarka', '100Doswiadczenia,100Zlota1Zielnik');
+INSERT INTO Zadania VALUES('Zmeczony Gosc', 'Do baru wpadl na chwile strudzony wedrowiec. Jest tak zmeczony, ze nie moze dalej isc. Zdobadz dla niego eliksir witalnosci by mogl wygodnie dotrzec do domu.', 'Wadrowiec', '100Doswiadczenia,1ButyWedrowca');
+
+CREATE TABLE Zbroja(
+    Nazwa VARCHAR(50) NOT NULL,
+    PunktyAtaku INT NOT NULL,
+    PunktyObrony INT NOT NULL,
+    WymaganyPoziom INT NOT NULL,
+    PunktyDoswiadczenia INT NOT NULL,
+    Plik VARCHAR(50) NOT NULL,
+    Klasa VARCHAR(50) NOT NULL,
+    Typ VARCHAR(50) NOT NULL,
+    PRIMARY KEY(Nazwa)
+);
+
+INSERT INTO Zbroja VALUES('ButyBlazna', 0, 70, 20, 50, 'blazenButy.png', 'mag', 'Buty');
+INSERT INTO Zbroja VALUES('ButyDoZbroi', 0, 150, 50, 150, 'zbrojaButy.png', 'wojownik', 'Buty');
+INSERT INTO Zbroja VALUES('ButyWedrowca', 0, 50, 5, 30, 'wedrowiecButy.png', 'wszystkieKlasy', 'Buty');
+INSERT INTO Zbroja VALUES('ButyWiedzmy', 0, 100, 30, 70, 'wiedzmyButy.png', 'mag', 'Buty');
+INSERT INTO Zbroja VALUES('DrewnianaRozczka', 50, 20, 1, 30, 'drewnianaRozczka.png', 'mag', 'Bron');
+INSERT INTO Zbroja VALUES('DrewnianaTarcza', 10, 30, 1, 30, 'drewnianaTarcza.png', 'wojownik', 'Tarcza');
+INSERT INTO Zbroja VALUES('DrewnianaTarczaZObiciem', 10, 30, 1, 30, 'drewnianaObicieTarcza.png', 'lotrzyk', 'Tarcza');
+INSERT INTO Zbroja VALUES('FikusneButyZPomponem', 0, 150, 50, 150, 'fikusneButy.png', 'mag', 'Buty');
+INSERT INTO Zbroja VALUES('GotyckieMitony', 50, 50, 5, 100, 'gotyckieMitony.png', 'wojownik', 'Rekawice');
+INSERT INTO Zbroja VALUES('GotyckieRekawice', 100, 100, 30, 300, 'gotyckieRekawice.png', 'wojownik', 'Rekawice');
+INSERT INTO Zbroja VALUES('HelmGladiatora', 0, 30, 5, 50, 'gladiatorHelm.png', 'wojownik', 'Helm');
+INSERT INTO Zbroja VALUES('HelmOkularowy', 0, 30, 5, 50, 'okularowyHelm.png', 'lotrzyk', 'Helm');
+INSERT INTO Zbroja VALUES('HelmRycerskiGermanski', 0, 100, 30, 300, 'rycerskiHelm.png', 'mag', 'Helm');
+INSERT INTO Zbroja VALUES('HelmRzymski', 0, 150, 50, 400, 'rzymskiHelm.png', 'wojownik', 'Helm');
+INSERT INTO Zbroja VALUES('HelmTopielcow', 0, 70, 20, 150, 'topielecHelm.png', 'mag', 'Helm');
+INSERT INTO Zbroja VALUES('HelmZeSkrzydlami', 0, 30, 5, 50, 'skrzydlaHelm.png', 'mag', 'Helm');
+INSERT INTO Zbroja VALUES('HelmZPrzylbica', 0, 150, 50, 400, 'przylbicaHelm.png', 'lotrzyk', 'Helm');
+INSERT INTO Zbroja VALUES('HelmZRogami', 0, 100, 30, 300, 'rogiHelm.png', 'lotrzyk', 'Helm');
+INSERT INTO Zbroja VALUES('HelmZSiatka', 0, 70, 20, 150, 'siatkaHelm.png', 'wojownik', 'Helm');
+INSERT INTO Zbroja VALUES('LaskaMaga', 300, 200, 100, 200, 'magaLaska.png', 'mag', 'Bron');
+INSERT INTO Zbroja VALUES('LaskaOgnia', 250, 170, 70, 150, 'ogniaLaska.png', 'mag', 'Bron');
+INSERT INTO Zbroja VALUES('LekkaMetalowaTarcza', 20, 50, 5, 50, 'lekkaMetalowaTarcza.png', 'lotrzyk', 'Tarcza');
+INSERT INTO Zbroja VALUES('LekkieSkorzaneButy', 0, 100, 30, 70, 'lekkieButy.png', 'lotrzyk', 'Buty');
+INSERT INTO Zbroja VALUES('LodowaTarcza', 20, 50, 5, 50, 'lodowaTarcza.png', 'mag', 'Tarcza');
+INSERT INTO Zbroja VALUES('MalySztylecik', 50, 20, 1, 30, 'malySztylecik.png', 'lotrzyk', 'Bron');
+INSERT INTO Zbroja VALUES('MedalionSmoczeOko', 100, 70, 30, 300, 'smoczeOko.png', 'mag', 'Atrybuty');
+INSERT INTO Zbroja VALUES('MetaloweMinetki', 150, 150, 50, 400, 'minetki.png', 'wojownik', 'Rekawice');
+INSERT INTO Zbroja VALUES('MieczSpartanski', 150, 70, 30, 70, 'spartanskiMiecz.png', 'wojownik', 'Bron');
+INSERT INTO Zbroja VALUES('Mithril', 50, 300, 70, 500, 'mithril.png', 'wojownik', 'Zbroja');
+INSERT INTO Zbroja VALUES('MitonyMaksymiliany', 100, 100, 30, 300, 'maksMitony.png', 'lotrzyk', 'Rekawice');
+INSERT INTO Zbroja VALUES('Mjonir', 500, 300, 150, 300, 'mjonir.png', 'wszystkieKlasy', 'Bron');
+INSERT INTO Zbroja VALUES('Napiersnik', 20, 50, 5, 70, 'napiersnik.png', 'lotrzyk', 'Zbroja');
+INSERT INTO Zbroja VALUES('NaszyjnikZZebowWilka', 30, 20, 1, 30, 'wilkNaszyjnik.png', 'wszystkieKlasy', 'Atrybuty');
+INSERT INTO Zbroja VALUES('Ostrogi', 0, 150, 50, 150, 'ostrogi.png', 'lotrzyk', 'Buty');
+INSERT INTO Zbroja VALUES('PelerynaWampira', 20, 50, 5, 70, 'pelerynaWampira.png', 'mag', 'Zbroja');
+INSERT INTO Zbroja VALUES('PieknyZdobionyMiecz', 300, 200, 100, 200, 'zdobionyMiecz.png', 'wojownik', 'Bron');
+INSERT INTO Zbroja VALUES('PlocienneButy', 0, 70, 20, 50, 'plocienneButy.png', 'lotrzyk', 'Buty');
+INSERT INTO Zbroja VALUES('RekawicaThora', 200, 200, 70, 500, 'thorRekawice.png', 'wszystkieKlasy', 'Rekawice');
+INSERT INTO Zbroja VALUES('RekawiceDoLokcia', 150, 150, 50, 400, 'lokiecRekawice.png', 'lotrzyk', 'Rekawice');
+INSERT INTO Zbroja VALUES('RekawiceSaurona', 150, 150, 50, 400, 'sauronRekawice.png', 'mag', 'Rekawice');
+INSERT INTO Zbroja VALUES('RoslinnaTarcza', 30, 100, 30, 70, 'roslinnaTarcza.png', 'mag', 'Tarcza');
+INSERT INTO Zbroja VALUES('SiatkoweMitony', 50, 50, 5, 100, 'siatkoweMitony.png', 'mag', 'Rekawice');
+INSERT INTO Zbroja VALUES('SiatkoweRekawice', 50, 50, 5, 100, 'siatkoweRekawice.png', 'lotrzyk', 'Rekawice');
+INSERT INTO Zbroja VALUES('SkorzanaZbroja', 10, 30, 1, 30, 'skorzanaZbroja.png',  'wszystkieKlasy', 'Zbroja');
+INSERT INTO Zbroja VALUES('SkorzaneRekawice', 30, 30, 1, 30, 'skorzaneRekawice.png', 'wszystkieKlasy', 'Rekawice');
+INSERT INTO Zbroja VALUES('SkorzanyCzepek', 0, 20, 1, 30, 'skorzanyCzepek.png', 'wszystkieKlasy', 'Helm');
+INSERT INTO Zbroja VALUES('SmoczaTarcza', 30, 100, 30, 70, 'smoczaTarcza.png', 'lotrzyk', 'Tarcza');
+INSERT INTO Zbroja VALUES('SmoczySygnet', 50, 30, 5, 50, 'smoczySygnet.png', 'mag', 'Atrybuty');
+INSERT INTO Zbroja VALUES('SnieznaLaska', 150, 70, 30, 70, 'snieznaLaska.png', 'mag', 'Bron');
+INSERT INTO Zbroja VALUES('SygnetWKsztalcieWeza', 50, 30, 5, 50, 'wazSygnet.png', 'lotrzyk', 'Atrybuty');
+INSERT INTO Zbroja VALUES('SygnetZHerbem', 50, 30, 5, 50, 'herbSygnet.png', 'wojownik', 'Atrybuty');
+INSERT INTO Zbroja VALUES('SztyletPerski', 200, 100, 50, 100, 'perskiSztylet.png', 'lotrzyk', 'Bron');
+INSERT INTO Zbroja VALUES('TarczaOgnia', 50, 150, 50, 100, 'ogniaTarcza.png', 'mag', 'Tarcza');
+INSERT INTO Zbroja VALUES('TarczaZHerbem', 30, 100, 30, 70, 'herbTarcza.png', 'wojownik', 'Tarcza');
+INSERT INTO Zbroja VALUES('WietrznaTarcza', 10, 30, 1, 30, 'wietrznaTarcza.png', 'mag', 'Tarcza');
+INSERT INTO Zbroja VALUES('WisiorKwiatZycia', 100, 70, 30, 300, 'kwiatZycia.png', 'wojownik', 'Atrybuty');
+INSERT INTO Zbroja VALUES('WisiorMlotThora', 200, 150, 70, 500, 'thorMlotaWisior.png', 'wszystkieKlasy', 'Atrybuty');
+INSERT INTO Zbroja VALUES('WisiorWKsztalcieWeza', 100, 70, 30, 300, 'wazWisior.png', 'lotrzyk', 'Atrybuty');
+INSERT INTO Zbroja VALUES('WysokieSkorzaneButy', 0, 100, 30, 70, 'wysokieButy.png', 'wojownik', 'Buty');
+INSERT INTO Zbroja VALUES('WyszczerpionyMiecz', 50, 20, 1, 30, 'wyszczerbionyMiecz.png', 'wojownik', 'Bron');
+INSERT INTO Zbroja VALUES('Zadlo', 250, 170, 70, 150, 'zadlo.png', 'lotrzyk', 'Bron');
+INSERT INTO Zbroja VALUES('ZbrojaGladiatora', 20, 50, 5, 70, 'gladiatorZbroja.png', 'wojownik', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZbrojaHusarska', 40, 150, 50, 300, 'husarskaZbroja.png', 'wojownik', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZbrojaPlytowa', 30, 100, 30, 200, 'plytowaZbroja.png', 'wojownik', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZbrojaRycerzaSredniowiecznego', 40, 150, 50, 300, 'rycerzZbroja.png', 'lotrzyk', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZbrojaSiatkowa', 30, 100, 30, 200, 'siatkowaZbroja.png', 'lotrzyk', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZbrojaTemplariusza', 40, 150, 50, 300, 'templariuszZbroja.png', 'mag', 'Zbroja');
+INSERT INTO Zbroja VALUES('ZdobionySztylet', 150, 70, 30, 70, 'zdobionySztylet.png', 'lotrzyk', 'Bron');
+INSERT INTO Zbroja VALUES('ZlotyPierscienKrasnoludaAndvari', 150, 120, 50, 400, 'pierscienAndvari.png', 'wszystkieKlasy', 'Atrybuty');
+INSERT INTO Zbroja VALUES('ZlotySygnetZGranatem', 70, 50, 20, 200, 'granatSygnet.png', 'wszystkieKlasy', 'Atrybuty');
+INSERT INTO Zbroja VALUES('ZniszczoneButy', 0, 30, 1, 10, 'zniszczoneButy.png', 'wszystkieKlasy', 'Buty');
+INSERT INTO Zbroja VALUES('ZwyklaLaskaMaga', 100, 50, 10, 50, 'zwyklaLaskaMaga.png', 'mag', 'Bron');
+INSERT INTO Zbroja VALUES('ZwyklaMetalowaTarcza', 20, 50, 5, 50, 'zwyklaMetalowaTarcza.png', 'wojownik', 'Tarcza');
+INSERT INTO Zbroja VALUES('ZwyklyMiecz', 100, 50, 10, 50, 'zwyklyMiecz.png', 'wojownik', 'Bron');
+INSERT INTO Zbroja VALUES('ZwyklySztylet', 100, 50, 10, 50, 'zwyklySztylet.png', 'lotrzyk', 'Bron');
+
+CREATE TABLE Ziola(
+    Nazwa VARCHAR(50) NOT NULL,
+    Polozenie VARCHAR(1000) NOT NULL,
+    Opis VARCHAR(100) NOT NULL,
+    Plik VARCHAR(50) NOT NULL,
+    PRIMARY KEY(Nazwa)
+);
