@@ -26,8 +26,7 @@ public class Wiadomosci {
     @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
     private Date Data;
 
-    public Wiadomosci(Integer id, @NotNull String nadawca, @NotNull String odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull Date data) {
-        Id = id;
+    public Wiadomosci(@NotNull String nadawca, @NotNull String odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull Date data) {
         Nadawca = nadawca;
         Odbiorca = odbiorca;
         Tytul = tytul;
