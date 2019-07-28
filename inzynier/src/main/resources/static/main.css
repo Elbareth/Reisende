@@ -1,0 +1,90 @@
+body{
+    background-image: url("/resources/tlo.JPG");
+}
+.main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    background-color: #990000;
+    opacity: 0.8;
+}
+.menu{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100em;
+    background-color: #990000;
+    opacity: 0.8;
+}
+input[type=submit] {
+    margin-left: auto;
+    margin-right: auto;
+	-moz-box-shadow:inset 0px 0px 0px 0px #f2ce00;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #f2ce00;
+	box-shadow:inset 0px 0px 0px 0px #f2ce00;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffd000), color-stop(1, #c7850c));
+	background:-moz-linear-gradient(top, #ffd000 5%, #c7850c 100%);
+	background:-webkit-linear-gradient(top, #ffd000 5%, #c7850c 100%);
+	background:-o-linear-gradient(top, #ffd000 5%, #c7850c 100%);
+	background:-ms-linear-gradient(top, #ffd000 5%, #c7850c 100%);
+	background:linear-gradient(to bottom, #ffd000 5%, #c7850c 100%);
+	background-color:#ffd000;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:3px solid #d62400;
+	display:inline-block;
+	cursor:pointer;
+	color:#bd2000;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 40px;
+	text-decoration:none;
+	text-shadow:0px 0px 1px #7d701e;
+	opacity: 0.7;
+}
+input[type=submit]:hover {
+    margin-left: auto;
+    margin-right: auto;
+	-moz-box-shadow:inset 0px 0px 0px 0px #fad500;
+    -webkit-box-shadow:inset 0px 0px 0px 0px #fad500;
+    box-shadow:inset 0px 0px 0px 0px #fad500;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cc0404), color-stop(1, #4d1305));
+    background:-moz-linear-gradient(top, #cc0404 5%, #4d1305 100%);
+    background:-webkit-linear-gradient(top, #cc0404 5%, #4d1305 100%);
+    background:-o-linear-gradient(top, #cc0404 5%, #4d1305 100%);
+    background:-ms-linear-gradient(top, #cc0404 5%, #4d1305 100%);
+    background:linear-gradient(to bottom, #cc0404 5%, #4d1305 100%);
+    background-color:#cc0404;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    border:3px solid #ffd500;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffaa00;
+    font-size:20px;
+    font-weight:bold;
+    padding:10px 40px;
+    text-decoration:none;
+    text-shadow:0px 0px 1px #000000;
+    opacity: 0.7;
+}
+input[type=submit]:active {
+	position:relative;
+	top:1px;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff9900;
+    font-size: 40px;
+}
+h3{
+    color: #ff9900;
+    font-size: 15px;
+}
+p{
+    color: red;
+    font-size: 15px;
+}
