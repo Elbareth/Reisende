@@ -2,95 +2,98 @@ package com.example.inzynier.tables;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+//TODO UWAGA MantToOne!!!
 @Entity
+@Table(name = "d_wiadomosci")
 public class Wiadomosci {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     @NotNull
-    private String Nadawca;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "login", referencedColumnName = "login", insertable = false, updatable = false)
+    private Uzytkownik nadawca;
     @NotNull
-    private String Odbiorca;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "login", referencedColumnName = "login", insertable = false, updatable = false)
+    private Uzytkownik odbiorca;
     @NotNull
-    private String Tytul;
+    private String tytul;
     @NotNull
-    private String Tresc;
+    private String tresc;
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
-    private Date Data;
+    private Date data;
 
-    public Wiadomosci(@NotNull String nadawca, @NotNull String odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull Date data) {
-        Nadawca = nadawca;
-        Odbiorca = odbiorca;
-        Tytul = tytul;
-        Tresc = tresc;
-        Data = data;
+    public Wiadomosci(@NotNull Uzytkownik nadawca, @NotNull Uzytkownik odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull Date data) {
+        this.nadawca = nadawca;
+        this.odbiorca = odbiorca;
+        this.tytul = tytul;
+        this.tresc = tresc;
+        this.data = data;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getNadawca() {
-        return Nadawca;
+    public Uzytkownik getNadawca() {
+        return nadawca;
     }
 
-    public void setNadawca(String nadawca) {
-        Nadawca = nadawca;
+    public void setNadawca(Uzytkownik nadawca) {
+        this.nadawca = nadawca;
     }
 
-    public String getOdbiorca() {
-        return Odbiorca;
+    public Uzytkownik getOdbiorca() {
+        return odbiorca;
     }
 
-    public void setOdbiorca(String odbiorca) {
-        Odbiorca = odbiorca;
+    public void setOdbiorca(Uzytkownik odbiorca) {
+        this.odbiorca = odbiorca;
     }
 
     public String getTytul() {
-        return Tytul;
+        return tytul;
     }
 
     public void setTytul(String tytul) {
-        Tytul = tytul;
+        this.tytul = tytul;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public Date getData() {
-        return Data;
+        return data;
     }
 
     public void setData(Date data) {
-        Data = data;
+        this.data = data;
     }
 
     @Override
     public String toString() {
         return "Wiadomosci{" +
-                "Id=" + Id +
-                ", Nadawca='" + Nadawca + '\'' +
-                ", Odbiorca='" + Odbiorca + '\'' +
-                ", Tytul='" + Tytul + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Data=" + Data +
+                "id=" + id +
+                ", nadawca=" + nadawca +
+                ", odbiorca=" + odbiorca +
+                ", tytul='" + tytul + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", data=" + data +
                 '}';
     }
 }

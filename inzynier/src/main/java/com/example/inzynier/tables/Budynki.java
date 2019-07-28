@@ -2,66 +2,68 @@ package com.example.inzynier.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="d_budynki")
 public class Budynki {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Polozenie;
+    private String polozenie;
     @NotNull
-    private String Wymiary;
+    private String wymiary;
     @NotNull
-    private String Plik;
+    private String plik;
+
+    public Budynki(@NotNull String nazwa, @NotNull String polozenie, @NotNull String wymiary, @NotNull String plik) {
+        this.nazwa = nazwa;
+        this.polozenie = polozenie;
+        this.wymiary = wymiary;
+        this.plik = plik;
+    }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getWymiary() {
-        return Wymiary;
+        return wymiary;
     }
 
     public void setWymiary(String wymiary) {
-        Wymiary = wymiary;
+        this.wymiary = wymiary;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
-    }
-
-    public Budynki(@NotNull String nazwa, @NotNull String polozenie, @NotNull String wymiary, @NotNull String plik) {
-        Nazwa = nazwa;
-        Polozenie = polozenie;
-        Wymiary = wymiary;
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "Budynki{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Wymiary='" + Wymiary + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", wymiary='" + wymiary + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

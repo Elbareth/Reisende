@@ -3,99 +3,107 @@ package com.example.inzynier.tables;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+//TODO UWAGA ManyToOne!!!
 @Entity
+@Table(name = "d_questy")
 public class Questy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     @NotNull
-    private String Postac;
+    @ManyToOne
+    @JoinColumn(name="imie")
+    private Postac postac;
     @NotNull
-    private String Wykonujacy;
+    @ManyToOne
+    @JoinColumn(name="login")
+    private Uzytkownik wykonujacy;
     @NotNull
-    private String NoweZadanie;
+    @Column(name = "nowe_zadanie")
+    private String noweZadanie;
     @NotNull
-    private String Tresc;
+    private String tresc;
     @NotNull
-    private String Nagroda;
+    private String nagroda;
     @NotNull
-    private Boolean CzyWykonane;
+    @Column(name = "czy_wykonane")
+    private Boolean czyWykonane;
 
-    public Questy(@NotNull String postac, @NotNull String wykonujacy, @NotNull String noweZadanie, @NotNull String tresc, @NotNull String nagroda, @NotNull Boolean czyWykonane) {
-        Postac = postac;
-        Wykonujacy = wykonujacy;
-        NoweZadanie = noweZadanie;
-        Tresc = tresc;
-        Nagroda = nagroda;
-        CzyWykonane = czyWykonane;
+    public Questy(@NotNull Postac postac, @NotNull Uzytkownik wykonujacy, @NotNull String noweZadanie, @NotNull String tresc, @NotNull String nagroda, @NotNull Boolean czyWykonane) {
+        this.postac = postac;
+        this.wykonujacy = wykonujacy;
+        this.noweZadanie = noweZadanie;
+        this.tresc = tresc;
+        this.nagroda = nagroda;
+        this.czyWykonane = czyWykonane;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getPostac() {
-        return Postac;
+    public Postac getPostac() {
+        return postac;
     }
 
-    public void setPostac(String postac) {
-        Postac = postac;
+    public void setPostac(Postac postac) {
+        this.postac = postac;
     }
 
-    public String getWykonujacy() {
-        return Wykonujacy;
+    public Uzytkownik getWykonujacy() {
+        return wykonujacy;
     }
 
-    public void setWykonujacy(String wykonujacy) {
-        Wykonujacy = wykonujacy;
+    public void setWykonujacy(Uzytkownik wykonujacy) {
+        this.wykonujacy = wykonujacy;
     }
 
     public String getNoweZadanie() {
-        return NoweZadanie;
+        return noweZadanie;
     }
 
     public void setNoweZadanie(String noweZadanie) {
-        NoweZadanie = noweZadanie;
+        this.noweZadanie = noweZadanie;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public String getNagroda() {
-        return Nagroda;
+        return nagroda;
     }
 
     public void setNagroda(String nagroda) {
-        Nagroda = nagroda;
+        this.nagroda = nagroda;
     }
 
     public Boolean getCzyWykonane() {
-        return CzyWykonane;
+        return czyWykonane;
     }
 
     public void setCzyWykonane(Boolean czyWykonane) {
-        CzyWykonane = czyWykonane;
+        this.czyWykonane = czyWykonane;
     }
 
     @Override
     public String toString() {
         return "Questy{" +
-                "Id=" + Id +
-                ", Postac='" + Postac + '\'' +
-                ", Wykonujacy='" + Wykonujacy + '\'' +
-                ", NoweZadanie='" + NoweZadanie + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Nagroda='" + Nagroda + '\'' +
-                ", CzyWykonane=" + CzyWykonane +
+                "id=" + id +
+                ", postac=" + postac +
+                ", wykonujacy=" + wykonujacy +
+                ", noweZadanie='" + noweZadanie + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", nagroda='" + nagroda + '\'' +
+                ", czyWykonane=" + czyWykonane +
                 '}';
     }
 }

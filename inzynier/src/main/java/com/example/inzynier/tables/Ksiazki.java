@@ -1,68 +1,66 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_ksiazki")
 public class Ksiazki {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Tresc;
+    private String tresc;
     @NotNull
-    private Integer Doswiadczenia;
+    private Integer doswiadczenia;
 
     public Ksiazki(@NotNull String nazwa, @NotNull String tresc, @NotNull Integer doswiadczenia) {
-        Nazwa = nazwa;
-        Tresc = tresc;
-        Doswiadczenia = doswiadczenia;
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.doswiadczenia = doswiadczenia;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public Integer getDoswiadczenia() {
-        return Doswiadczenia;
+        return doswiadczenia;
     }
 
     public void setDoswiadczenia(Integer doswiadczenia) {
-        Doswiadczenia = doswiadczenia;
+        this.doswiadczenia = doswiadczenia;
     }
 
     @Override
     public String toString() {
         return "Ksiazki{" +
-                "Id=" + Id +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Doswiadczenia=" + Doswiadczenia +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", doswiadczenia=" + doswiadczenia +
                 '}';
     }
 }

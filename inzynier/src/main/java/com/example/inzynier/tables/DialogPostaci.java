@@ -1,69 +1,71 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 //TODO Stworz dialog postaci
+//TODO Uwaga ManyToOne!!!
 @Entity
+@Table(name = "d_dialog_postaci")
 public class DialogPostaci {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer id;
     @NotNull
-    private String NazwaQuesta;
+    @Column(name="nazwa_questa")
+    private String nazwaQuesta;
     @NotNull
-    private String Postac;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "imie")
+    private Postac postac;
     @NotNull
-    private String Tekst;
+    private String tekst;
 
-    public Integer getID() {
-        return ID;
+    public DialogPostaci(@NotNull String nazwaQuesta, @NotNull Postac postac, @NotNull String tekst) {
+        this.nazwaQuesta = nazwaQuesta;
+        this.postac = postac;
+        this.tekst = tekst;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNazwaQuesta() {
-        return NazwaQuesta;
+        return nazwaQuesta;
     }
 
     public void setNazwaQuesta(String nazwaQuesta) {
-        NazwaQuesta = nazwaQuesta;
+        this.nazwaQuesta = nazwaQuesta;
     }
 
-    public String getPostac() {
-        return Postac;
+    public Postac getPostac() {
+        return postac;
     }
 
-    public void setPostac(String postac) {
-        Postac = postac;
+    public void setPostac(Postac postac) {
+        this.postac = postac;
     }
 
     public String getTekst() {
-        return Tekst;
+        return tekst;
     }
 
     public void setTekst(String tekst) {
-        Tekst = tekst;
-    }
-
-    public DialogPostaci(@NotNull String nazwaQuesta, @NotNull String postac, @NotNull String tekst) {
-        NazwaQuesta = nazwaQuesta;
-        Postac = postac;
-        Tekst = tekst;
+        this.tekst = tekst;
     }
 
     @Override
     public String toString() {
         return "DialogPostaci{" +
-                "ID=" + ID +
-                ", NazwaQuesta='" + NazwaQuesta + '\'' +
-                ", Postac='" + Postac + '\'' +
-                ", Tekst='" + Tekst + '\'' +
+                "id=" + id +
+                ", nazwaQuesta='" + nazwaQuesta + '\'' +
+                ", postac=" + postac +
+                ", tekst='" + tekst + '\'' +
                 '}';
     }
 }

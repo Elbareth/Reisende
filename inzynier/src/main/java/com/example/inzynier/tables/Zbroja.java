@@ -1,115 +1,122 @@
 package com.example.inzynier.tables;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_zbroja")
 public class Zbroja {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private Integer PunktyAtaku;
+    @Column(name = "punkty_ataku")
+    private Integer punktyAtaku;
     @NotNull
-    private Integer PunktyObrony;
+    @Column(name = "punkty_obrony")
+    private Integer punktyObrony;
     @NotNull
-    private Integer WymaganyPoziom;
+    @Column(name = "wymagany_poziom")
+    private Integer wymaganyPoziom;
     @NotNull
-    private Integer PunktyDoswiadczenia;
+    @Column(name = "punkty_doswiadczenia")
+    private Integer punktyDoswiadczenia;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Klasa;
+    private String klasa;
     @NotNull
-    private String Typ;
+    private String typ;
 
     public Zbroja(@NotNull String nazwa, @NotNull Integer punktyAtaku, @NotNull Integer punktyObrony, @NotNull Integer wymaganyPoziom, @NotNull Integer punktyDoswiadczenia, @NotNull String plik, @NotNull String klasa, @NotNull String typ) {
-        Nazwa = nazwa;
-        PunktyAtaku = punktyAtaku;
-        PunktyObrony = punktyObrony;
-        WymaganyPoziom = wymaganyPoziom;
-        PunktyDoswiadczenia = punktyDoswiadczenia;
-        Plik = plik;
-        Klasa = klasa;
-        Typ = typ;
+        this.nazwa = nazwa;
+        this.punktyAtaku = punktyAtaku;
+        this.punktyObrony = punktyObrony;
+        this.wymaganyPoziom = wymaganyPoziom;
+        this.punktyDoswiadczenia = punktyDoswiadczenia;
+        this.plik = plik;
+        this.klasa = klasa;
+        this.typ = typ;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public Integer getPunktyAtaku() {
-        return PunktyAtaku;
+        return punktyAtaku;
     }
 
     public void setPunktyAtaku(Integer punktyAtaku) {
-        PunktyAtaku = punktyAtaku;
+        this.punktyAtaku = punktyAtaku;
     }
 
     public Integer getPunktyObrony() {
-        return PunktyObrony;
+        return punktyObrony;
     }
 
     public void setPunktyObrony(Integer punktyObrony) {
-        PunktyObrony = punktyObrony;
+        this.punktyObrony = punktyObrony;
     }
 
     public Integer getWymaganyPoziom() {
-        return WymaganyPoziom;
+        return wymaganyPoziom;
     }
 
     public void setWymaganyPoziom(Integer wymaganyPoziom) {
-        WymaganyPoziom = wymaganyPoziom;
+        this.wymaganyPoziom = wymaganyPoziom;
     }
 
     public Integer getPunktyDoswiadczenia() {
-        return PunktyDoswiadczenia;
+        return punktyDoswiadczenia;
     }
 
     public void setPunktyDoswiadczenia(Integer punktyDoswiadczenia) {
-        PunktyDoswiadczenia = punktyDoswiadczenia;
+        this.punktyDoswiadczenia = punktyDoswiadczenia;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKlasa() {
-        return Klasa;
+        return klasa;
     }
 
     public void setKlasa(String klasa) {
-        Klasa = klasa;
+        this.klasa = klasa;
     }
 
     public String getTyp() {
-        return Typ;
+        return typ;
     }
 
     public void setTyp(String typ) {
-        Typ = typ;
+        this.typ = typ;
     }
 
     @Override
     public String toString() {
         return "Zbroja{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", PunktyAtaku=" + PunktyAtaku +
-                ", PunktyObrony=" + PunktyObrony +
-                ", WymaganyPoziom=" + WymaganyPoziom +
-                ", PunktyDoswiadczenia=" + PunktyDoswiadczenia +
-                ", Plik='" + Plik + '\'' +
-                ", Klasa='" + Klasa + '\'' +
-                ", Typ='" + Typ + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", punktyAtaku=" + punktyAtaku +
+                ", punktyObrony=" + punktyObrony +
+                ", wymaganyPoziom=" + wymaganyPoziom +
+                ", punktyDoswiadczenia=" + punktyDoswiadczenia +
+                ", plik='" + plik + '\'' +
+                ", klasa='" + klasa + '\'' +
+                ", typ='" + typ + '\'' +
                 '}';
     }
 }

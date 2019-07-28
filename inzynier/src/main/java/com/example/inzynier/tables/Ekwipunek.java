@@ -1,80 +1,81 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+//TODO OneToOne nie shared key!!!
 @Entity
+@Table(name = "d_ekwipunek")
 public class Ekwipunek {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer id;
     @NotNull
-    private String Wlasciciel;
+    @OneToOne
+    @JoinColumn(name="login")
+    private Uzytkownik wlasciciel;
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Opis;
+    private String opis;
 
-    public Integer getID() {
-        return ID;
+    public Ekwipunek(@NotNull Uzytkownik wlasciciel, @NotNull String nazwa, @NotNull String plik, @NotNull String opis) {
+        this.wlasciciel = wlasciciel;
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.opis = opis;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public Integer getId() {
+        return id;
     }
 
-    public String getWlasciciel() {
-        return Wlasciciel;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setWlasciciel(String wlasciciel) {
-        Wlasciciel = wlasciciel;
+    public Uzytkownik getWlasciciel() {
+        return wlasciciel;
+    }
+
+    public void setWlasciciel(Uzytkownik wlasciciel) {
+        this.wlasciciel = wlasciciel;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
-    }
-
-    public Ekwipunek(@NotNull String wlasciciel, @NotNull String nazwa, @NotNull String plik, @NotNull String opis) {
-        Wlasciciel = wlasciciel;
-        Nazwa = nazwa;
-        Plik = plik;
-        Opis = opis;
+        this.opis = opis;
     }
 
     @Override
     public String toString() {
         return "Ekwipunek{" +
-                "ID=" + ID +
-                ", Wlasciciel='" + Wlasciciel + '\'' +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Opis='" + Opis + '\'' +
+                "id=" + id +
+                ", wlasciciel=" + wlasciciel +
+                ", nazwa='" + nazwa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", opis='" + opis + '\'' +
                 '}';
     }
 }

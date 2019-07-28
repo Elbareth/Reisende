@@ -1,67 +1,70 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+//TODO UWAGA MAnyTOOne!!
 @Entity
+@Table(name = "d_zadania")
 public class Zadania {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Tresc;
+    private String tresc;
     @NotNull
-    private String Postać;
+    @ManyToOne
+    @JoinColumn(name="imie")
+    private Postac postac;
     @NotNull
-    private String Nagroda;
+    private String nagroda;
 
-    public Zadania(@NotNull String nazwa, @NotNull String tresc, @NotNull String postać, @NotNull String nagroda) {
-        Nazwa = nazwa;
-        Tresc = tresc;
-        Postać = postać;
-        Nagroda = nagroda;
+    public Zadania(@NotNull String nazwa, @NotNull String tresc, @NotNull Postac postac, @NotNull String nagroda) {
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.postac = postac;
+        this.nagroda = nagroda;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
-    public String getPostać() {
-        return Postać;
+    public Postac getPostac() {
+        return postac;
     }
 
-    public void setPostać(String postać) {
-        Postać = postać;
+    public void setPostac(Postac postac) {
+        this.postac = postac;
     }
 
     public String getNagroda() {
-        return Nagroda;
+        return nagroda;
     }
 
     public void setNagroda(String nagroda) {
-        Nagroda = nagroda;
+        this.nagroda = nagroda;
     }
 
     @Override
     public String toString() {
         return "Zadania{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Postać='" + Postać + '\'' +
-                ", Nagroda='" + Nagroda + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", postac=" + postac +
+                ", nagroda='" + nagroda + '\'' +
                 '}';
     }
 }

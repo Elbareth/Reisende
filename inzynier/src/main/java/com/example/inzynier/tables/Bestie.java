@@ -1,80 +1,78 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="d_bestie")
 public class Bestie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer id;
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Polozenie;
+    private String polozenie;
     @NotNull
-    private String Wymiary;
+    private String wymiary;
 
-    public Integer getID() {
-        return ID;
+    public Bestie(@NotNull String nazwa, @NotNull String plik, @NotNull String polozenie, @NotNull String wymiary) {
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.polozenie = polozenie;
+        this.wymiary = wymiary;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getWymiary() {
-        return Wymiary;
+        return wymiary;
     }
 
     public void setWymiary(String wymiary) {
-        Wymiary = wymiary;
-    }
-
-    public Bestie(@NotNull String nazwa, @NotNull String plik, @NotNull String polozenie, @NotNull String wymiary) {
-        Nazwa = nazwa;
-        Plik = plik;
-        Polozenie = polozenie;
-        Wymiary = wymiary;
+        this.wymiary = wymiary;
     }
 
     @Override
     public String toString() {
         return "Bestie{" +
-                "ID=" + ID +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Wymiary='" + Wymiary + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", wymiary='" + wymiary + '\'' +
                 '}';
     }
 }

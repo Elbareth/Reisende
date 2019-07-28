@@ -2,66 +2,68 @@ package com.example.inzynier.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_ziola")
 public class Ziola {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Polozenie;
+    private String polozenie;
     @NotNull
-    private String Opis;
+    private String opis;
     @NotNull
-    private String Plik;
+    private String plik;
 
     public Ziola(@NotNull String nazwa, @NotNull String polozenie, @NotNull String opis, @NotNull String plik) {
-        Nazwa = nazwa;
-        Polozenie = polozenie;
-        Opis = opis;
-        Plik = plik;
+        this.nazwa = nazwa;
+        this.polozenie = polozenie;
+        this.opis = opis;
+        this.plik = plik;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
+        this.opis = opis;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "Ziola{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Opis='" + Opis + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", opis='" + opis + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

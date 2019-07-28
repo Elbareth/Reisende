@@ -1,56 +1,59 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+//TODO UWAGA ManyToOne!!!
 @Entity
+@Table(name="d_czytelnik")
 public class Czytelnik {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private Integer id;
     @NotNull
-    private String Tytul;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="nazwa")
+    private Ksiazki tytul;
     @NotNull
-    private String Czytelnik;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="login")
+    private Uzytkownik czytelnik;
 
-    public Integer getID() {
-        return ID;
+    public Czytelnik(@NotNull Ksiazki tytul, @NotNull Uzytkownik czytelnik) {
+        this.tytul = tytul;
+        this.czytelnik = czytelnik;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public Integer getId() {
+        return id;
     }
 
-    public String getTytul() {
-        return Tytul;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setTytul(String tytul) {
-        Tytul = tytul;
+    public Ksiazki getTytul() {
+        return tytul;
     }
 
-    public String getCzytelnik() {
-        return Czytelnik;
+    public void setTytul(Ksiazki tytul) {
+        this.tytul = tytul;
     }
 
-    public void setCzytelnik(String czytelnik) {
-        Czytelnik = czytelnik;
+    public Uzytkownik getCzytelnik() {
+        return czytelnik;
     }
 
-    public Czytelnik(@NotNull String tytul, @NotNull String czytelnik) {
-        Tytul = tytul;
-        Czytelnik = czytelnik;
+    public void setCzytelnik(Uzytkownik czytelnik) {
+        this.czytelnik = czytelnik;
     }
 
     @Override
     public String toString() {
         return "Czytelnik{" +
-                "ID=" + ID +
-                ", Tytul='" + Tytul + '\'' +
-                ", Czytelnik='" + Czytelnik + '\'' +
+                "id=" + id +
+                ", tytul=" + tytul +
+                ", czytelnik=" + czytelnik +
                 '}';
     }
 }

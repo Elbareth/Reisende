@@ -2,66 +2,68 @@ package com.example.inzynier.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_inne_przedmioty")
 public class InnePrzedmioty {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private Float Cena;
+    private Float cena;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Opis;
+    private String opis;
+
+    public InnePrzedmioty(@NotNull String nazwa, @NotNull Float cena, @NotNull String plik, @NotNull String opis) {
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.plik = plik;
+        this.opis = opis;
+    }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public Float getCena() {
-        return Cena;
+        return cena;
     }
 
     public void setCena(Float cena) {
-        Cena = cena;
+        this.cena = cena;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
-    }
-
-    public InnePrzedmioty(@NotNull String nazwa, @NotNull Float cena, @NotNull String plik, @NotNull String opis) {
-        Nazwa = nazwa;
-        Cena = cena;
-        Plik = plik;
-        Opis = opis;
+        this.opis = opis;
     }
 
     @Override
     public String toString() {
         return "InnePrzedmioty{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Cena=" + Cena +
-                ", Plik='" + Plik + '\'' +
-                ", Opis='" + Opis + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", cena=" + cena +
+                ", plik='" + plik + '\'' +
+                ", opis='" + opis + '\'' +
                 '}';
     }
 }

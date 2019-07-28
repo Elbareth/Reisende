@@ -1,80 +1,78 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_wyglad_postaci")
 public class WygladPostaci {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Klasa;
+    private String klasa;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Kategoria;
+    private String kategoria;
 
-    public WygladPostaci(String nazwa, String klasa, String plik, String kategoria) {
-        Nazwa = nazwa;
-        Klasa = klasa;
-        Plik = plik;
-        Kategoria = kategoria;
+    public WygladPostaci(@NotNull String nazwa, @NotNull String klasa, @NotNull String plik, @NotNull String kategoria) {
+        this.nazwa = nazwa;
+        this.klasa = klasa;
+        this.plik = plik;
+        this.kategoria = kategoria;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getKlasa() {
-        return Klasa;
+        return klasa;
     }
 
     public void setKlasa(String klasa) {
-        Klasa = klasa;
+        this.klasa = klasa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKategoria() {
-        return Kategoria;
+        return kategoria;
     }
 
     public void setKategoria(String kategoria) {
-        Kategoria = kategoria;
+        this.kategoria = kategoria;
     }
 
     @Override
     public String toString() {
         return "WygladPostaci{" +
-                "Id=" + Id +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Klasa='" + Klasa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Kategoria='" + Kategoria + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", klasa='" + klasa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", kategoria='" + kategoria + '\'' +
                 '}';
     }
 }

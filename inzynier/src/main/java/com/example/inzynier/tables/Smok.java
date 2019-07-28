@@ -1,79 +1,94 @@
 package com.example.inzynier.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_smok")
 public class Smok {
     @Id
     @NotNull
-    private String Wlasciciel;
+    private String wlasciciel;
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    @JoinColumn(name="login")
+    private Uzytkownik uzytkownik;
     @NotNull
-    private String Imie;
+    private String imie;
     @NotNull
-    private String Gatunek;
+    private String gatunek;
     @NotNull
-    private Integer PunktyZycia;
+    @Column(name = "punkty_zycia")
+    private Integer punktyZycia;
     @NotNull
-    private String Plik;
+    private String plik;
 
-    public Smok(@NotNull String wlasciciel, @NotNull String imie, @NotNull String gatunek, @NotNull Integer punktyZycia, @NotNull String plik) {
-        Wlasciciel = wlasciciel;
-        Imie = imie;
-        Gatunek = gatunek;
-        PunktyZycia = punktyZycia;
-        Plik = plik;
+    public Smok(@NotNull String wlasciciel, Uzytkownik uzytkownik, @NotNull String imie, @NotNull String gatunek, @NotNull Integer punktyZycia, @NotNull String plik) {
+        this.wlasciciel = wlasciciel;
+        this.uzytkownik = uzytkownik;
+        this.imie = imie;
+        this.gatunek = gatunek;
+        this.punktyZycia = punktyZycia;
+        this.plik = plik;
     }
 
     public String getWlasciciel() {
-        return Wlasciciel;
+        return wlasciciel;
     }
 
     public void setWlasciciel(String wlasciciel) {
-        Wlasciciel = wlasciciel;
+        this.wlasciciel = wlasciciel;
+    }
+
+    public Uzytkownik getUzytkownik() {
+        return uzytkownik;
+    }
+
+    public void setUzytkownik(Uzytkownik uzytkownik) {
+        this.uzytkownik = uzytkownik;
     }
 
     public String getImie() {
-        return Imie;
+        return imie;
     }
 
     public void setImie(String imie) {
-        Imie = imie;
+        this.imie = imie;
     }
 
     public String getGatunek() {
-        return Gatunek;
+        return gatunek;
     }
 
     public void setGatunek(String gatunek) {
-        Gatunek = gatunek;
+        this.gatunek = gatunek;
     }
 
     public Integer getPunktyZycia() {
-        return PunktyZycia;
+        return punktyZycia;
     }
 
     public void setPunktyZycia(Integer punktyZycia) {
-        PunktyZycia = punktyZycia;
+        this.punktyZycia = punktyZycia;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "Smok{" +
-                "Wlasciciel='" + Wlasciciel + '\'' +
-                ", Imie='" + Imie + '\'' +
-                ", Gatunek='" + Gatunek + '\'' +
-                ", PunktyZycia=" + PunktyZycia +
-                ", Plik='" + Plik + '\'' +
+                "wlasciciel='" + wlasciciel + '\'' +
+                ", uzytkownik=" + uzytkownik +
+                ", imie='" + imie + '\'' +
+                ", gatunek='" + gatunek + '\'' +
+                ", punktyZycia=" + punktyZycia +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

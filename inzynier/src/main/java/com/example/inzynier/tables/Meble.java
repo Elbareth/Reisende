@@ -2,114 +2,128 @@ package com.example.inzynier.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_meble")
 public class Meble {
     @Id
     @NotNull
-    private String Nazwa;
+    private String nazwa;
     @NotNull
-    private String Plik;
+    private String plik;
     @NotNull
-    private String Kategoria;
+    private String kategoria;
     @NotNull
-    private Integer Glod;
+    private Float cena;
     @NotNull
-    private Integer Sen;
+    private Integer glod;
     @NotNull
-    private Integer Pragnienie;
+    private Integer sen;
     @NotNull
-    private Integer Higiena;
+    private Integer pragnienie;
     @NotNull
-    private Integer Doswiadczenia;
+    private Integer higiena;
+    @NotNull
+    private Integer doswiadczenia;
 
-    public Meble(@NotNull String nazwa, @NotNull String plik, @NotNull String kategoria, @NotNull Integer glod, @NotNull Integer pragnienie, @NotNull Integer sen, @NotNull Integer higiena, @NotNull Integer doswiadczenia) {
-        Nazwa = nazwa;
-        Plik = plik;
-        Kategoria = kategoria;
-        Glod = glod;
-        Pragnienie = pragnienie;
-        Sen = sen;
-        Higiena = higiena;
-        Doswiadczenia = doswiadczenia;
+    public Meble(@NotNull String nazwa, @NotNull String plik, @NotNull String kategoria,@NotNull Float cena, @NotNull Integer glod, @NotNull Integer sen, @NotNull Integer pragnienie, @NotNull Integer higiena, @NotNull Integer doswiadczenia) {
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.kategoria = kategoria;
+        this.cena = cena;
+        this.glod = glod;
+        this.sen = sen;
+        this.pragnienie = pragnienie;
+        this.higiena = higiena;
+        this.doswiadczenia = doswiadczenia;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKategoria() {
-        return Kategoria;
+        return kategoria;
     }
 
     public void setKategoria(String kategoria) {
-        Kategoria = kategoria;
+        this.kategoria = kategoria;
     }
 
     public Integer getGlod() {
-        return Glod;
+        return glod;
     }
 
     public void setGlod(Integer glod) {
-        Glod = glod;
-    }
-
-    public Integer getPragnienie() {
-        return Pragnienie;
-    }
-
-    public void setPragnienie(Integer pragnienie) {
-        Pragnienie = pragnienie;
+        this.glod = glod;
     }
 
     public Integer getSen() {
-        return Sen;
+        return sen;
     }
 
     public void setSen(Integer sen) {
-        Sen = sen;
+        this.sen = sen;
+    }
+
+    public Integer getPragnienie() {
+        return pragnienie;
+    }
+
+    public void setPragnienie(Integer pragnienie) {
+        this.pragnienie = pragnienie;
     }
 
     public Integer getHigiena() {
-        return Higiena;
+        return higiena;
     }
 
     public void setHigiena(Integer higiena) {
-        Higiena = higiena;
+        this.higiena = higiena;
     }
 
     public Integer getDoswiadczenia() {
-        return Doswiadczenia;
+        return doswiadczenia;
     }
 
     public void setDoswiadczenia(Integer doswiadczenia) {
-        Doswiadczenia = doswiadczenia;
+        this.doswiadczenia = doswiadczenia;
+    }
+
+    public Float getCena() {
+        return cena;
+    }
+
+    public void setCena(Float cena) {
+        this.cena = cena;
     }
 
     @Override
     public String toString() {
         return "Meble{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Kategoria='" + Kategoria + '\'' +
-                ", Glod=" + Glod +
-                ", Pragnienie=" + Pragnienie +
-                ", Sen=" + Sen +
-                ", Higiena=" + Higiena +
-                ", Doswiadczenia=" + Doswiadczenia +
+                "nazwa='" + nazwa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", kategoria='" + kategoria + '\'' +
+                ", cena='" + cena + '\'' +
+                ", glod=" + glod +
+                ", sen=" + sen +
+                ", pragnienie=" + pragnienie +
+                ", higiena=" + higiena +
+                ", doswiadczenia=" + doswiadczenia +
                 '}';
     }
 }

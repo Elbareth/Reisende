@@ -2,54 +2,56 @@ package com.example.inzynier.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "d_postac")
 public class Postac {
     @Id
     @NotNull
-    private String Imie;
+    private String imie;
     @NotNull
-    private String Polozenie;
+    private String polozenie;
     @NotNull
-    private String Plik;
+    private String plik;
 
     public Postac(@NotNull String imie, @NotNull String polozenie, @NotNull String plik) {
-        Imie = imie;
-        Polozenie = polozenie;
-        Plik = plik;
+        this.imie = imie;
+        this.polozenie = polozenie;
+        this.plik = plik;
     }
 
     public String getImie() {
-        return Imie;
+        return imie;
     }
 
     public void setImie(String imie) {
-        Imie = imie;
+        this.imie = imie;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getPlik() {
-        return Plik;
-    }
-
-    public void setPlik(String plik) {
-        Plik = plik;
+        return plik;
     }
 
     @Override
     public String toString() {
         return "Postac{" +
-                "Imie='" + Imie + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "imie='" + imie + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
+    }
+
+    public void setPlik(String plik) {
+        this.plik = plik;
     }
 }
