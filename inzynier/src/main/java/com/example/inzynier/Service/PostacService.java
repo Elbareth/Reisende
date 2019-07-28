@@ -4,6 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PostacService {
-    //nie bede modyfikowac dodawac ani usuwac
-    //potrzebuje jedynie listy postaci oraz wyszukiwanie po imieniu
+    //tylko wyszukuje cala liste lub po imieniu
+    //nie aktualizuje, usuwam ani tworze z poziomu kodu
 }

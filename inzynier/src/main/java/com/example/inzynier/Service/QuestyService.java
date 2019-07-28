@@ -1,6 +1,9 @@
 package com.example.inzynier.Service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class QuestyService {
-    //potrzebuje dodawanie wyszukiwanie oraz modyfikowanie
-    //oraz wyszukiwanie po wykonujacym i czyWykonane
+    //Wyszukiwanie po Wykonujacym, czyWykonane i po id
+    //Bede tez dodawac, usuwac oraz modyfikowac
 }

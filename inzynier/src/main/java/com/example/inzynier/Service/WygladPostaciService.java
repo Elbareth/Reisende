@@ -4,6 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WygladPostaciService {
-    //nie bede modyfikowac dodawac ani usuwac z poziomu kodu
-    //wyszukiwanie po klasie oraz lista
+    //wyszukiwanie po id i lista
+    //brak modyfikacji dodawania i usuwania
 }

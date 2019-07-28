@@ -4,6 +4,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ZadaniaService {
-    //z poziomu kodu nie bede dodawac odyfikowac ani usuwac zadania
-    //bede wyszukiwac po postaci i po nazwie
+    //wyszukiwanie po nazwie i postaci oraz lista
+    //brak modyfkikacji dodawania oraz usuwania od strony kodu
 }
