@@ -1,24 +1,33 @@
 package com.example.inzynier.Assembler;
 
+import com.example.inzynier.DTO.ZadaniaDTO;
+import com.example.inzynier.tables.Zadania;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ZadaniaAssembler {
-    public WygladPostaciDTO toDto(WygladPostaci wygladPostaci){
-        return new WygladPostaciDTO(wygladPostaci.getNazwa(), wygladPostaci.getKlasa(), wygladPostaci.getPlik(), wygladPostaci.getKategoria());
+    @Autowired
+    private PostacAssembler postacAssembler;
+    public ZadaniaDTO toDto(Zadania zadania){
+        return new ZadaniaDTO(zadania.getNazwa(), zadania.getTresc(), postacAssembler.toDto(zadania.getPostac()), zadania.getNagroda());
     }
-    public List<WygladPostaciDTO> toDto(List<WygladPostaci> listaWygladPostaci){
-        List<WygladPostaciDTO> listaWygladPostaciDto = new ArrayList<>();
-        listaWygladPostaci.forEach(param ->{
-            listaWygladPostaciDto.add(toDto(param));
+    public List<ZadaniaDTO> toDto(List<Zadania> listaZadania){
+        List<ZadaniaDTO> listaZadaniaDto = new ArrayList<>();
+        listaZadania.forEach(param ->{
+            listaZadaniaDto.add(toDto(param));
         });
-        return listaWygladPostaciDto;
+        return listaZadaniaDto;
     }
-    public WygladPostaci toEntity(WygladPostaciDTO wygladPostaciDTO){
-        return new WygladPostaci(wygladPostaciDTO.getNazwa(), wygladPostaciDTO.getKlasa(), wygladPostaciDTO.getPlik(), wygladPostaciDTO.getKategoria());
+    public Zadania toEntity(ZadaniaDTO zadaniaDTO){
+        return new Zadania(zadaniaDTO.getNazwa(), zadaniaDTO.getTresc(), postacAssembler.toEntity(zadaniaDTO.getPostac()), zadaniaDTO.getNagroda());
     }
-    public List<WygladPostaci> toEntity(List<WygladPostaciDTO> listaWygladPostaciDto){
-        List<WygladPostaci> listaWygladPostaci = new ArrayList<>();
-        listaWygladPostaciDto.forEach(param ->{
-            listaWygladPostaci.add(toEntity(param));
+    public List<Zadania> toEntity(List<ZadaniaDTO> listaZadaniaDto){
+        List<Zadania> listaZadania = new ArrayList<>();
+        listaZadaniaDto.forEach(param ->{
+            listaZadania.add(toEntity(param));
         });
-        return listaWygladPostaci;
+        return listaZadania;
     }
 }
