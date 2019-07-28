@@ -1,57 +1,57 @@
 package com.example.inzynier.DTO;
 
 public class ZadaniaDTO {
-    private String Nazwa;
-    private String Tresc;
-    private String Postać;
-    private String Nagroda;
+    private String nazwa;
+    private String tresc;
+    private PostacDTO postac;
+    private String nagroda;
 
-    public ZadaniaDTO(String nazwa, String tresc, String postać, String nagroda) {
-        Nazwa = nazwa;
-        Tresc = tresc;
-        Postać = postać;
-        Nagroda = nagroda;
+    public ZadaniaDTO(String nazwa, String tresc, PostacDTO postac, String nagroda) {
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.postac = postac;
+        this.nagroda = nagroda;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
-    public String getPostać() {
-        return Postać;
+    public PostacDTO getPostac() {
+        return postac;
     }
 
-    public void setPostać(String postać) {
-        Postać = postać;
+    public void setPostac(PostacDTO postac) {
+        this.postac = postac;
     }
 
     public String getNagroda() {
-        return Nagroda;
+        return nagroda;
     }
 
     public void setNagroda(String nagroda) {
-        Nagroda = nagroda;
+        this.nagroda = nagroda;
     }
 
     @Override
     public String toString() {
         return "ZadaniaDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Postać='" + Postać + '\'' +
-                ", Nagroda='" + Nagroda + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", postac=" + postac +
+                ", nagroda='" + nagroda + '\'' +
                 '}';
     }
 }

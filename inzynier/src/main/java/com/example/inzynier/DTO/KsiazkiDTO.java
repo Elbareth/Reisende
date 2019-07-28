@@ -1,56 +1,56 @@
 package com.example.inzynier.DTO;
 
 public class KsiazkiDTO {
-    private Integer Id;
-    private String Nazwa;
-    private String Tresc;
-    private Integer Doswiadczenia;
+    private Integer id;
+    private String nazwa;
+    private String tresc;
+    private Integer doswiadczenia;
 
     public KsiazkiDTO(String nazwa, String tresc, Integer doswiadczenia) {
-        Nazwa = nazwa;
-        Tresc = tresc;
-        Doswiadczenia = doswiadczenia;
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.doswiadczenia = doswiadczenia;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public Integer getDoswiadczenia() {
-        return Doswiadczenia;
+        return doswiadczenia;
     }
 
     public void setDoswiadczenia(Integer doswiadczenia) {
-        Doswiadczenia = doswiadczenia;
+        this.doswiadczenia = doswiadczenia;
     }
 
     @Override
     public String toString() {
         return "KsiazkiDTO{" +
-                "Id=" + Id +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Doswiadczenia=" + Doswiadczenia +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", doswiadczenia=" + doswiadczenia +
                 '}';
     }
 }

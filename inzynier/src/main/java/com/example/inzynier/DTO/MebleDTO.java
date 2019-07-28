@@ -1,101 +1,113 @@
 package com.example.inzynier.DTO;
 
 public class MebleDTO {
-    private String Nazwa;
-    private String Plik;
-    private String Kategoria;
-    private Integer Glod;
-    private Integer Sen;
-    private Integer Pragnienie;
-    private Integer Higiena;
-    private Integer Doswiadczenia;
+    private String nazwa;
+    private String plik;
+    private String kategoria;
+    private Float cena;
+    private Integer glod;
+    private Integer sen;
+    private Integer pragnienie;
+    private Integer higiena;
+    private Integer doswiadczenia;
 
-    public MebleDTO(String nazwa, String plik, String kategoria, Integer glod, Integer sen, Integer pragnienie, Integer higiena, Integer doswiadczenia) {
-        Nazwa = nazwa;
-        Plik = plik;
-        Kategoria = kategoria;
-        Glod = glod;
-        Sen = sen;
-        Pragnienie = pragnienie;
-        Higiena = higiena;
-        Doswiadczenia = doswiadczenia;
+
+    public MebleDTO(String nazwa, String plik, String kategoria,Float cena, Integer glod, Integer sen, Integer pragnienie, Integer higiena, Integer doswiadczenia) {
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.kategoria = kategoria;
+        this.cena = cena;
+        this.glod = glod;
+        this.sen = sen;
+        this.pragnienie = pragnienie;
+        this.higiena = higiena;
+        this.doswiadczenia = doswiadczenia;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKategoria() {
-        return Kategoria;
+        return kategoria;
     }
 
     public void setKategoria(String kategoria) {
-        Kategoria = kategoria;
+        this.kategoria = kategoria;
     }
 
     public Integer getGlod() {
-        return Glod;
+        return glod;
     }
 
     public void setGlod(Integer glod) {
-        Glod = glod;
+        this.glod = glod;
     }
 
     public Integer getSen() {
-        return Sen;
+        return sen;
     }
 
     public void setSen(Integer sen) {
-        Sen = sen;
+        this.sen = sen;
     }
 
     public Integer getPragnienie() {
-        return Pragnienie;
+        return pragnienie;
     }
 
     public void setPragnienie(Integer pragnienie) {
-        Pragnienie = pragnienie;
+        this.pragnienie = pragnienie;
     }
 
     public Integer getHigiena() {
-        return Higiena;
+        return higiena;
     }
 
     public void setHigiena(Integer higiena) {
-        Higiena = higiena;
+        this.higiena = higiena;
     }
 
     public Integer getDoswiadczenia() {
-        return Doswiadczenia;
+        return doswiadczenia;
     }
 
     public void setDoswiadczenia(Integer doswiadczenia) {
-        Doswiadczenia = doswiadczenia;
+        this.doswiadczenia = doswiadczenia;
+    }
+
+    public Float getCena() {
+        return cena;
+    }
+
+    public void setCena(Float cena) {
+        this.cena = cena;
     }
 
     @Override
     public String toString() {
         return "MebleDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Kategoria='" + Kategoria + '\'' +
-                ", Glod=" + Glod +
-                ", Sen=" + Sen +
-                ", Pragnienie=" + Pragnienie +
-                ", Higiena=" + Higiena +
-                ", Doswiadczenia=" + Doswiadczenia +
+                "nazwa='" + nazwa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", kategoria='" + kategoria + '\'' +
+                ", cena='" + cena + '\'' +
+                ", glod=" + glod +
+                ", sen=" + sen +
+                ", pragnienie=" + pragnienie +
+                ", higiena=" + higiena +
+                ", doswiadczenia=" + doswiadczenia +
                 '}';
     }
 }

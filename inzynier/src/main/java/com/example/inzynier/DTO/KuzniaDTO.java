@@ -1,111 +1,111 @@
 package com.example.inzynier.DTO;
 
 public class KuzniaDTO {
-    private Integer Id;
-    private String Sprzedajacy;
-    private Float AktualnaCena;
-    private Boolean CzyStala;
-    private Integer IloscLicytujacych;
-    private String Nazwa;
-    private String Plik;
-    private String Klasa;
-    private String Opis;
+    private Integer id;
+    private UzytkownikDTO sprzedajacy;
+    private Float aktualnaCena;
+    private Boolean czyStala;
+    private Integer iloscLicytujacych;
+    private ZbrojaDTO nazwa;
+    private String plik;
+    private String klasa;
+    private String opis;
 
-    public KuzniaDTO(String sprzedajacy, Float aktualnaCena, Boolean czyStala, Integer iloscLicytujacych, String nazwa, String plik, String klasa, String opis) {
-        Sprzedajacy = sprzedajacy;
-        AktualnaCena = aktualnaCena;
-        CzyStala = czyStala;
-        IloscLicytujacych = iloscLicytujacych;
-        Nazwa = nazwa;
-        Plik = plik;
-        Klasa = klasa;
-        Opis = opis;
+    public KuzniaDTO(UzytkownikDTO sprzedajacy, Float aktualnaCena, Boolean czyStala, Integer iloscLicytujacych, ZbrojaDTO nazwa, String plik, String klasa, String opis) {
+        this.sprzedajacy = sprzedajacy;
+        this.aktualnaCena = aktualnaCena;
+        this.czyStala = czyStala;
+        this.iloscLicytujacych = iloscLicytujacych;
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.klasa = klasa;
+        this.opis = opis;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getSprzedajacy() {
-        return Sprzedajacy;
+    public UzytkownikDTO getSprzedajacy() {
+        return sprzedajacy;
     }
 
-    public void setSprzedajacy(String sprzedajacy) {
-        Sprzedajacy = sprzedajacy;
+    public void setSprzedajacy(UzytkownikDTO sprzedajacy) {
+        this.sprzedajacy = sprzedajacy;
     }
 
     public Float getAktualnaCena() {
-        return AktualnaCena;
+        return aktualnaCena;
     }
 
     public void setAktualnaCena(Float aktualnaCena) {
-        AktualnaCena = aktualnaCena;
+        this.aktualnaCena = aktualnaCena;
     }
 
     public Boolean getCzyStala() {
-        return CzyStala;
+        return czyStala;
     }
 
     public void setCzyStala(Boolean czyStala) {
-        CzyStala = czyStala;
+        this.czyStala = czyStala;
     }
 
     public Integer getIloscLicytujacych() {
-        return IloscLicytujacych;
+        return iloscLicytujacych;
     }
 
     public void setIloscLicytujacych(Integer iloscLicytujacych) {
-        IloscLicytujacych = iloscLicytujacych;
+        this.iloscLicytujacych = iloscLicytujacych;
     }
 
-    public String getNazwa() {
-        return Nazwa;
+    public ZbrojaDTO getNazwa() {
+        return nazwa;
     }
 
-    public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+    public void setNazwa(ZbrojaDTO nazwa) {
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKlasa() {
-        return Klasa;
+        return klasa;
     }
 
     public void setKlasa(String klasa) {
-        Klasa = klasa;
+        this.klasa = klasa;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
+        this.opis = opis;
     }
 
     @Override
     public String toString() {
         return "KuzniaDTO{" +
-                "Id=" + Id +
-                ", Sprzedajacy='" + Sprzedajacy + '\'' +
-                ", AktualnaCena=" + AktualnaCena +
-                ", CzyStala=" + CzyStala +
-                ", IloscLicytujacych=" + IloscLicytujacych +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Klasa='" + Klasa + '\'' +
-                ", Opis='" + Opis + '\'' +
+                "id=" + id +
+                ", sprzedajacy=" + sprzedajacy +
+                ", aktualnaCena=" + aktualnaCena +
+                ", czyStala=" + czyStala +
+                ", iloscLicytujacych=" + iloscLicytujacych +
+                ", nazwa=" + nazwa +
+                ", plik='" + plik + '\'' +
+                ", klasa='" + klasa + '\'' +
+                ", opis='" + opis + '\'' +
                 '}';
     }
 }

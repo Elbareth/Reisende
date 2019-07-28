@@ -1,68 +1,68 @@
 package com.example.inzynier.DTO;
 
 public class EliksirDTO {
-    private String Nazwa;
-    private Float Cena;
-    private String Plik;
-    private String Wlasciwosci;
-    private String Przepis;
+    private String nazwa;
+    private Float cena;
+    private String plik;
+    private String wlasciwosci;
+    private String przepis;
 
     public EliksirDTO(String nazwa, Float cena, String plik, String wlasciwosci, String przepis) {
-        Nazwa = nazwa;
-        Cena = cena;
-        Plik = plik;
-        Wlasciwosci = wlasciwosci;
-        Przepis = przepis;
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.plik = plik;
+        this.wlasciwosci = wlasciwosci;
+        this.przepis = przepis;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public Float getCena() {
-        return Cena;
+        return cena;
     }
 
     public void setCena(Float cena) {
-        Cena = cena;
+        this.cena = cena;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getWlasciwosci() {
-        return Wlasciwosci;
+        return wlasciwosci;
     }
 
     public void setWlasciwosci(String wlasciwosci) {
-        Wlasciwosci = wlasciwosci;
+        this.wlasciwosci = wlasciwosci;
     }
 
     public String getPrzepis() {
-        return Przepis;
+        return przepis;
     }
 
     public void setPrzepis(String przepis) {
-        Przepis = przepis;
+        this.przepis = przepis;
     }
 
     @Override
     public String toString() {
         return "EliksirDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Cena=" + Cena +
-                ", Plik='" + Plik + '\'' +
-                ", Wlasciwosci='" + Wlasciwosci + '\'' +
-                ", Przepis='" + Przepis + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", cena=" + cena +
+                ", plik='" + plik + '\'' +
+                ", wlasciwosci='" + wlasciwosci + '\'' +
+                ", przepis='" + przepis + '\'' +
                 '}';
     }
 }

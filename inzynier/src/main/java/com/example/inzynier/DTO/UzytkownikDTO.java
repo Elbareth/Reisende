@@ -1,343 +1,347 @@
 package com.example.inzynier.DTO;
 
 public class UzytkownikDTO {
-    private String Login;
-    private String Haslo;
-    private String Nick;
-    private String KlasaPostaci;
-    private Integer ZloteMonety;
-    private Integer Doswiadczenie;
-    private String Wyglad;
-    private Character Plec;
-    private Integer Drewno;
-    private Integer GrudkaGliny;
-    private Integer GrudkaZelaza;
-    private Integer WorekZboza;
-    private Integer Deski;
-    private Integer Cegly;
-    private Integer SztabkaZelaza;
-    private Integer Chleb;
-    private String Helm;
-    private String Zbroja;
-    private String Buty;
-    private String Rekawice;
-    private String Amulet;
-    private String Tarcza;
-    private String Bron;
-    private Integer Sen;
-    private Integer Glod;
-    private Integer Higiena;
-    private Integer Pragnienie;
-    private String Smok;
-    private Integer Poziom;
-    private String Polozenie;
+    private String login;
+    private String haslo;
+    private String nick;
+    private String klasaPostaci;
+    private Integer zloteMonety;
+    private Integer doswiadczenie;
+    private String wyglad;
+    private Character plec;
+    private Integer drewno;
+    private Integer grudkaGliny;
+    private Integer grudkaZelaza;
+    private Integer worekZboza;
+    private Integer deski;
+    private Integer cegly;
+    private Integer sztabkaZelaza;
+    private Integer chleb;
+    private String helm;
+    private String zbroja;
+    private String buty;
+    private String rekawice;
+    private String amulet;
+    private String tarcza;
+    private String bron;
+    private Integer sen;
+    private Integer glod;
+    private Integer higiena;
+    private Integer pragnienie;
+    private String smok;
+    private Integer poziom;
+    private String polozenie;
+
+    public UzytkownikDTO(){
+
+    }
 
     public UzytkownikDTO(String login, String haslo, String nick, String klasaPostaci, Integer zloteMonety, Integer doswiadczenie, String wyglad, Character plec, Integer drewno, Integer grudkaGliny, Integer grudkaZelaza, Integer worekZboza, Integer deski, Integer cegly, Integer sztabkaZelaza, Integer chleb, String helm, String zbroja, String buty, String rekawice, String amulet, String tarcza, String bron, Integer sen, Integer glod, Integer higiena, Integer pragnienie, String smok, Integer poziom, String polozenie) {
-        Login = login;
-        Haslo = haslo;
-        Nick = nick;
-        KlasaPostaci = klasaPostaci;
-        ZloteMonety = zloteMonety;
-        Doswiadczenie = doswiadczenie;
-        Wyglad = wyglad;
-        Plec = plec;
-        Drewno = drewno;
-        GrudkaGliny = grudkaGliny;
-        GrudkaZelaza = grudkaZelaza;
-        WorekZboza = worekZboza;
-        Deski = deski;
-        Cegly = cegly;
-        SztabkaZelaza = sztabkaZelaza;
-        Chleb = chleb;
-        Helm = helm;
-        Zbroja = zbroja;
-        Buty = buty;
-        Rekawice = rekawice;
-        Amulet = amulet;
-        Tarcza = tarcza;
-        Bron = bron;
-        Sen = sen;
-        Glod = glod;
-        Higiena = higiena;
-        Pragnienie = pragnienie;
-        Smok = smok;
-        Poziom = poziom;
-        Polozenie = polozenie;
+        this.login = login;
+        this.haslo = haslo;
+        this.nick = nick;
+        this.klasaPostaci = klasaPostaci;
+        this.zloteMonety = zloteMonety;
+        this.doswiadczenie = doswiadczenie;
+        this.wyglad = wyglad;
+        this.plec = plec;
+        this.drewno = drewno;
+        this.grudkaGliny = grudkaGliny;
+        this.grudkaZelaza = grudkaZelaza;
+        this.worekZboza = worekZboza;
+        this.deski = deski;
+        this.cegly = cegly;
+        this.sztabkaZelaza = sztabkaZelaza;
+        this.chleb = chleb;
+        this.helm = helm;
+        this.zbroja = zbroja;
+        this.buty = buty;
+        this.rekawice = rekawice;
+        this.amulet = amulet;
+        this.tarcza = tarcza;
+        this.bron = bron;
+        this.sen = sen;
+        this.glod = glod;
+        this.higiena = higiena;
+        this.pragnienie = pragnienie;
+        this.smok = smok;
+        this.poziom = poziom;
+        this.polozenie = polozenie;
     }
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
     public void setLogin(String login) {
-        Login = login;
+        this.login = login;
     }
 
     public String getHaslo() {
-        return Haslo;
+        return haslo;
     }
 
     public void setHaslo(String haslo) {
-        Haslo = haslo;
+        this.haslo = haslo;
     }
 
     public String getNick() {
-        return Nick;
+        return nick;
     }
 
     public void setNick(String nick) {
-        Nick = nick;
+        this.nick = nick;
     }
 
     public String getKlasaPostaci() {
-        return KlasaPostaci;
+        return klasaPostaci;
     }
 
     public void setKlasaPostaci(String klasaPostaci) {
-        KlasaPostaci = klasaPostaci;
+        this.klasaPostaci = klasaPostaci;
     }
 
     public Integer getZloteMonety() {
-        return ZloteMonety;
+        return zloteMonety;
     }
 
     public void setZloteMonety(Integer zloteMonety) {
-        ZloteMonety = zloteMonety;
+        this.zloteMonety = zloteMonety;
     }
 
     public Integer getDoswiadczenie() {
-        return Doswiadczenie;
+        return doswiadczenie;
     }
 
     public void setDoswiadczenie(Integer doswiadczenie) {
-        Doswiadczenie = doswiadczenie;
+        this.doswiadczenie = doswiadczenie;
     }
 
     public String getWyglad() {
-        return Wyglad;
+        return wyglad;
     }
 
     public void setWyglad(String wyglad) {
-        Wyglad = wyglad;
+        this.wyglad = wyglad;
     }
 
     public Character getPlec() {
-        return Plec;
+        return plec;
     }
 
     public void setPlec(Character plec) {
-        Plec = plec;
+        this.plec = plec;
     }
 
     public Integer getDrewno() {
-        return Drewno;
+        return drewno;
     }
 
     public void setDrewno(Integer drewno) {
-        Drewno = drewno;
+        this.drewno = drewno;
     }
 
     public Integer getGrudkaGliny() {
-        return GrudkaGliny;
+        return grudkaGliny;
     }
 
     public void setGrudkaGliny(Integer grudkaGliny) {
-        GrudkaGliny = grudkaGliny;
+        this.grudkaGliny = grudkaGliny;
     }
 
     public Integer getGrudkaZelaza() {
-        return GrudkaZelaza;
+        return grudkaZelaza;
     }
 
     public void setGrudkaZelaza(Integer grudkaZelaza) {
-        GrudkaZelaza = grudkaZelaza;
+        this.grudkaZelaza = grudkaZelaza;
     }
 
     public Integer getWorekZboza() {
-        return WorekZboza;
+        return worekZboza;
     }
 
     public void setWorekZboza(Integer worekZboza) {
-        WorekZboza = worekZboza;
+        this.worekZboza = worekZboza;
     }
 
     public Integer getDeski() {
-        return Deski;
+        return deski;
     }
 
     public void setDeski(Integer deski) {
-        Deski = deski;
+        this.deski = deski;
     }
 
     public Integer getCegly() {
-        return Cegly;
+        return cegly;
     }
 
     public void setCegly(Integer cegly) {
-        Cegly = cegly;
+        this.cegly = cegly;
     }
 
     public Integer getSztabkaZelaza() {
-        return SztabkaZelaza;
+        return sztabkaZelaza;
     }
 
     public void setSztabkaZelaza(Integer sztabkaZelaza) {
-        SztabkaZelaza = sztabkaZelaza;
+        this.sztabkaZelaza = sztabkaZelaza;
     }
 
     public Integer getChleb() {
-        return Chleb;
+        return chleb;
     }
 
     public void setChleb(Integer chleb) {
-        Chleb = chleb;
+        this.chleb = chleb;
     }
 
     public String getHelm() {
-        return Helm;
+        return helm;
     }
 
     public void setHelm(String helm) {
-        Helm = helm;
+        this.helm = helm;
     }
 
     public String getZbroja() {
-        return Zbroja;
+        return zbroja;
     }
 
     public void setZbroja(String zbroja) {
-        Zbroja = zbroja;
+        this.zbroja = zbroja;
     }
 
     public String getButy() {
-        return Buty;
+        return buty;
     }
 
     public void setButy(String buty) {
-        Buty = buty;
+        this.buty = buty;
     }
 
     public String getRekawice() {
-        return Rekawice;
+        return rekawice;
     }
 
     public void setRekawice(String rekawice) {
-        Rekawice = rekawice;
+        this.rekawice = rekawice;
     }
 
     public String getAmulet() {
-        return Amulet;
+        return amulet;
     }
 
     public void setAmulet(String amulet) {
-        Amulet = amulet;
+        this.amulet = amulet;
     }
 
     public String getTarcza() {
-        return Tarcza;
+        return tarcza;
     }
 
     public void setTarcza(String tarcza) {
-        Tarcza = tarcza;
+        this.tarcza = tarcza;
     }
 
     public String getBron() {
-        return Bron;
+        return bron;
     }
 
     public void setBron(String bron) {
-        Bron = bron;
+        this.bron = bron;
     }
 
     public Integer getSen() {
-        return Sen;
+        return sen;
     }
 
     public void setSen(Integer sen) {
-        Sen = sen;
+        this.sen = sen;
     }
 
     public Integer getGlod() {
-        return Glod;
+        return glod;
     }
 
     public void setGlod(Integer glod) {
-        Glod = glod;
+        this.glod = glod;
     }
 
     public Integer getHigiena() {
-        return Higiena;
+        return higiena;
     }
 
     public void setHigiena(Integer higiena) {
-        Higiena = higiena;
+        this.higiena = higiena;
     }
 
     public Integer getPragnienie() {
-        return Pragnienie;
+        return pragnienie;
     }
 
     public void setPragnienie(Integer pragnienie) {
-        Pragnienie = pragnienie;
+        this.pragnienie = pragnienie;
     }
 
     public String getSmok() {
-        return Smok;
+        return smok;
     }
 
     public void setSmok(String smok) {
-        Smok = smok;
+        this.smok = smok;
     }
 
     public Integer getPoziom() {
-        return Poziom;
+        return poziom;
     }
 
     public void setPoziom(Integer poziom) {
-        Poziom = poziom;
+        this.poziom = poziom;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     @Override
     public String toString() {
         return "UzytkownikDTO{" +
-                "Login='" + Login + '\'' +
-                ", Haslo='" + Haslo + '\'' +
-                ", Nick='" + Nick + '\'' +
-                ", KlasaPostaci='" + KlasaPostaci + '\'' +
-                ", ZloteMonety=" + ZloteMonety +
-                ", Doswiadczenie=" + Doswiadczenie +
-                ", Wyglad='" + Wyglad + '\'' +
-                ", Plec=" + Plec +
-                ", Drewno=" + Drewno +
-                ", GrudkaGliny=" + GrudkaGliny +
-                ", GrudkaZelaza=" + GrudkaZelaza +
-                ", WorekZboza=" + WorekZboza +
-                ", Deski=" + Deski +
-                ", Cegly=" + Cegly +
-                ", SztabkaZelaza=" + SztabkaZelaza +
-                ", Chleb=" + Chleb +
-                ", Helm='" + Helm + '\'' +
-                ", Zbroja='" + Zbroja + '\'' +
-                ", Buty='" + Buty + '\'' +
-                ", Rekawice='" + Rekawice + '\'' +
-                ", Amulet='" + Amulet + '\'' +
-                ", Tarcza='" + Tarcza + '\'' +
-                ", Bron='" + Bron + '\'' +
-                ", Sen=" + Sen +
-                ", Glod=" + Glod +
-                ", Higiena=" + Higiena +
-                ", Pragnienie=" + Pragnienie +
-                ", Smok='" + Smok + '\'' +
-                ", Poziom=" + Poziom +
-                ", Polozenie='" + Polozenie + '\'' +
+                "login='" + login + '\'' +
+                ", haslo='" + haslo + '\'' +
+                ", nick='" + nick + '\'' +
+                ", klasaPostaci='" + klasaPostaci + '\'' +
+                ", zloteMonety=" + zloteMonety +
+                ", doswiadczenie=" + doswiadczenie +
+                ", wyglad='" + wyglad + '\'' +
+                ", plec=" + plec +
+                ", drewno=" + drewno +
+                ", grudkaGliny=" + grudkaGliny +
+                ", grudkaZelaza=" + grudkaZelaza +
+                ", worekZboza=" + worekZboza +
+                ", deski=" + deski +
+                ", cegly=" + cegly +
+                ", sztabkaZelaza=" + sztabkaZelaza +
+                ", chleb=" + chleb +
+                ", helm='" + helm + '\'' +
+                ", zbroja='" + zbroja + '\'' +
+                ", buty='" + buty + '\'' +
+                ", rekawice='" + rekawice + '\'' +
+                ", amulet='" + amulet + '\'' +
+                ", tarcza='" + tarcza + '\'' +
+                ", bron='" + bron + '\'' +
+                ", sen=" + sen +
+                ", glod=" + glod +
+                ", higiena=" + higiena +
+                ", pragnienie=" + pragnienie +
+                ", smok='" + smok + '\'' +
+                ", poziom=" + poziom +
+                ", polozenie='" + polozenie + '\'' +
                 '}';
     }
 }

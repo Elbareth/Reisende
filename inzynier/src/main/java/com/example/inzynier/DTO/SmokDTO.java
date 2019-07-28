@@ -1,68 +1,68 @@
 package com.example.inzynier.DTO;
 
 public class SmokDTO {
-    private String Wlasciciel;
-    private String Imie;
-    private String Gatunek;
-    private Integer PunktyZycia;
-    private String Plik;
+    private String wlasciciel;
+    private String imie;
+    private String gatunek;
+    private Integer punktyZycia;
+    private String plik;
 
     public SmokDTO(String wlasciciel, String imie, String gatunek, Integer punktyZycia, String plik) {
-        Wlasciciel = wlasciciel;
-        Imie = imie;
-        Gatunek = gatunek;
-        PunktyZycia = punktyZycia;
-        Plik = plik;
+        this.wlasciciel = wlasciciel;
+        this.imie = imie;
+        this.gatunek = gatunek;
+        this.punktyZycia = punktyZycia;
+        this.plik = plik;
     }
 
     public String getWlasciciel() {
-        return Wlasciciel;
+        return wlasciciel;
     }
 
     public void setWlasciciel(String wlasciciel) {
-        Wlasciciel = wlasciciel;
+        this.wlasciciel = wlasciciel;
     }
 
     public String getImie() {
-        return Imie;
+        return imie;
     }
 
     public void setImie(String imie) {
-        Imie = imie;
+        this.imie = imie;
     }
 
     public String getGatunek() {
-        return Gatunek;
+        return gatunek;
     }
 
     public void setGatunek(String gatunek) {
-        Gatunek = gatunek;
+        this.gatunek = gatunek;
     }
 
     public Integer getPunktyZycia() {
-        return PunktyZycia;
+        return punktyZycia;
     }
 
     public void setPunktyZycia(Integer punktyZycia) {
-        PunktyZycia = punktyZycia;
+        this.punktyZycia = punktyZycia;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "SmokDTO{" +
-                "Wlasciciel='" + Wlasciciel + '\'' +
-                ", Imie='" + Imie + '\'' +
-                ", Gatunek='" + Gatunek + '\'' +
-                ", PunktyZycia=" + PunktyZycia +
-                ", Plik='" + Plik + '\'' +
+                "wlasciciel='" + wlasciciel + '\'' +
+                ", imie='" + imie + '\'' +
+                ", gatunek='" + gatunek + '\'' +
+                ", punktyZycia=" + punktyZycia +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

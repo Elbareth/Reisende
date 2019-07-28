@@ -1,89 +1,89 @@
 package com.example.inzynier.DTO;
 
 public class QuestyDTO {
-    private Integer Id;
-    private String Postac;
-    private String Wykonujacy;
-    private String NoweZadanie;
-    private String Tresc;
-    private String Nagroda;
-    private Boolean CzyWykonane;
+    private Integer id;
+    private PostacDTO postac;
+    private UzytkownikDTO wykonujacy;
+    private String noweZadanie;
+    private String tresc;
+    private String nagroda;
+    private Boolean czyWykonane;
 
-    public QuestyDTO(String postac, String wykonujacy, String noweZadanie, String tresc, String nagroda, Boolean czyWykonane) {
-        Postac = postac;
-        Wykonujacy = wykonujacy;
-        NoweZadanie = noweZadanie;
-        Tresc = tresc;
-        Nagroda = nagroda;
-        CzyWykonane = czyWykonane;
+    public QuestyDTO(PostacDTO postac, UzytkownikDTO wykonujacy, String noweZadanie, String tresc, String nagroda, Boolean czyWykonane) {
+        this.postac = postac;
+        this.wykonujacy = wykonujacy;
+        this.noweZadanie = noweZadanie;
+        this.tresc = tresc;
+        this.nagroda = nagroda;
+        this.czyWykonane = czyWykonane;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getPostac() {
-        return Postac;
+    public PostacDTO getPostac() {
+        return postac;
     }
 
-    public void setPostac(String postac) {
-        Postac = postac;
+    public void setPostac(PostacDTO postac) {
+        this.postac = postac;
     }
 
-    public String getWykonujacy() {
-        return Wykonujacy;
+    public UzytkownikDTO getWykonujacy() {
+        return wykonujacy;
     }
 
-    public void setWykonujacy(String wykonujacy) {
-        Wykonujacy = wykonujacy;
+    public void setWykonujacy(UzytkownikDTO wykonujacy) {
+        this.wykonujacy = wykonujacy;
     }
 
     public String getNoweZadanie() {
-        return NoweZadanie;
+        return noweZadanie;
     }
 
     public void setNoweZadanie(String noweZadanie) {
-        NoweZadanie = noweZadanie;
+        this.noweZadanie = noweZadanie;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public String getNagroda() {
-        return Nagroda;
+        return nagroda;
     }
 
     public void setNagroda(String nagroda) {
-        Nagroda = nagroda;
+        this.nagroda = nagroda;
     }
 
     public Boolean getCzyWykonane() {
-        return CzyWykonane;
+        return czyWykonane;
     }
 
     public void setCzyWykonane(Boolean czyWykonane) {
-        CzyWykonane = czyWykonane;
+        this.czyWykonane = czyWykonane;
     }
 
     @Override
     public String toString() {
         return "QuestyDTO{" +
-                "Id=" + Id +
-                ", Postac='" + Postac + '\'' +
-                ", Wykonujacy='" + Wykonujacy + '\'' +
-                ", NoweZadanie='" + NoweZadanie + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Nagroda='" + Nagroda + '\'' +
-                ", CzyWykonane=" + CzyWykonane +
+                "id=" + id +
+                ", postac=" + postac +
+                ", wykonujacy=" + wykonujacy +
+                ", noweZadanie='" + noweZadanie + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", nagroda='" + nagroda + '\'' +
+                ", czyWykonane=" + czyWykonane +
                 '}';
     }
 }

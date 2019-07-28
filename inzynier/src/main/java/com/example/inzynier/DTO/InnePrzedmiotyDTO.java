@@ -1,57 +1,58 @@
 package com.example.inzynier.DTO;
 
 public class InnePrzedmiotyDTO {
-    private String Nazwa;
-    private Float Cena;
-    private String Plik;
-    private String Opis;
+    private String nazwa;
+    private Float cena;
+    private String plik;
+    private String opis;
+
 
     public InnePrzedmiotyDTO(String nazwa, Float cena, String plik, String opis) {
-        Nazwa = nazwa;
-        Cena = cena;
-        Plik = plik;
-        Opis = opis;
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.plik = plik;
+        this.opis = opis;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public Float getCena() {
-        return Cena;
+        return cena;
     }
 
     public void setCena(Float cena) {
-        Cena = cena;
+        this.cena = cena;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
+        this.opis = opis;
     }
 
     @Override
     public String toString() {
         return "InnePrzedmiotyDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Cena=" + Cena +
-                ", Plik='" + Plik + '\'' +
-                ", Opis='" + Opis + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", cena=" + cena +
+                ", plik='" + plik + '\'' +
+                ", opis='" + opis + '\'' +
                 '}';
     }
 }

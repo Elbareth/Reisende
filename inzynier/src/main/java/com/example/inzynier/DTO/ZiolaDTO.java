@@ -1,57 +1,58 @@
 package com.example.inzynier.DTO;
 
 public class ZiolaDTO {
-    private String Nazwa;
-    private String Polozenie;
-    private String Opis;
-    private String Plik;
+    private String nazwa;
+    private String polozenie;
+    private String opis;
+    private String plik;
+
 
     public ZiolaDTO(String nazwa, String polozenie, String opis, String plik) {
-        Nazwa = nazwa;
-        Polozenie = polozenie;
-        Opis = opis;
-        Plik = plik;
+        this.nazwa = nazwa;
+        this.polozenie = polozenie;
+        this.opis = opis;
+        this.plik = plik;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
+        this.opis = opis;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "ZiolaDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Opis='" + Opis + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", opis='" + opis + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

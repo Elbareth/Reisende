@@ -1,46 +1,46 @@
 package com.example.inzynier.DTO;
 
 public class PostacDTO {
-    private String Imie;
-    private String Polozenie;
-    private String Plik;
+    private String imie;
+    private String polozenie;
+    private String plik;
 
     public PostacDTO(String imie, String polozenie, String plik) {
-        Imie = imie;
-        Polozenie = polozenie;
-        Plik = plik;
+        this.imie = imie;
+        this.polozenie = polozenie;
+        this.plik = plik;
     }
 
     public String getImie() {
-        return Imie;
+        return imie;
     }
 
     public void setImie(String imie) {
-        Imie = imie;
+        this.imie = imie;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "PostacDTO{" +
-                "Imie='" + Imie + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "imie='" + imie + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

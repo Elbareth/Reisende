@@ -1,57 +1,57 @@
 package com.example.inzynier.DTO;
 
 public class BudynkiDTO {
-    private String Nazwa;
-    private String Polozenie;
-    private String Wymiary;
-    private String Plik;
+    private String nazwa;
+    private String polozenie;
+    private String wymiary;
+    private String plik;
 
     public BudynkiDTO(String nazwa, String polozenie, String wymiary, String plik) {
-        Nazwa = nazwa;
-        Polozenie = polozenie;
-        Wymiary = wymiary;
-        Plik = plik;
+        this.nazwa = nazwa;
+        this.polozenie = polozenie;
+        this.wymiary = wymiary;
+        this.plik = plik;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPolozenie() {
-        return Polozenie;
+        return polozenie;
     }
 
     public void setPolozenie(String polozenie) {
-        Polozenie = polozenie;
+        this.polozenie = polozenie;
     }
 
     public String getWymiary() {
-        return Wymiary;
+        return wymiary;
     }
 
     public void setWymiary(String wymiary) {
-        Wymiary = wymiary;
+        this.wymiary = wymiary;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     @Override
     public String toString() {
         return "BudynkiDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", Polozenie='" + Polozenie + '\'' +
-                ", Wymiary='" + Wymiary + '\'' +
-                ", Plik='" + Plik + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", polozenie='" + polozenie + '\'' +
+                ", wymiary='" + wymiary + '\'' +
+                ", plik='" + plik + '\'' +
                 '}';
     }
 }

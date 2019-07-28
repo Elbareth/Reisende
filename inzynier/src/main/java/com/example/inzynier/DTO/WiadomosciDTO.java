@@ -1,80 +1,83 @@
 package com.example.inzynier.DTO;
 
+import com.example.inzynier.tables.Uzytkownik;
+
 import java.util.Date;
 
 public class WiadomosciDTO {
-    private Integer Id;
-    private String Nadawca;
-    private String Odbiorca;
-    private String Tytul;
-    private String Tresc;
-    private Date Data;
+    private Integer id;
+    private UzytkownikDTO nadawca;
+    private UzytkownikDTO odbiorca;
+    private String tytul;
+    private String tresc;
+    private Date data;
 
-    public WiadomosciDTO(String nadawca, String odbiorca, String tytul, String tresc, Date data) {
-        Nadawca = nadawca;
-        Odbiorca = odbiorca;
-        Tytul = tytul;
-        Tresc = tresc;
-        Data = data;
+
+    public WiadomosciDTO(UzytkownikDTO nadawca, UzytkownikDTO odbiorca, String tytul, String tresc, Date data) {
+        this.nadawca = nadawca;
+        this.odbiorca = odbiorca;
+        this.tytul = tytul;
+        this.tresc = tresc;
+        this.data = data;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getNadawca() {
-        return Nadawca;
+    public UzytkownikDTO getNadawca() {
+        return nadawca;
     }
 
-    public void setNadawca(String nadawca) {
-        Nadawca = nadawca;
+    public void setNadawca(UzytkownikDTO nadawca) {
+        this.nadawca = nadawca;
     }
 
-    public String getOdbiorca() {
-        return Odbiorca;
+    public UzytkownikDTO getOdbiorca() {
+        return odbiorca;
     }
 
-    public void setOdbiorca(String odbiorca) {
-        Odbiorca = odbiorca;
+    public void setOdbiorca(UzytkownikDTO odbiorca) {
+        this.odbiorca = odbiorca;
     }
 
     public String getTytul() {
-        return Tytul;
+        return tytul;
     }
 
     public void setTytul(String tytul) {
-        Tytul = tytul;
+        this.tytul = tytul;
     }
 
     public String getTresc() {
-        return Tresc;
+        return tresc;
     }
 
     public void setTresc(String tresc) {
-        Tresc = tresc;
+        this.tresc = tresc;
     }
 
     public Date getData() {
-        return Data;
+        return data;
     }
 
     public void setData(Date data) {
-        Data = data;
+        this.data = data;
     }
 
     @Override
     public String toString() {
         return "WiadomosciDTO{" +
-                "Id=" + Id +
-                ", Nadawca='" + Nadawca + '\'' +
-                ", Odbiorca='" + Odbiorca + '\'' +
-                ", Tytul='" + Tytul + '\'' +
-                ", Tresc='" + Tresc + '\'' +
-                ", Data=" + Data +
+                "id=" + id +
+                ", nadawca=" + nadawca +
+                ", odbiorca=" + odbiorca +
+                ", tytul='" + tytul + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", data=" + data +
                 '}';
     }
 }

@@ -1,56 +1,56 @@
 package com.example.inzynier.DTO;
 
 public class DialogPostaciDTO {
-    private Integer ID;
-    private String NazwaQuesta;
-    private String Postac;
-    private String Tekst;
+    private Integer id;
+    private String nazwaQuesta;
+    private PostacDTO postac;
+    private String tekst;
 
-    public DialogPostaciDTO(String nazwaQuesta, String postac, String tekst) {
-        NazwaQuesta = nazwaQuesta;
-        Postac = postac;
-        Tekst = tekst;
+    public DialogPostaciDTO(String nazwaQuesta, PostacDTO postac, String tekst) {
+        this.nazwaQuesta = nazwaQuesta;
+        this.postac = postac;
+        this.tekst = tekst;
     }
 
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNazwaQuesta() {
-        return NazwaQuesta;
+        return nazwaQuesta;
     }
 
     public void setNazwaQuesta(String nazwaQuesta) {
-        NazwaQuesta = nazwaQuesta;
+        this.nazwaQuesta = nazwaQuesta;
     }
 
-    public String getPostac() {
-        return Postac;
+    public PostacDTO getPostac() {
+        return postac;
     }
 
-    public void setPostac(String postac) {
-        Postac = postac;
+    public void setPostac(PostacDTO postac) {
+        this.postac = postac;
     }
 
     public String getTekst() {
-        return Tekst;
+        return tekst;
     }
 
     public void setTekst(String tekst) {
-        Tekst = tekst;
+        this.tekst = tekst;
     }
 
     @Override
     public String toString() {
         return "DialogPostaciDTO{" +
-                "ID=" + ID +
-                ", NazwaQuesta='" + NazwaQuesta + '\'' +
-                ", Postac='" + Postac + '\'' +
-                ", Tekst='" + Tekst + '\'' +
+                "id=" + id +
+                ", nazwaQuesta='" + nazwaQuesta + '\'' +
+                ", postac=" + postac +
+                ", tekst='" + tekst + '\'' +
                 '}';
     }
 }

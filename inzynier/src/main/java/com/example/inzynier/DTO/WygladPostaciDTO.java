@@ -1,67 +1,67 @@
 package com.example.inzynier.DTO;
 
 public class WygladPostaciDTO {
-    private Integer Id;
-    private String Nazwa;
-    private String Klasa;
-    private String Plik;
-    private String Kategoria;
+    private Integer id;
+    private String nazwa;
+    private String klasa;
+    private String plik;
+    private String kategoria;
 
     public WygladPostaciDTO(String nazwa, String klasa, String plik, String kategoria) {
-        Nazwa = nazwa;
-        Klasa = klasa;
-        Plik = plik;
-        Kategoria = kategoria;
+        this.nazwa = nazwa;
+        this.klasa = klasa;
+        this.plik = plik;
+        this.kategoria = kategoria;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getKlasa() {
-        return Klasa;
+        return klasa;
     }
 
     public void setKlasa(String klasa) {
-        Klasa = klasa;
+        this.klasa = klasa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKategoria() {
-        return Kategoria;
+        return kategoria;
     }
 
     public void setKategoria(String kategoria) {
-        Kategoria = kategoria;
+        this.kategoria = kategoria;
     }
 
     @Override
     public String toString() {
         return "WygladPostaciDTO{" +
-                "Id=" + Id +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Klasa='" + Klasa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Kategoria='" + Kategoria + '\'' +
+                "id=" + id +
+                ", nazwa='" + nazwa + '\'' +
+                ", klasa='" + klasa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", kategoria='" + kategoria + '\'' +
                 '}';
     }
 }

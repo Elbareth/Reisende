@@ -1,67 +1,67 @@
 package com.example.inzynier.DTO;
 
 public class EkwipunekDTO {
-    private Integer ID;
-    private String Wlasciciel;
-    private String Nazwa;
-    private String Plik;
-    private String Opis;
+    private Integer id;
+    private UzytkownikDTO wlasciciel;
+    private String nazwa;
+    private String plik;
+    private String opis;
 
-    public EkwipunekDTO(String wlasciciel, String nazwa, String plik, String opis) {
-        Wlasciciel = wlasciciel;
-        Nazwa = nazwa;
-        Plik = plik;
-        Opis = opis;
+    public EkwipunekDTO(UzytkownikDTO wlasciciel, String nazwa, String plik, String opis) {
+        this.wlasciciel = wlasciciel;
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.opis = opis;
     }
 
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getWlasciciel() {
-        return Wlasciciel;
+    public UzytkownikDTO getWlasciciel() {
+        return wlasciciel;
     }
 
-    public void setWlasciciel(String wlasciciel) {
-        Wlasciciel = wlasciciel;
+    public void setWlasciciel(UzytkownikDTO wlasciciel) {
+        this.wlasciciel = wlasciciel;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getOpis() {
-        return Opis;
+        return opis;
     }
 
     public void setOpis(String opis) {
-        Opis = opis;
+        this.opis = opis;
     }
 
     @Override
     public String toString() {
         return "EkwipunekDTO{" +
-                "ID=" + ID +
-                ", Wlasciciel='" + Wlasciciel + '\'' +
-                ", Nazwa='" + Nazwa + '\'' +
-                ", Plik='" + Plik + '\'' +
-                ", Opis='" + Opis + '\'' +
+                "id=" + id +
+                ", wlasciciel=" + wlasciciel +
+                ", nazwa='" + nazwa + '\'' +
+                ", plik='" + plik + '\'' +
+                ", opis='" + opis + '\'' +
                 '}';
     }
 }

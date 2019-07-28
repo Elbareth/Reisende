@@ -1,299 +1,299 @@
 package com.example.inzynier.DTO;
 
 public class DomekDTO {
-    private String Wlasciciel;
-    private String Pomieszczenia;
-    private String Okna;
-    private String Drzwi;
-    private String Lozko;
-    private String Wanna;
-    private String Umywalka;
-    private String Toaeta;
-    private String Szafki;
-    private String Zlew;
-    private String Kuchenka;
-    private String Lodowka;
-    private String Szafa;
-    private String Obraz;
-    private String Dywany;
-    private String Kominki;
-    private String Kwiaty;
-    private String Wazony;
-    private String Trofea;
-    private String Kojec;
-    private String Krzesla;
-    private String Fotele;
-    private String Sofa;
-    private String Stoly;
-    private String Barek;
-    private String Podloga;
+    private String wlasciciel;
+    private String pomieszczenia;
+    private String okna;
+    private String drzwi;
+    private String lozko;
+    private String wanna;
+    private String umywalka;
+    private String toaeta;
+    private String szafki;
+    private String zlew;
+    private String kuchenka;
+    private String lodowka;
+    private String szafa;
+    private String obraz;
+    private String dywany;
+    private String kominki;
+    private String kwiaty;
+    private String wazony;
+    private String trofea;
+    private String kojec;
+    private String krzesla;
+    private String fotele;
+    private String sofa;
+    private String stoly;
+    private String barek;
+    private String podloga;
 
     public DomekDTO(String wlasciciel, String pomieszczenia, String okna, String drzwi, String lozko, String wanna, String umywalka, String toaeta, String szafki, String zlew, String kuchenka, String lodowka, String szafa, String obraz, String dywany, String kominki, String kwiaty, String wazony, String trofea, String kojec, String krzesla, String fotele, String sofa, String stoly, String barek, String podloga) {
-        Wlasciciel = wlasciciel;
-        Pomieszczenia = pomieszczenia;
-        Okna = okna;
-        Drzwi = drzwi;
-        Lozko = lozko;
-        Wanna = wanna;
-        Umywalka = umywalka;
-        Toaeta = toaeta;
-        Szafki = szafki;
-        Zlew = zlew;
-        Kuchenka = kuchenka;
-        Lodowka = lodowka;
-        Szafa = szafa;
-        Obraz = obraz;
-        Dywany = dywany;
-        Kominki = kominki;
-        Kwiaty = kwiaty;
-        Wazony = wazony;
-        Trofea = trofea;
-        Kojec = kojec;
-        Krzesla = krzesla;
-        Fotele = fotele;
-        Sofa = sofa;
-        Stoly = stoly;
-        Barek = barek;
-        Podloga = podloga;
+        this.wlasciciel = wlasciciel;
+        this.pomieszczenia = pomieszczenia;
+        this.okna = okna;
+        this.drzwi = drzwi;
+        this.lozko = lozko;
+        this.wanna = wanna;
+        this.umywalka = umywalka;
+        this.toaeta = toaeta;
+        this.szafki = szafki;
+        this.zlew = zlew;
+        this.kuchenka = kuchenka;
+        this.lodowka = lodowka;
+        this.szafa = szafa;
+        this.obraz = obraz;
+        this.dywany = dywany;
+        this.kominki = kominki;
+        this.kwiaty = kwiaty;
+        this.wazony = wazony;
+        this.trofea = trofea;
+        this.kojec = kojec;
+        this.krzesla = krzesla;
+        this.fotele = fotele;
+        this.sofa = sofa;
+        this.stoly = stoly;
+        this.barek = barek;
+        this.podloga = podloga;
     }
 
     public String getWlasciciel() {
-        return Wlasciciel;
+        return wlasciciel;
     }
 
     public void setWlasciciel(String wlasciciel) {
-        Wlasciciel = wlasciciel;
+        this.wlasciciel = wlasciciel;
     }
 
     public String getPomieszczenia() {
-        return Pomieszczenia;
+        return pomieszczenia;
     }
 
     public void setPomieszczenia(String pomieszczenia) {
-        Pomieszczenia = pomieszczenia;
+        this.pomieszczenia = pomieszczenia;
     }
 
     public String getOkna() {
-        return Okna;
+        return okna;
     }
 
     public void setOkna(String okna) {
-        Okna = okna;
+        this.okna = okna;
     }
 
     public String getDrzwi() {
-        return Drzwi;
+        return drzwi;
     }
 
     public void setDrzwi(String drzwi) {
-        Drzwi = drzwi;
+        this.drzwi = drzwi;
     }
 
     public String getLozko() {
-        return Lozko;
+        return lozko;
     }
 
     public void setLozko(String lozko) {
-        Lozko = lozko;
+        this.lozko = lozko;
     }
 
     public String getWanna() {
-        return Wanna;
+        return wanna;
     }
 
     public void setWanna(String wanna) {
-        Wanna = wanna;
+        this.wanna = wanna;
     }
 
     public String getUmywalka() {
-        return Umywalka;
+        return umywalka;
     }
 
     public void setUmywalka(String umywalka) {
-        Umywalka = umywalka;
+        this.umywalka = umywalka;
     }
 
     public String getToaeta() {
-        return Toaeta;
+        return toaeta;
     }
 
     public void setToaeta(String toaeta) {
-        Toaeta = toaeta;
+        this.toaeta = toaeta;
     }
 
     public String getSzafki() {
-        return Szafki;
+        return szafki;
     }
 
     public void setSzafki(String szafki) {
-        Szafki = szafki;
+        this.szafki = szafki;
     }
 
     public String getZlew() {
-        return Zlew;
+        return zlew;
     }
 
     public void setZlew(String zlew) {
-        Zlew = zlew;
+        this.zlew = zlew;
     }
 
     public String getKuchenka() {
-        return Kuchenka;
+        return kuchenka;
     }
 
     public void setKuchenka(String kuchenka) {
-        Kuchenka = kuchenka;
+        this.kuchenka = kuchenka;
     }
 
     public String getLodowka() {
-        return Lodowka;
+        return lodowka;
     }
 
     public void setLodowka(String lodowka) {
-        Lodowka = lodowka;
+        this.lodowka = lodowka;
     }
 
     public String getSzafa() {
-        return Szafa;
+        return szafa;
     }
 
     public void setSzafa(String szafa) {
-        Szafa = szafa;
+        this.szafa = szafa;
     }
 
     public String getObraz() {
-        return Obraz;
+        return obraz;
     }
 
     public void setObraz(String obraz) {
-        Obraz = obraz;
+        this.obraz = obraz;
     }
 
     public String getDywany() {
-        return Dywany;
+        return dywany;
     }
 
     public void setDywany(String dywany) {
-        Dywany = dywany;
+        this.dywany = dywany;
     }
 
     public String getKominki() {
-        return Kominki;
+        return kominki;
     }
 
     public void setKominki(String kominki) {
-        Kominki = kominki;
+        this.kominki = kominki;
     }
 
     public String getKwiaty() {
-        return Kwiaty;
+        return kwiaty;
     }
 
     public void setKwiaty(String kwiaty) {
-        Kwiaty = kwiaty;
+        this.kwiaty = kwiaty;
     }
 
     public String getWazony() {
-        return Wazony;
+        return wazony;
     }
 
     public void setWazony(String wazony) {
-        Wazony = wazony;
+        this.wazony = wazony;
     }
 
     public String getTrofea() {
-        return Trofea;
+        return trofea;
     }
 
     public void setTrofea(String trofea) {
-        Trofea = trofea;
+        this.trofea = trofea;
     }
 
     public String getKojec() {
-        return Kojec;
+        return kojec;
     }
 
     public void setKojec(String kojec) {
-        Kojec = kojec;
+        this.kojec = kojec;
     }
 
     public String getKrzesla() {
-        return Krzesla;
+        return krzesla;
     }
 
     public void setKrzesla(String krzesla) {
-        Krzesla = krzesla;
+        this.krzesla = krzesla;
     }
 
     public String getFotele() {
-        return Fotele;
+        return fotele;
     }
 
     public void setFotele(String fotele) {
-        Fotele = fotele;
+        this.fotele = fotele;
     }
 
     public String getSofa() {
-        return Sofa;
+        return sofa;
     }
 
     public void setSofa(String sofa) {
-        Sofa = sofa;
+        this.sofa = sofa;
     }
 
     public String getStoly() {
-        return Stoly;
+        return stoly;
     }
 
     public void setStoly(String stoly) {
-        Stoly = stoly;
+        this.stoly = stoly;
     }
 
     public String getBarek() {
-        return Barek;
+        return barek;
     }
 
     public void setBarek(String barek) {
-        Barek = barek;
+        this.barek = barek;
     }
 
     public String getPodloga() {
-        return Podloga;
+        return podloga;
     }
 
     public void setPodloga(String podloga) {
-        Podloga = podloga;
+        this.podloga = podloga;
     }
 
     @Override
     public String toString() {
         return "DomekDTO{" +
-                "Wlasciciel='" + Wlasciciel + '\'' +
-                ", Pomieszczenia='" + Pomieszczenia + '\'' +
-                ", Okna='" + Okna + '\'' +
-                ", Drzwi='" + Drzwi + '\'' +
-                ", Lozko='" + Lozko + '\'' +
-                ", Wanna='" + Wanna + '\'' +
-                ", Umywalka='" + Umywalka + '\'' +
-                ", Toaeta='" + Toaeta + '\'' +
-                ", Szafki='" + Szafki + '\'' +
-                ", Zlew='" + Zlew + '\'' +
-                ", Kuchenka='" + Kuchenka + '\'' +
-                ", Lodowka='" + Lodowka + '\'' +
-                ", Szafa='" + Szafa + '\'' +
-                ", Obraz='" + Obraz + '\'' +
-                ", Dywany='" + Dywany + '\'' +
-                ", Kominki='" + Kominki + '\'' +
-                ", Kwiaty='" + Kwiaty + '\'' +
-                ", Wazony='" + Wazony + '\'' +
-                ", Trofea='" + Trofea + '\'' +
-                ", Kojec='" + Kojec + '\'' +
-                ", Krzesla='" + Krzesla + '\'' +
-                ", Fotele='" + Fotele + '\'' +
-                ", Sofa='" + Sofa + '\'' +
-                ", Stoly='" + Stoly + '\'' +
-                ", Barek='" + Barek + '\'' +
-                ", Podloga='" + Podloga + '\'' +
+                "wlasciciel='" + wlasciciel + '\'' +
+                ", pomieszczenia='" + pomieszczenia + '\'' +
+                ", okna='" + okna + '\'' +
+                ", drzwi='" + drzwi + '\'' +
+                ", lozko='" + lozko + '\'' +
+                ", wanna='" + wanna + '\'' +
+                ", umywalka='" + umywalka + '\'' +
+                ", toaeta='" + toaeta + '\'' +
+                ", szafki='" + szafki + '\'' +
+                ", zlew='" + zlew + '\'' +
+                ", kuchenka='" + kuchenka + '\'' +
+                ", lodowka='" + lodowka + '\'' +
+                ", szafa='" + szafa + '\'' +
+                ", obraz='" + obraz + '\'' +
+                ", dywany='" + dywany + '\'' +
+                ", kominki='" + kominki + '\'' +
+                ", kwiaty='" + kwiaty + '\'' +
+                ", wazony='" + wazony + '\'' +
+                ", trofea='" + trofea + '\'' +
+                ", kojec='" + kojec + '\'' +
+                ", krzesla='" + krzesla + '\'' +
+                ", fotele='" + fotele + '\'' +
+                ", sofa='" + sofa + '\'' +
+                ", stoly='" + stoly + '\'' +
+                ", barek='" + barek + '\'' +
+                ", podloga='" + podloga + '\'' +
                 '}';
     }
 }

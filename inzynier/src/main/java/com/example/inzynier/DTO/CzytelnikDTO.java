@@ -1,45 +1,48 @@
 package com.example.inzynier.DTO;
 
+import com.example.inzynier.tables.Ksiazki;
+import com.example.inzynier.tables.Uzytkownik;
+
 public class CzytelnikDTO {
-    private Integer ID;
-    private String Tytul;
-    private String Czytelnik;
+    private Integer id;
+    private KsiazkiDTO tytul;
+    private UzytkownikDTO czytelnik;
 
-    public CzytelnikDTO(String tytul, String czytelnik) {
-        Tytul = tytul;
-        Czytelnik = czytelnik;
+    public CzytelnikDTO(KsiazkiDTO tytul, UzytkownikDTO czytelnik) {
+        this.tytul = tytul;
+        this.czytelnik = czytelnik;
     }
 
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getTytul() {
-        return Tytul;
+    public KsiazkiDTO getTytul() {
+        return tytul;
     }
 
-    public void setTytul(String tytul) {
-        Tytul = tytul;
+    public void setTytul(KsiazkiDTO tytul) {
+        this.tytul = tytul;
     }
 
-    public String getCzytelnik() {
-        return Czytelnik;
+    public UzytkownikDTO getCzytelnik() {
+        return czytelnik;
     }
 
-    public void setCzytelnik(String czytelnik) {
-        Czytelnik = czytelnik;
+    public void setCzytelnik(UzytkownikDTO czytelnik) {
+        this.czytelnik = czytelnik;
     }
 
     @Override
     public String toString() {
         return "CzytelnikDTO{" +
-                "ID=" + ID +
-                ", Tytul='" + Tytul + '\'' +
-                ", Czytelnik='" + Czytelnik + '\'' +
+                "id=" + id +
+                ", tytul=" + tytul +
+                ", czytelnik=" + czytelnik +
                 '}';
     }
 }

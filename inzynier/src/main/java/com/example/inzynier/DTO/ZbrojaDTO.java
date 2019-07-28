@@ -1,101 +1,102 @@
 package com.example.inzynier.DTO;
 
 public class ZbrojaDTO {
-    private String Nazwa;
-    private Integer PunktyAtaku;
-    private Integer PunktyObrony;
-    private Integer WymaganyPoziom;
-    private Integer PunktyDoswiadczenia;
-    private String Plik;
-    private String Klasa;
-    private String Typ;
+    private String nazwa;
+    private Integer punktyAtaku;
+    private Integer punktyObrony;
+    private Integer wymaganyPoziom;
+    private Integer punktyDoswiadczenia;
+    private String plik;
+    private String klasa;
+    private String typ;
+
 
     public ZbrojaDTO(String nazwa, Integer punktyAtaku, Integer punktyObrony, Integer wymaganyPoziom, Integer punktyDoswiadczenia, String plik, String klasa, String typ) {
-        Nazwa = nazwa;
-        PunktyAtaku = punktyAtaku;
-        PunktyObrony = punktyObrony;
-        WymaganyPoziom = wymaganyPoziom;
-        PunktyDoswiadczenia = punktyDoswiadczenia;
-        Plik = plik;
-        Klasa = klasa;
-        Typ = typ;
+        this.nazwa = nazwa;
+        this.punktyAtaku = punktyAtaku;
+        this.punktyObrony = punktyObrony;
+        this.wymaganyPoziom = wymaganyPoziom;
+        this.punktyDoswiadczenia = punktyDoswiadczenia;
+        this.plik = plik;
+        this.klasa = klasa;
+        this.typ = typ;
     }
 
     public String getNazwa() {
-        return Nazwa;
+        return nazwa;
     }
 
     public void setNazwa(String nazwa) {
-        Nazwa = nazwa;
+        this.nazwa = nazwa;
     }
 
     public Integer getPunktyAtaku() {
-        return PunktyAtaku;
+        return punktyAtaku;
     }
 
     public void setPunktyAtaku(Integer punktyAtaku) {
-        PunktyAtaku = punktyAtaku;
+        this.punktyAtaku = punktyAtaku;
     }
 
     public Integer getPunktyObrony() {
-        return PunktyObrony;
+        return punktyObrony;
     }
 
     public void setPunktyObrony(Integer punktyObrony) {
-        PunktyObrony = punktyObrony;
+        this.punktyObrony = punktyObrony;
     }
 
     public Integer getWymaganyPoziom() {
-        return WymaganyPoziom;
+        return wymaganyPoziom;
     }
 
     public void setWymaganyPoziom(Integer wymaganyPoziom) {
-        WymaganyPoziom = wymaganyPoziom;
+        this.wymaganyPoziom = wymaganyPoziom;
     }
 
     public Integer getPunktyDoswiadczenia() {
-        return PunktyDoswiadczenia;
+        return punktyDoswiadczenia;
     }
 
     public void setPunktyDoswiadczenia(Integer punktyDoswiadczenia) {
-        PunktyDoswiadczenia = punktyDoswiadczenia;
+        this.punktyDoswiadczenia = punktyDoswiadczenia;
     }
 
     public String getPlik() {
-        return Plik;
+        return plik;
     }
 
     public void setPlik(String plik) {
-        Plik = plik;
+        this.plik = plik;
     }
 
     public String getKlasa() {
-        return Klasa;
+        return klasa;
     }
 
     public void setKlasa(String klasa) {
-        Klasa = klasa;
+        this.klasa = klasa;
     }
 
     public String getTyp() {
-        return Typ;
+        return typ;
     }
 
     public void setTyp(String typ) {
-        Typ = typ;
+        this.typ = typ;
     }
 
     @Override
     public String toString() {
         return "ZbrojaDTO{" +
-                "Nazwa='" + Nazwa + '\'' +
-                ", PunktyAtaku=" + PunktyAtaku +
-                ", PunktyObrony=" + PunktyObrony +
-                ", WymaganyPoziom=" + WymaganyPoziom +
-                ", PunktyDoswiadczenia=" + PunktyDoswiadczenia +
-                ", Plik='" + Plik + '\'' +
-                ", Klasa='" + Klasa + '\'' +
-                ", Typ='" + Typ + '\'' +
+                "nazwa='" + nazwa + '\'' +
+                ", punktyAtaku=" + punktyAtaku +
+                ", punktyObrony=" + punktyObrony +
+                ", wymaganyPoziom=" + wymaganyPoziom +
+                ", punktyDoswiadczenia=" + punktyDoswiadczenia +
+                ", plik='" + plik + '\'' +
+                ", klasa='" + klasa + '\'' +
+                ", typ='" + typ + '\'' +
                 '}';
     }
 }
