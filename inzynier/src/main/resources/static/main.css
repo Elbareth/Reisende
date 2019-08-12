@@ -85,18 +85,21 @@ h3{
     font-size: 15px;
 }
 p{
-    color: red;
+    color: black;
     font-size: 15px;
 }
-table {
-    border: 1px solid #ff9900;
+.letter{
+    margin-left: auto;
+    margin-right: auto;
+    height: 900px;
+    background-image: url("/resources/listMini.png");
+    background-repeat: no-repeat;
 }
-th{
-    border: 1px solid #ff9900;
-}
-td{
-    border: 1px solid #ff9900;
-}
-tr{
-    border: 1px solid #ff9900;
+.innerLetter{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding:0px 0px;
+    font-size:10px;
 }
