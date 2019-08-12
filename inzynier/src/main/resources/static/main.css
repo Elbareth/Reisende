@@ -88,3 +88,15 @@ p{
     color: red;
     font-size: 15px;
 }
+table {
+    border: 1px solid #ff9900;
+}
+th{
+    border: 1px solid #ff9900;
+}
+td{
+    border: 1px solid #ff9900;
+}
+tr{
+    border: 1px solid #ff9900;
+}
