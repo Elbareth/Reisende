@@ -22,6 +22,18 @@
         <put-attribute name="content" value="/WEB-INF/views/arena/index.jsp" />
     </definition>
     <definition name="wiadomosci.index" extends="myTemplate">
-        <put-attribute name="content" value="/WEB-INF/views/wiadomosci/index.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/index.jsp" />
+    </definition>
+    <definition name="wiadomosciNadawca.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexNadawca.jsp" />
+    </definition>
+    <definition name="napiszWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexNapisz.jsp" />
+    </definition>
+    <definition name="otworzWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexOtworz.jsp" />
+    </definition>
+    <definition name="odpiszNaWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexOdpisz.jsp" />
     </definition>
 </tiles-definitions>
