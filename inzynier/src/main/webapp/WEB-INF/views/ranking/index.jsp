@@ -17,6 +17,11 @@
                     <td><h3>Wyzwij na arene</h3></td>
                 </tr>
             <c:forEach var="element" items="${uzytkownikLista}" varStatus="status">
+                <c:if test="${uzytkownikLista[status.index].login} == login">
+                    <style>
+                        td{background-color: green;}
+                    </style>
+                </c:if>
                 <tr>
                      <td><h3>${status.index+1}</h3></td>
                     <td><h3>${uzytkownikLista[status.index].login}</h3></td>
