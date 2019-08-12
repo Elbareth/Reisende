@@ -15,11 +15,11 @@ public class Wiadomosci {
     private Integer id;
     @NotNull
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "login", referencedColumnName = "login", insertable = false, updatable = false)
+    @JoinColumn(name = "nadawca", referencedColumnName = "login", insertable = false, updatable = false)
     private Uzytkownik nadawca;
     @NotNull
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "login", referencedColumnName = "login", insertable = false, updatable = false)
+    @JoinColumn(name = "odbiorca", referencedColumnName = "login", insertable = false, updatable = false)
     private Uzytkownik odbiorca;
     @NotNull
     private String tytul;
