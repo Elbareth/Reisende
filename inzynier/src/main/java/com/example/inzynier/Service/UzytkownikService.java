@@ -6,6 +6,7 @@ import com.example.inzynier.Repositories.UzytkownikRepositories;
 import com.example.inzynier.tables.Uzytkownik;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.*;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
@@ -40,5 +41,9 @@ public class UzytkownikService {
         Uzytkownik user = uzytkownikRepositories.getOne(login);
         uzytkownikAssembler.updateEntity(user,uzytkownikDTO);
         return uzytkownikAssembler.toDto(user);
+    }
+    //lista uzytkownikow posortowanych po punktach doswiadczenia
+    public List<UzytkownikDTO> listRaking(){
+        return uzytkownikAssembler.toDto(uzytkownikRepositories.findAllByOrderByDoswiadczenieDesc());
     }
 }
