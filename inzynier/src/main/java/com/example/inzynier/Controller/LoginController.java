@@ -19,11 +19,11 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@Controller("login")
+@Controller
 public class LoginController {
     @Autowired
     private UzytkownikService uzytkownikService;
-    @GetMapping("/index")
+    @GetMapping("/home")
     public ModelAndView showMainPage(){
         return new ModelAndView("login", "uzytkownik", new UzytkownikDTO());
     }

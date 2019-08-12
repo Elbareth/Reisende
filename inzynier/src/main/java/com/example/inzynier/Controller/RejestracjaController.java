@@ -19,7 +19,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-@Controller("rejestracja")
+@Controller
 public class RejestracjaController {
     @Autowired
     private UzytkownikService uzytkownikService;
