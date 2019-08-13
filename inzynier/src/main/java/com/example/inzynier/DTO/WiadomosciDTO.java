@@ -2,24 +2,36 @@ package com.example.inzynier.DTO;
 
 import com.example.inzynier.tables.Uzytkownik;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class WiadomosciDTO {
     private Integer id;
-    private UzytkownikDTO nadawca;
-    private UzytkownikDTO odbiorca;
+    private String nadawca;
+    private String odbiorca;
     private String tytul;
     private String tresc;
-    private Date data;
+    private LocalDate data;
 
 
-    public WiadomosciDTO(UzytkownikDTO nadawca, UzytkownikDTO odbiorca, String tytul, String tresc, Date data) {
+    public WiadomosciDTO(String nadawca, String odbiorca, String tytul, String tresc, LocalDate data) {
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
         this.tresc = tresc;
         this.data = data;
     }
+
+    public WiadomosciDTO(Integer id, String nadawca, String odbiorca, String tytul, String tresc, LocalDate data) {
+        this.id = id;
+        this.nadawca = nadawca;
+        this.odbiorca = odbiorca;
+        this.tytul = tytul;
+        this.tresc = tresc;
+        this.data = data;
+    }
+
+    public WiadomosciDTO(){}
 
     public Integer getId() {
         return id;
@@ -29,19 +41,19 @@ public class WiadomosciDTO {
         this.id = id;
     }
 
-    public UzytkownikDTO getNadawca() {
+    public String getNadawca() {
         return nadawca;
     }
 
-    public void setNadawca(UzytkownikDTO nadawca) {
+    public void setNadawca(String nadawca) {
         this.nadawca = nadawca;
     }
 
-    public UzytkownikDTO getOdbiorca() {
+    public String getOdbiorca() {
         return odbiorca;
     }
 
-    public void setOdbiorca(UzytkownikDTO odbiorca) {
+    public void setOdbiorca(String odbiorca) {
         this.odbiorca = odbiorca;
     }
 
@@ -61,11 +73,11 @@ public class WiadomosciDTO {
         this.tresc = tresc;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
