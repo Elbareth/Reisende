@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 //TODO UWAGA MantToOne!!!
@@ -14,12 +15,12 @@ public class Wiadomosci {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotNull
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "nadawca", referencedColumnName = "login", insertable = false, updatable = false)
+    @ManyToOne(cascade=CascadeType.MERGE)
+    @JoinColumn(name = "nadawca", referencedColumnName = "login")
     private Uzytkownik nadawca;
     @NotNull
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "odbiorca", referencedColumnName = "login", insertable = false, updatable = false)
+    @ManyToOne(cascade=CascadeType.MERGE)
+    @JoinColumn(name = "odbiorca", referencedColumnName = "login")
     private Uzytkownik odbiorca;
     @NotNull
     private String tytul;
@@ -27,15 +28,17 @@ public class Wiadomosci {
     private String tresc;
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
-    private Date data;
+    private LocalDate data;
 
-    public Wiadomosci(@NotNull Uzytkownik nadawca, @NotNull Uzytkownik odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull Date data) {
+    public Wiadomosci(@NotNull Uzytkownik nadawca, @NotNull Uzytkownik odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull LocalDate data) {
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
         this.tresc = tresc;
         this.data = data;
     }
+
+    public Wiadomosci(){}
 
     public Integer getId() {
         return id;
@@ -77,11 +80,11 @@ public class Wiadomosci {
         this.tresc = tresc;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
