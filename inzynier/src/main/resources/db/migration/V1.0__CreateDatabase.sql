@@ -1,3 +1,5 @@
+SET SQL_MODE = '';
+
 CREATE TABLE d_bestie (
     id INT NOT NULL AUTO_INCREMENT,
     nazwa VARCHAR(50) NOT NULL,
