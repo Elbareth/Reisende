@@ -9,4 +9,5 @@ import java.util.*;
 public interface UzytkownikRepositories extends JpaRepository<Uzytkownik, String> {
     Boolean existsByLoginAndHaslo(String login, String haslo);
     ArrayList<Uzytkownik> findAllByOrderByDoswiadczenieDesc();
+    Optional<Uzytkownik> findByLogin(String login);
 }
