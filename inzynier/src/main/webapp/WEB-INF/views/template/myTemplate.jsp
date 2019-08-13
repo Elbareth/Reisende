@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>Reisende</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="/resources/main.css">
         <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
     </head>

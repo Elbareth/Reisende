@@ -5,6 +5,10 @@
     <body>
         <div class="main">
             <h1> Reisende - ranking </h1>
+            <form action="/search" method="post">
+                <input type="text" placeholder = "Wyszukaj" name ="search"/><br/>
+                <input type="submit" value="Wyszukaj"/>
+            <form>
             <table>
                 <tr>
                     <td><h3>Index</h3></td>
@@ -17,21 +21,32 @@
                     <td><h3>Wyzwij na arene</h3></td>
                 </tr>
             <c:forEach var="element" items="${uzytkownikLista}" varStatus="status">
-                <c:if test="${uzytkownikLista[status.index].login} == login">
-                    <style>
-                        td{background-color: green;}
-                    </style>
-                </c:if>
-                <tr>
-                     <td><h3>${status.index+1}</h3></td>
-                    <td><h3>${uzytkownikLista[status.index].login}</h3></td>
-                    <td><h3>${uzytkownikLista[status.index].nick}</h3></td>
-                    <td><h3>${uzytkownikLista[status.index].klasaPostaci}</h3></td>
-                    <td><h3>${uzytkownikLista[status.index].doswiadczenie}</h3></td>
-                    <td><h3>${uzytkownikLista[status.index].poziom}</h3></td>
-                    <td><h3><a href="/napiszWiadomosc">Napisz wiadomosc</a></h3></td>
-                    <td><h3><a href="">Wyzywam na arene</a></h3></td>
-                </tr>
+            <c:choose>
+                <c:when test="${login eq uzytkownikLista[status.index].login }">
+                    <tr style="background-color: green;">
+                        <td><h3>${(status.index)+((page*20)-19)}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].login}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].nick}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].klasaPostaci}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].doswiadczenie}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].poziom}</h3></td>
+                        <td><h3><a href="/odpiszWiadomosc/${uzytkownikLista[status.index].login}">Napisz wiadomosc</a></h3></td>
+                        <td><h3><a href="">Wyzywam na arene</a></h3></td>
+                    </tr>
+                </c:when>
+                <c:otherwise>
+                    <tr>
+                        <td><h3>${(status.index)+((page*20)-19)}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].login}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].nick}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].klasaPostaci}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].doswiadczenie}</h3></td>
+                        <td><h3>${uzytkownikLista[status.index].poziom}</h3></td>
+                        <td><h3><a href="/odpiszWiadomosc/${uzytkownikLista[status.index].login}">Napisz wiadomosc</a></h3></td>
+                        <td><h3><a href="">Wyzywam na arene</a></h3></td>
+                    </tr>
+                </c:otherwise>
+            </c:choose>
             </c:forEach>
             </table>
             <div id="pagination">

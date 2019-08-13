@@ -7,25 +7,26 @@
             <h1> Reisende - Odebrane wiadomosci </h1>
             <a href="/wiadomosc"><input type="submit" value="Wiadomosci odebrane"/></a>
             <a href="/wiadomosciNadawca"><input type="submit" value="Wyslane wiadomosci"/></a>
-            <a href=""><input type="submit" value="Napisz wiadomosc"/></a>
+            <a href="/napiszWiadomosc"><input type="submit" value="Napisz wiadomosc"/></a>
             <table>
                 <tr>
-                    <td><h3>Index</h3></td>
-                    <td><h3>Nadawca</h3></td>
-                    <td><h3>Tytul</h3></td>
-                    <td><h3>Data</h3></td>
-                    <td><h3>Odpisz</h3></td>
-                    <td><h3>Usun</h3></td>
+                    <td><h3>*****Index*****</h3></td>
+                    <td><h3>*****Nadawca*****</h3></td>
+                    <td><h3>*****Tytul*****</h3></td>
+                    <td><h3>*****Data*****</h3></td>
+                    <td><h3>*****Odpisz*****</h3></td>
+                    <td><h3>*****Usun*****</h3></td>
                 </tr>
             <c:forEach var="element" items="${wiadomosciList}" varStatus="status">
-
                <tr>
                     <td><h3>${status.index+1}</h3></td>
                     <td><h3>${wiadomosciList[status.index].nadawca}</h3></td>
                     <td><h3><a href="/otworz/${wiadomosciList[status.index].id}">${wiadomosciList[status.index].tytul}</a></h3></td>
                     <td><h3>${wiadomosciList[status.index].data}</h3></td>
-                    <td><h3><a href="">Odpisz</a></h3></td>
-                    <td><h3><a href="/delete/odbiorca/${wiadomosciList[status.index].id}">X</a></h3></td>
+                    <td><h3><a href="/odpiszWiadomosc/${wiadomosciList[status.index].nadawca}">Odpisz</a></h3></td>
+                    <td><h3><form action="/delete/odbiorca/${wiadomosciList[status.index].id}" method="post">
+                        <button type="submit"><img src="/resources/delete1.png"/></button>
+                    </form></h3></td>
                </tr>
             </c:forEach>
             </table>
