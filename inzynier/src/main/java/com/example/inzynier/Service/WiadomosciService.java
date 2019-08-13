@@ -22,13 +22,13 @@ public class WiadomosciService {
     //wyszukiwaie po nadawcy po odbiorcy i po id
     //dodawanie usuwanie ale brak modyfikacji
     public List<WiadomosciDTO> findByNadawca(UzytkownikDTO uzytkownikDTO){
-        return wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
+        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
     }
     public List<WiadomosciDTO> findByOdbiorca(UzytkownikDTO uzytkownikDTO){
-        return wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
+        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
     }
     public WiadomosciDTO findById(Integer id){
-        return wiadomosciAssembler.toDto(wiadomosciRepositories.findById(id).get());
+        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findById(id).get());
     }
     public WiadomosciDTO createWiadomosc(WiadomosciDTO wiadomosciDTO){
         return wiadomosciAssembler.toDto(wiadomosciRepositories.save(wiadomosciAssembler.toEntity(wiadomosciDTO)));
