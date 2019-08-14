@@ -52,7 +52,6 @@ public class WiadomoscController {
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
-        //TODO zrob ladny widok dla tej zakladki - przekopiuj z wysylania wiadomosci
         final WiadomosciDTO wiadomosciDTO = wiadomosciService.findById(id);
         return new ModelAndView("otworzWiadomosc.index", "wiadomosc",wiadomosciDTO);
     }
@@ -80,10 +79,7 @@ public class WiadomoscController {
             //TODO Alert
             return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
         }
-        String login = sesja.getAttribute("login").toString();
-        wiadomosc.setNadawca(login);
-        wiadomosc.setData(LocalDate.now());
-        wiadomosciService.createWiadomosc(wiadomosc);
+        basicInfoForMessage(wiadomosc, (String) sesja.getAttribute("login"), sesja);
         return getListaOdbiorca(1,sesja);
     }
 
@@ -107,17 +103,13 @@ public class WiadomoscController {
             //TODO Alert
             return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
         }
-        wiadomosc.setOdbiorca(odbiorca);
-        String login = sesja.getAttribute("login").toString();
-        wiadomosc.setNadawca(login);
-        wiadomosc.setData(LocalDate.now());
-        wiadomosciService.createWiadomosc(wiadomosc);
+        basicInfoForMessage(wiadomosc, odbiorca, sesja);
         return getListaOdbiorca(1,sesja);
     }
 
     private ModelAndView createPagination(List<WiadomosciDTO> wiadomosciList, ModelAndView modelAndView, Integer page){
         PagedListHolder<WiadomosciDTO> pagedListHolder = new PagedListHolder<>(wiadomosciList); // tworzymy pagelistholder z nasza lista uzytkownikow
-        pagedListHolder.setPageSize(20);
+        pagedListHolder.setPageSize(15);
         modelAndView.addObject("maxPages", pagedListHolder.getPageCount()); // znajdujemy maksymalna liczbe naszych uzytkownikow
         if(page==null || page < 1 || page > pagedListHolder.getPageCount())page=1; // w przypadku gdy nie rozpoznajemy strony wracamy n strone pierwsza
         modelAndView.addObject("page", page); // i dodajemy ja do naszego modelAndView
@@ -130,5 +122,12 @@ public class WiadomoscController {
             modelAndView.addObject("uzytkownikLista", pagedListHolder.getPageList());
         }
         return modelAndView;
+    }
+    public void basicInfoForMessage(WiadomosciDTO wiadomosc, String odbiorca, HttpSession sesja){
+        wiadomosc.setOdbiorca(odbiorca);
+        String login = sesja.getAttribute("login").toString();
+        wiadomosc.setNadawca(login);
+        wiadomosc.setData(LocalDate.now());
+        wiadomosciService.createWiadomosc(wiadomosc);
     }
 }
