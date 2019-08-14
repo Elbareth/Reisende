@@ -16,7 +16,11 @@ public class WiadomosciAssembler {
     @Autowired
     private UzytkownikAssembler uzytkownikAssembler;
     public WiadomosciDTO toDto(Wiadomosci wiadomosci){
-        return new WiadomosciDTO(wiadomosci.getNadawca().getLogin(), wiadomosci.getOdbiorca().getLogin(), wiadomosci.getTytul(), wiadomosci.getTresc(), wiadomosci.getData());
+        return new WiadomosciDTO(wiadomosci.getNadawca().getLogin(),
+                wiadomosci.getOdbiorca().getLogin(),
+                wiadomosci.getTytul(),
+                wiadomosci.getTresc(),
+                wiadomosci.getData());
     }
 
     public List<WiadomosciDTO> toDto(List<Wiadomosci> listaWiadomosci){
@@ -28,7 +32,12 @@ public class WiadomosciAssembler {
     }
 
     public WiadomosciDTO toDtoWithId(Wiadomosci wiadomosci){
-        return new WiadomosciDTO(wiadomosci.getId(),wiadomosci.getNadawca().getLogin(), wiadomosci.getOdbiorca().getLogin(), wiadomosci.getTytul(), wiadomosci.getTresc(), wiadomosci.getData());
+        return new WiadomosciDTO(wiadomosci.getId(),
+                wiadomosci.getNadawca().getLogin(),
+                wiadomosci.getOdbiorca().getLogin(),
+                wiadomosci.getTytul(),
+                wiadomosci.getTresc(),
+                wiadomosci.getData());
     }
 
     public List<WiadomosciDTO> toDtoWithId(List<Wiadomosci> listaWiadomosci){
@@ -40,7 +49,12 @@ public class WiadomosciAssembler {
     }
 
     public Wiadomosci toEntity(WiadomosciDTO wiadomosciDTO){
-        return new Wiadomosci(uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getNadawca())), uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getOdbiorca())), wiadomosciDTO.getTytul(), wiadomosciDTO.getTresc(), wiadomosciDTO.getData());
+        return new Wiadomosci(
+                uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getNadawca())),
+                uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getOdbiorca())),
+                wiadomosciDTO.getTytul(),
+                wiadomosciDTO.getTresc(),
+                wiadomosciDTO.getData());
     }
 
     public List<Wiadomosci> toEntity(List<WiadomosciDTO> listaWiadomosciDto){
