@@ -19,8 +19,7 @@ public class WiadomosciService {
     private UzytkownikAssembler uzytkownikAssembler;
     @Autowired
     private WiadomosciAssembler wiadomosciAssembler;
-    //wyszukiwaie po nadawcy po odbiorcy i po id
-    //dodawanie usuwanie ale brak modyfikacji
+
     public List<WiadomosciDTO> findByNadawca(UzytkownikDTO uzytkownikDTO){
         return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
     }

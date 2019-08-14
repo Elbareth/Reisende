@@ -17,9 +17,7 @@ public class UzytkownikService {
     private UzytkownikRepositories  uzytkownikRepositories;
     @Autowired
     private UzytkownikAssembler uzytkownikAssembler;
-    //wyszukiwanie po loginie
-    //czy dany uzytkownik istnieje -- haslo i login
-    //dodawanie modyfikowanie i usuwanie
+
     public UzytkownikDTO findByLogin(String login){
         return uzytkownikAssembler.toDto(uzytkownikRepositories.findById(login).get());
     }
@@ -45,5 +43,8 @@ public class UzytkownikService {
     //lista uzytkownikow posortowanych po punktach doswiadczenia
     public List<UzytkownikDTO> listRaking(){
         return uzytkownikAssembler.toDto(uzytkownikRepositories.findAllByOrderByDoswiadczenieDesc());
+    }
+    public List<UzytkownikDTO> findAll(){
+        return uzytkownikAssembler.toDto(uzytkownikRepositories.findAll());
     }
 }
