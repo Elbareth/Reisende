@@ -10,7 +10,11 @@ public class UzytkownikRejestracjaDTO {
     public UzytkownikRejestracjaDTO() {
     }
 
-    public UzytkownikRejestracjaDTO(String login, String haslo, String nick, String klasaPostaci, Character plec) {
+    public UzytkownikRejestracjaDTO(String login,
+                                    String haslo,
+                                    String nick,
+                                    String klasaPostaci,
+                                    Character plec) {
         this.login = login;
         this.haslo = haslo;
         this.nick = nick;

@@ -36,7 +36,37 @@ public class UzytkownikDTO {
 
     }
 
-    public UzytkownikDTO(String login, String haslo, String nick, String klasaPostaci, Integer zloteMonety, Integer doswiadczenie, String wyglad, Character plec, Integer drewno, Integer grudkaGliny, Integer grudkaZelaza, Integer worekZboza, Integer deski, Integer cegly, Integer sztabkaZelaza, Integer chleb, String helm, String zbroja, String buty, String rekawice, String amulet, String tarcza, String bron, Integer sen, Integer glod, Integer higiena, Integer pragnienie, String smok, Integer poziom, String polozenie) {
+    public UzytkownikDTO(
+            String login,
+            String haslo,
+            String nick,
+            String klasaPostaci,
+            Integer zloteMonety,
+            Integer doswiadczenie,
+            String wyglad,
+            Character plec,
+            Integer drewno,
+            Integer grudkaGliny,
+            Integer grudkaZelaza,
+            Integer worekZboza,
+            Integer deski,
+            Integer cegly,
+            Integer sztabkaZelaza,
+            Integer chleb,
+            String helm,
+            String zbroja,
+            String buty,
+            String rekawice,
+            String amulet,
+            String tarcza,
+            String bron,
+            Integer sen,
+            Integer glod,
+            Integer higiena,
+            Integer pragnienie,
+            String smok,
+            Integer poziom,
+            String polozenie) {
         this.login = login;
         this.haslo = haslo;
         this.nick = nick;
