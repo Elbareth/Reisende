@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="myTemplate" template="/WEB-INF/views/template/myTemplate.jsp">
+        <put-attribute name="content" value="" />
+    </definition>
+    <definition name="mapa.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/index.jsp" />
+    </definition>
+    <definition name="wyglad.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wyglad/index.jsp" />
+    </definition>
+    <definition name="dom.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/dom/index.jsp" />
+    </definition>
+    <definition name="ranking.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/ranking/index.jsp" />
+    </definition>
+    <definition name="arena.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/arena/index.jsp" />
+    </definition>
+    <definition name="wiadomosci.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/index.jsp" />
+    </definition>
+    <definition name="wiadomosciNadawca.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexNadawca.jsp" />
+    </definition>
+    <definition name="napiszWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexNapisz.jsp" />
+    </definition>
+    <definition name="otworzWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexOtworz.jsp" />
+    </definition>
+    <definition name="odpiszNaWiadomosc.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wiadomosc/indexOdpisz.jsp" />
+    </definition>
+</tiles-definitions>
