@@ -8,6 +8,6 @@ import java.util.*;
 
 @Repository("WiadomosciRepositories")
 public interface WiadomosciRepositories extends JpaRepository<Wiadomosci, Integer> {
-    public List<Wiadomosci> findAllByOdbiorcaOrderByDataAsc(Uzytkownik odbiorca);
-    public List<Wiadomosci> findAllByNadawcaOrderByDataAsc(Uzytkownik nadawca);
+    List<Wiadomosci> findAllByOdbiorcaOrderByDataAsc(Uzytkownik odbiorca);
+    List<Wiadomosci> findAllByNadawcaOrderByDataAsc(Uzytkownik nadawca);
 }
