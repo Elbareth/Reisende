@@ -78,7 +78,37 @@ public class Uzytkownik {
 
     }
 
-    public Uzytkownik(@NotNull String login, @NotNull String haslo, @NotNull String nick, @NotNull String klasaPostaci, @NotNull Integer zloteMonety, @NotNull Integer doswiadczenie, @NotNull String wyglad, @NotNull Character plec, @NotNull Integer drewno, @NotNull Integer grudkaGliny, @NotNull Integer grudkaZelaza, @NotNull Integer worekZboza, @NotNull Integer deski, @NotNull Integer cegly, @NotNull Integer sztabkaZelaza, @NotNull Integer chleb, @NotNull String helm, @NotNull String zbroja, @NotNull String buty, @NotNull String rekawice, @NotNull String amulet, @NotNull String tarcza, @NotNull String bron, @NotNull Integer sen, @NotNull Integer glod, @NotNull Integer higiena, @NotNull Integer pragnienie, @NotNull String smok, @NotNull Integer poziom, @NotNull String polozenie) {
+    public Uzytkownik(
+            @NotNull String login,
+            @NotNull String haslo,
+            @NotNull String nick,
+            @NotNull String klasaPostaci,
+            @NotNull Integer zloteMonety,
+            @NotNull Integer doswiadczenie,
+            @NotNull String wyglad,
+            @NotNull Character plec,
+            @NotNull Integer drewno,
+            @NotNull Integer grudkaGliny,
+            @NotNull Integer grudkaZelaza,
+            @NotNull Integer worekZboza,
+            @NotNull Integer deski,
+            @NotNull Integer cegly,
+            @NotNull Integer sztabkaZelaza,
+            @NotNull Integer chleb,
+            @NotNull String helm,
+            @NotNull String zbroja,
+            @NotNull String buty,
+            @NotNull String rekawice,
+            @NotNull String amulet,
+            @NotNull String tarcza,
+            @NotNull String bron,
+            @NotNull Integer sen,
+            @NotNull Integer glod,
+            @NotNull Integer higiena,
+            @NotNull Integer pragnienie,
+            @NotNull String smok,
+            @NotNull Integer poziom,
+            @NotNull String polozenie) {
         this.login = login;
         this.haslo = haslo;
         this.nick = nick;

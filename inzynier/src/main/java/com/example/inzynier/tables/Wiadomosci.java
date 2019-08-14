@@ -30,7 +30,12 @@ public class Wiadomosci {
     @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
     private LocalDate data;
 
-    public Wiadomosci(@NotNull Uzytkownik nadawca, @NotNull Uzytkownik odbiorca, @NotNull String tytul, @NotNull String tresc, @NotNull LocalDate data) {
+    public Wiadomosci(
+            @NotNull Uzytkownik nadawca,
+            @NotNull Uzytkownik odbiorca,
+            @NotNull String tytul,
+            @NotNull String tresc,
+            @NotNull LocalDate data) {
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
