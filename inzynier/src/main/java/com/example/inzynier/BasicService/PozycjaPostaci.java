@@ -12,6 +12,7 @@ public class PozycjaPostaci {
     @Autowired
     private HttpSession sesja;
     public void savePosition(Integer x, Integer y){
+        System.out.println("W metodzie do przesuwania ");
         UzytkownikDTO uzytkownikDTO = uzytkownikService.findByLogin((String) sesja.getAttribute("login"));
         uzytkownikDTO.setPolozenie(x+"x"+y);
         uzytkownikService.update(uzytkownikDTO.getLogin(), uzytkownikDTO);
