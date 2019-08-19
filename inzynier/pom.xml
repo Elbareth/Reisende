@@ -102,8 +102,6 @@
 			<artifactId>bootstrap</artifactId>
 			<version>4.3.1</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
