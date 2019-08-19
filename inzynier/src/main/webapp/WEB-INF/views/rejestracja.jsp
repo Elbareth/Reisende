@@ -12,9 +12,9 @@
         <div class="main">
             <h1> Reisende - Rejestracja </h1>
             <s:form action="/register" method="post" modelAttribute="uzytkownik" enctype="multipart/form-data">
-                <h3>Login:</h3> <div class="inp"> <s:input required = "required" placeholder = "Wprowadz login" path = "login"/><br/> </div>
-                <h3>Haslo:</h3> <div class="inp"> <s:password required = "required" placeholder = "Wprowadz haslo" path = "haslo"/><br/> </div>
-                <h3>Nick:</h3> <div class="inp"> <s:input required = "required" placeholder = "Wprowadz nick" path = "nick"/><br/> </div>
+                <h3>Login:</h3> <s:input class="inp" required = "required" placeholder = "Wprowadz login" path = "login"/><br/>
+                <h3>Haslo:</h3> <s:password class="inp" required = "required" placeholder = "Wprowadz haslo" path = "haslo"/><br/>
+                <h3>Nick:</h3> <s:input class="inp" required = "required" placeholder = "Wprowadz nick" path = "nick"/><br/>
                 <h3>Wybierz klase postaci:</h3>
                 <tr>
                    <td> <img src="/resources/mag.PNG"/> </td>

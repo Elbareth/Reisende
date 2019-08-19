@@ -24,7 +24,7 @@
             <c:choose>
                 <c:when test="${login eq uzytkownikLista[status.index].login }">
                     <tr style="background-color: green;">
-                        <td><h3>${(status.index)+((page*20)-19)}</h3></td>
+                        <td><h3>${(status.index)+((page*15)-14)}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].login}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].nick}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].klasaPostaci}</h3></td>
@@ -36,7 +36,7 @@
                 </c:when>
                 <c:otherwise>
                     <tr>
-                        <td><h3>${(status.index)+((page*20)-19)}</h3></td>
+                        <td><h3>${(status.index)+((page*15)-14)}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].login}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].nick}</h3></td>
                         <td><h3>${uzytkownikLista[status.index].klasaPostaci}</h3></td>
