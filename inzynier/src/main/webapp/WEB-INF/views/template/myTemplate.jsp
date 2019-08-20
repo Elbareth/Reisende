@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="/resources/main.css">
         <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <meta http-equiv="Refresh" content="60">
     </head>
     <body>
         <div class="menu">

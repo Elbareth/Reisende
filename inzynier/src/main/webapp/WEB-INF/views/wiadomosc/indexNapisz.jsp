@@ -6,6 +6,11 @@
     </style>
     <div class="main">
         <h1> Reisende - Napisz wiadomosc </h1>
+        <c:if test="${not empty error}">
+            <div id="mymodal" class="alert alert-info">
+                <p>${error}</p>
+            </div>
+        </c:if>
         <a href="/wiadomosc"><input type="submit" value="Wiadomosci odebrane"/></a>
         <a href="/wiadomosciNadawca"><input type="submit" value="Wyslane wiadomosci"/></a>
         <a href="/napiszWiadomosc"><input type="submit" value="Napisz wiadomosc"/></a>

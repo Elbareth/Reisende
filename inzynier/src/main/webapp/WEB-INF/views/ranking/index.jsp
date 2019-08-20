@@ -6,6 +6,11 @@
         <div class="main">
             <h1> Reisende - ranking </h1>
             <form action="/search" method="post">
+                <c:if test="${not empty error}">
+                    <div id="mymodal" class="alert alert-info">
+                        <p>${error}</p>
+                    </div>
+                </c:if>
                 <input type="text" placeholder = "Wyszukaj" name ="search"/><br/>
                 <input type="submit" value="Wyszukaj"/>
             <form>

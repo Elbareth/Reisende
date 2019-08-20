@@ -11,6 +11,11 @@
     <body>
         <div class="main">
             <h1> Reisende - Rejestracja </h1>
+            <c:if test="${not empty error}">
+                <div id="mymodal" class="alert alert-info">
+                    <p>${error}</p>
+                </div>
+            </c:if>
             <s:form action="/register" method="post" modelAttribute="uzytkownik" enctype="multipart/form-data">
                 <h3>Login:</h3> <s:input class="inp" required = "required" placeholder = "Wprowadz login" path = "login"/><br/>
                 <h3>Haslo:</h3> <s:password class="inp" required = "required" placeholder = "Wprowadz haslo" path = "haslo"/><br/>

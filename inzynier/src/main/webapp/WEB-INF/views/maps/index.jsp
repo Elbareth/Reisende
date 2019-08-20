@@ -13,54 +13,62 @@
             </div>
         </div>
         <script type="text/javascript" >
-            document.addEventListener('keyup', function(event) {
-              var json = {};
-              var xhr = new XMLHttpRequest();
-              xhr.open('POST', '/maps');
-              xhr.setRequestHeader("Content-Type", "application/json");
-              switch(event.key){
-              case 'ArrowLeft':
-                document.getElementById("postac").style.left =  ${lewo} - 2;
-                document.getElementById("postac").style.top =  ${gora};
-                json.left = document.getElementById("postac").style.left;
-                json.top = document.getElementById("postac").style.top;
-                xhr.send(JSON.stringify(json));
-                $('#postac').empty().load(window.location.href + '#postac');
-                json = {};
-                event.preventDefault();
-                break;
-              case 'ArrowRight':
-                document.getElementById("postac").style.left =  ${lewo} + 2;
-                document.getElementById("postac").style.top =  ${gora};
-                json.left = document.getElementById("postac").style.left;
-                json.top = document.getElementById("postac").style.top;
-                xhr.send(JSON.stringify(json));
-                $('#postac').empty().load(window.location.href + '#postac');
-                json = {};
-                event.preventDefault();
-                break;
-              case 'ArrowUp':
-                document.getElementById("postac").style.left =  ${lewo};
-                document.getElementById("postac").style.top =  ${gora} - 2;
-                json.left = document.getElementById("postac").style.left;
-                json.top = document.getElementById("postac").style.top;
-                xhr.send(JSON.stringify(json));
-                $('#postac').empty().load(window.location.href + '#postac');
-                json = {};
-                event.preventDefault();
-                break;
-              case 'ArrowDown':
-                document.getElementById("postac").style.left =  ${lewo};
-                document.getElementById("postac").style.top =  ${gora} + 2;
-                json.left = document.getElementById("postac").style.left;
-                json.top = document.getElementById("postac").style.top;
-                xhr.send(JSON.stringify(json));
-                $('#postac').empty().load(window.location.href + '#postac');
-                json = {};
-                event.preventDefault();
-                break;
-              }
-            });
+            var onlyOnce = true;
+            function listener(event){
+                var json = {};
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/maps');
+                xhr.setRequestHeader("Content-Type", "application/json");
+                switch(event.key){
+                    case 'ArrowLeft':
+                        document.getElementById("postac").style.left =  ${lewo} - 2;
+                        document.getElementById("postac").style.top =  ${gora};
+                        json.left = document.getElementById("postac").style.left;
+                        json.top = document.getElementById("postac").style.top;
+                        setTimeout(xhr.send(JSON.stringify(json)),5000);
+                        $('#postac').empty().load(window.location.href + '#postac');
+                        json = {};
+                        event.preventDefault();
+                        document.removeEventListener('keydown', listener);
+                        break;
+                    case 'ArrowRight':
+                        document.getElementById("postac").style.left =  ${lewo} + 2;
+                        document.getElementById("postac").style.top =  ${gora};
+                        json.left = document.getElementById("postac").style.left;
+                        json.top = document.getElementById("postac").style.top;
+                        setTimeout(xhr.send(JSON.stringify(json)),5000);
+                        $('#postac').empty().load(window.location.href + '#postac');
+                        json = {};
+                        event.preventDefault();
+                        document.removeEventListener('keydown', listener);
+                        break;
+                    case 'ArrowUp':
+                        document.getElementById("postac").style.left =  ${lewo};
+                        document.getElementById("postac").style.top =  ${gora} - 2;
+                        json.left = document.getElementById("postac").style.left;
+                        json.top = document.getElementById("postac").style.top;
+                        setTimeout(xhr.send(JSON.stringify(json)),5000);
+                        $('#postac').empty().load(window.location.href + '#postac');
+                        json = {};
+                        event.preventDefault();
+                        document.removeEventListener('keydown', listener);
+                        break;
+                    case 'ArrowDown':
+                        document.getElementById("postac").style.left =  ${lewo};
+                        document.getElementById("postac").style.top =  ${gora} + 2;
+                        json.left = document.getElementById("postac").style.left;
+                        json.top = document.getElementById("postac").style.top;
+                        setTimeout(xhr.send(JSON.stringify(json)),5000);
+                        $('#postac').empty().load(window.location.href + '#postac');
+                        json = {};
+                        event.preventDefault();
+                        document.removeEventListener('keydown', listener);
+                        break;
+                }
+            }
+            if(document.addEventListener){
+                document.addEventListener('keydown', listener, false);
+            }
         </script>
     <div class="info">
     <style>
@@ -89,13 +97,13 @@
                     <td>
                         Glod:
                          <div class="w3-light-grey w3-round">
-                          <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.glod}%; width: 200px; height: 20px;">${uzytkownik.glod}%</div>
+                          <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.glod}%; height: 20px;">${uzytkownik.glod}%</div>
                         </div>
                     </td>
                     <td>
                         Pragnienie:
                         <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.pragnienie}%; width: 200px; height: 20px;">${uzytkownik.pragnienie}%</div>
+                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.pragnienie}%; height: 20px;">${uzytkownik.pragnienie}%</div>
                         </div>
                     </td>
                     <td title="Drewno">
@@ -118,13 +126,13 @@
                     <td>
                         Higiena:
                         <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.higiena}%; width: 200px; height: 20px;">${uzytkownik.higiena}%</div>
+                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.higiena}%; height: 20px;">${uzytkownik.higiena}%</div>
                         </div>
                     </td>
                     <td>
                         Sen:
                         <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.sen}%; width: 200px; height: 20px;">${uzytkownik.sen}%</div>
+                            <div class="w3-container w3-round w3-blue" style="width:${uzytkownik.sen}%; height: 20px;">${uzytkownik.sen}%</div>
                         </div>
                     </td>
                     <td title="Deski">
