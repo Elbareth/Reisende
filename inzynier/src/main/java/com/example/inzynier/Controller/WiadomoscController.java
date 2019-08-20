@@ -71,12 +71,12 @@ public class WiadomoscController {
         return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
     }
     @PostMapping("/wyslijWiadomosc")
-    public ModelAndView wyslijWiadomosc(@ModelAttribute("wiadomosc")WiadomosciDTO wiadomosc, HttpSession sesja){
+    public ModelAndView wyslijWiadomosc(@ModelAttribute("wiadomosc")WiadomosciDTO wiadomosc, HttpSession sesja, ModelMap model){
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
         if(!uzytkownikRepositories.findByLogin(wiadomosc.getOdbiorca()).isPresent()){
-            //TODO Alert
+            model.put("error","Podany odbiorca nie istnieje");
             return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
         }
         basicInfoForMessage(wiadomosc, (String) sesja.getAttribute("login"), sesja);
@@ -95,12 +95,12 @@ public class WiadomoscController {
     }
 
     @PostMapping(value = "/wyslijRE/{odbiorca}", consumes = "multipart/form-data", produces = { "application/json", "application/xml" })
-    public ModelAndView wyslijRE(@PathVariable("odbiorca") String odbiorca, @ModelAttribute("wiadomosc") WiadomosciDTO wiadomosc, HttpSession sesja){
+    public ModelAndView wyslijRE(@PathVariable("odbiorca") String odbiorca, @ModelAttribute("wiadomosc") WiadomosciDTO wiadomosc, HttpSession sesja, ModelMap model){
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
         if(!uzytkownikRepositories.findByLogin(odbiorca).isPresent()){
-            //TODO Alert
+            model.put("error","Podany odbiorca nie istnieje");
             return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
         }
         basicInfoForMessage(wiadomosc, odbiorca, sesja);

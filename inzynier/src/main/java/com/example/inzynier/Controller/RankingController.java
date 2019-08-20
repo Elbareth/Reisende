@@ -64,12 +64,12 @@ public class RankingController {
 
     }
     @PostMapping("/search")
-    public ModelAndView search(@RequestParam("search") String search, HttpSession sesja){
+    public ModelAndView search(@RequestParam("search") String search, HttpSession sesja, ModelMap model){
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
         if(!uzytkownikRepositories.findByLogin(search).isPresent()){
-            //TODO Alert
+            model.put("error","Nie ma uzytkownika z takim loginem");
             throw new EntityNotFoundException("Nie ma takiego uzytkownika");
         }
         List<UzytkownikDTO> listTmp = new ArrayList<>();

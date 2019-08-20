@@ -28,7 +28,7 @@ public class RejestracjaController {
     public ModelAndView register(@ModelAttribute("uzytkownik") UzytkownikRejestracjaDTO uzytkownikRejestracjaDTO, HttpSession sesja, ModelMap model, HttpServletResponse response){
         UzytkownikDTO user;
         if(uzytkownikService.isThisLoginInUse(uzytkownikRejestracjaDTO.getLogin())){
-            //TODO alert
+            model.put("error","Wybrany login jest juz zajety");
             return new ModelAndView("rejestracja","uzytkownik",new UzytkownikRejestracjaDTO());
         }
         else{

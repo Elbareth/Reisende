@@ -36,10 +36,8 @@ public class MapaController {
         }
         String login = (String) sesja.getAttribute("login");
         UzytkownikDTO uzytkownikDTO = uzytkownikService.findByLogin(login);
-        System.out.println(postac);
         postac.setLeft(postac.getLeft().replaceAll("\\D+",""));
         postac.setTop(postac.getTop().replaceAll("\\D+",""));
-        System.out.println(postac.getLeft()+"x"+postac.getTop());
         uzytkownikDTO.setPolozenie(postac.getLeft()+"x"+postac.getTop());
         uzytkownikService.update(login, uzytkownikDTO);
         modelMap.put("lewo",postac.getLeft());
