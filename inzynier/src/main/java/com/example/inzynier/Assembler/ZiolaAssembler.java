@@ -3,10 +3,12 @@ package com.example.inzynier.Assembler;
 import com.example.inzynier.DTO.ZiolaDTO;
 import com.example.inzynier.tables.Zbroja;
 import com.example.inzynier.tables.Ziola;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ZiolaAssembler {
     public ZiolaDTO toDto(Ziola ziola){
         return new ZiolaDTO(ziola.getNazwa(), ziola.getPolozenie(), ziola.getOpis(), ziola.getPlik());

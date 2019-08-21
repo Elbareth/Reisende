@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.BudynkiDTO;
 import com.example.inzynier.tables.Budynki;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BudynkiAssembler {
     public BudynkiDTO toDto(Budynki budynki){
         return new BudynkiDTO(budynki.getNazwa(), budynki.getPolozenie(), budynki.getWymiary(), budynki.getPlik());

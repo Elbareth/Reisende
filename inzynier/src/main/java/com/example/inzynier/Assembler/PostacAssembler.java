@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.PostacDTO;
 import com.example.inzynier.tables.Postac;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class PostacAssembler {
     public PostacDTO toDto(Postac postac){
         return new PostacDTO(postac.getImie(), postac.getPolozenie(), postac.getPlik());

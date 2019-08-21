@@ -3,10 +3,12 @@ package com.example.inzynier.Assembler;
 import com.example.inzynier.DTO.KuzniaDTO;
 import com.example.inzynier.tables.Kuznia;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class KuzniaAssembler {
     @Autowired
     private UzytkownikAssembler uzytkownikAssembler;

@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.EliksirDTO;
 import com.example.inzynier.tables.Eliksir;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class EliksirAssembler {
     public EliksirDTO toDto(Eliksir eliksir){
         return new EliksirDTO(eliksir.getNazwa(), eliksir.getCena(), eliksir.getPlik(), eliksir.getWlasciwosci(), eliksir.getPrzepis());

@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.BestieDTO;
 import com.example.inzynier.tables.Bestie;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BestieAssembler {
     public BestieDTO toDto(Bestie bestie){
         return new BestieDTO(bestie.getNazwa(), bestie.getPlik(), bestie.getPolozenie(), bestie.getWymiary());

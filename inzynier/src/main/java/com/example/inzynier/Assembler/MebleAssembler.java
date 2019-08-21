@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.MebleDTO;
 import com.example.inzynier.tables.Meble;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MebleAssembler {
     public MebleDTO toDto(Meble meble){
         return new MebleDTO(meble.getNazwa(), meble.getPlik(), meble.getKategoria(),meble.getCena(), meble.getGlod(), meble.getSen(), meble.getPragnienie(), meble.getHigiena(), meble.getDoswiadczenia());

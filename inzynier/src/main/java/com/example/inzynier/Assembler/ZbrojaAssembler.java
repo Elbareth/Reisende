@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.ZbrojaDTO;
 import com.example.inzynier.tables.Zbroja;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ZbrojaAssembler {
     public ZbrojaDTO toDto(Zbroja zbroja){
         return new ZbrojaDTO(zbroja.getNazwa(), zbroja.getPunktyAtaku(), zbroja.getPunktyObrony(), zbroja.getWymaganyPoziom(), zbroja.getPunktyDoswiadczenia(), zbroja.getPlik(), zbroja.getKlasa(), zbroja.getTyp());

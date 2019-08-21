@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.SmokDTO;
 import com.example.inzynier.tables.Smok;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class SmokAssembler {
     public SmokDTO toDto(Smok smok){
         return new SmokDTO(smok.getWlasciciel(), smok.getImie(), smok.getGatunek(), smok.getPunktyZycia(), smok.getPlik());

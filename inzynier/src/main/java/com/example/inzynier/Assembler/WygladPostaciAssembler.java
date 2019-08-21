@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.WygladPostaciDTO;
 import com.example.inzynier.tables.WygladPostaci;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class WygladPostaciAssembler {
     public WygladPostaciDTO toDto(WygladPostaci wygladPostaci){
         return new WygladPostaciDTO(wygladPostaci.getNazwa(), wygladPostaci.getKlasa(), wygladPostaci.getPlik(), wygladPostaci.getKategoria());

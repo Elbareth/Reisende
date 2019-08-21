@@ -2,10 +2,12 @@ package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.InnePrzedmiotyDTO;
 import com.example.inzynier.tables.InnePrzedmioty;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class InnePrzedmiotyAssembler {
     public InnePrzedmiotyDTO toDto(InnePrzedmioty innePrzedmioty){
         return new InnePrzedmiotyDTO(innePrzedmioty.getNazwa(), innePrzedmioty.getCena(), innePrzedmioty.getPlik(), innePrzedmioty.getOpis());
