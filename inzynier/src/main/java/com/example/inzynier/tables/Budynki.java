@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name="d_budynki")
@@ -65,5 +66,24 @@ public class Budynki {
                 ", wymiary='" + wymiary + '\'' +
                 ", plik='" + plik + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Budynki budynki = (Budynki) o;
+        return nazwa.equals(budynki.nazwa) &&
+                polozenie.equals(budynki.polozenie) &&
+                wymiary.equals(budynki.wymiary) &&
+                plik.equals(budynki.plik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                polozenie,
+                wymiary,
+                plik);
     }
 }

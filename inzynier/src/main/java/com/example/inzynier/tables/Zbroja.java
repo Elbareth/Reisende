@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_zbroja")
@@ -118,5 +119,32 @@ public class Zbroja {
                 ", klasa='" + klasa + '\'' +
                 ", typ='" + typ + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Zbroja zbroja = (Zbroja) o;
+        return nazwa.equals(zbroja.nazwa) &&
+                punktyAtaku.equals(zbroja.punktyAtaku) &&
+                punktyObrony.equals(zbroja.punktyObrony) &&
+                wymaganyPoziom.equals(zbroja.wymaganyPoziom) &&
+                punktyDoswiadczenia.equals(zbroja.punktyDoswiadczenia) &&
+                plik.equals(zbroja.plik) &&
+                klasa.equals(zbroja.klasa) &&
+                typ.equals(zbroja.typ);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                punktyAtaku,
+                punktyObrony,
+                wymaganyPoziom,
+                punktyDoswiadczenia,
+                plik,
+                klasa,
+                typ);
     }
 }

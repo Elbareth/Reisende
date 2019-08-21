@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_wyglad_postaci")
@@ -74,5 +75,24 @@ public class WygladPostaci {
                 ", plik='" + plik + '\'' +
                 ", kategoria='" + kategoria + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WygladPostaci that = (WygladPostaci) o;
+        return nazwa.equals(that.nazwa) &&
+                klasa.equals(that.klasa) &&
+                plik.equals(that.plik) &&
+                kategoria.equals(that.kategoria);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                klasa,
+                plik,
+                kategoria);
     }
 }

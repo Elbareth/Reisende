@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO UWAGA MAnyTOOne!!
 @Entity
@@ -66,5 +67,24 @@ public class Zadania {
                 ", postac=" + postac +
                 ", nagroda='" + nagroda + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Zadania zadania = (Zadania) o;
+        return nazwa.equals(zadania.nazwa) &&
+                tresc.equals(zadania.tresc) &&
+                postac.equals(zadania.postac) &&
+                nagroda.equals(zadania.nagroda);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                tresc,
+                postac,
+                nagroda);
     }
 }

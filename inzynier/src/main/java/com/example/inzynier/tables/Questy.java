@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO UWAGA ManyToOne!!!
 @Entity
@@ -105,5 +106,28 @@ public class Questy {
                 ", nagroda='" + nagroda + '\'' +
                 ", czyWykonane=" + czyWykonane +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Questy questy = (Questy) o;
+        return postac.equals(questy.postac) &&
+                wykonujacy.equals(questy.wykonujacy) &&
+                noweZadanie.equals(questy.noweZadanie) &&
+                tresc.equals(questy.tresc) &&
+                nagroda.equals(questy.nagroda) &&
+                czyWykonane.equals(questy.czyWykonane);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(postac,
+                wykonujacy,
+                noweZadanie,
+                tresc,
+                nagroda,
+                czyWykonane);
     }
 }

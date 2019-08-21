@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_eliksir")
@@ -77,5 +78,26 @@ public class Eliksir {
                 ", wlasciwosci='" + wlasciwosci + '\'' +
                 ", przepis='" + przepis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Eliksir eliksir = (Eliksir) o;
+        return nazwa.equals(eliksir.nazwa) &&
+                cena.equals(eliksir.cena) &&
+                plik.equals(eliksir.plik) &&
+                wlasciwosci.equals(eliksir.wlasciwosci) &&
+                przepis.equals(eliksir.przepis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                cena,
+                plik,
+                wlasciwosci,
+                przepis);
     }
 }

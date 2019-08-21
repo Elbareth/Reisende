@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_domek")
@@ -341,5 +342,70 @@ public class Domek {
                 ", barek='" + barek + '\'' +
                 ", podloga='" + podloga + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Domek domek = (Domek) o;
+        return wlasciciel.equals(domek.wlasciciel) &&
+                uzytkownik.equals(domek.uzytkownik) &&
+                pomieszczenia.equals(domek.pomieszczenia) &&
+                okna.equals(domek.okna) &&
+                drzwi.equals(domek.drzwi) &&
+                lozko.equals(domek.lozko) &&
+                wanna.equals(domek.wanna) &&
+                umywalka.equals(domek.umywalka) &&
+                toaeta.equals(domek.toaeta) &&
+                szafki.equals(domek.szafki) &&
+                zlew.equals(domek.zlew) &&
+                kuchenka.equals(domek.kuchenka) &&
+                lodowka.equals(domek.lodowka) &&
+                szafa.equals(domek.szafa) &&
+                obraz.equals(domek.obraz) &&
+                dywany.equals(domek.dywany) &&
+                kominki.equals(domek.kominki) &&
+                kwiaty.equals(domek.kwiaty) &&
+                wazony.equals(domek.wazony) &&
+                trofea.equals(domek.trofea) &&
+                kojec.equals(domek.kojec) &&
+                krzesla.equals(domek.krzesla) &&
+                fotele.equals(domek.fotele) &&
+                sofa.equals(domek.sofa) &&
+                stoly.equals(domek.stoly) &&
+                barek.equals(domek.barek) &&
+                podloga.equals(domek.podloga);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                uzytkownik,
+                pomieszczenia,
+                okna,
+                drzwi,
+                lozko,
+                wanna,
+                umywalka,
+                toaeta,
+                szafki,
+                zlew,
+                kuchenka,
+                lodowka,
+                szafa,
+                obraz,
+                dywany,
+                kominki,
+                kwiaty,
+                wazony,
+                trofea,
+                kojec,
+                krzesla,
+                fotele,
+                sofa,
+                stoly,
+                barek,
+                podloga);
     }
 }

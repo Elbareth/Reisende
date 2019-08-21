@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_uzytkownik")
@@ -415,5 +416,76 @@ public class Uzytkownik {
                 ", poziom=" + poziom +
                 ", polozenie='" + polozenie + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Uzytkownik that = (Uzytkownik) o;
+        return login.equals(that.login) &&
+                haslo.equals(that.haslo) &&
+                nick.equals(that.nick) &&
+                klasaPostaci.equals(that.klasaPostaci) &&
+                zloteMonety.equals(that.zloteMonety) &&
+                doswiadczenie.equals(that.doswiadczenie) &&
+                wyglad.equals(that.wyglad) &&
+                plec.equals(that.plec) &&
+                drewno.equals(that.drewno) &&
+                grudkaGliny.equals(that.grudkaGliny) &&
+                grudkaZelaza.equals(that.grudkaZelaza) &&
+                worekZboza.equals(that.worekZboza) &&
+                deski.equals(that.deski) &&
+                cegly.equals(that.cegly) &&
+                sztabkaZelaza.equals(that.sztabkaZelaza) &&
+                chleb.equals(that.chleb) &&
+                helm.equals(that.helm) &&
+                zbroja.equals(that.zbroja) &&
+                buty.equals(that.buty) &&
+                rekawice.equals(that.rekawice) &&
+                amulet.equals(that.amulet) &&
+                tarcza.equals(that.tarcza) &&
+                bron.equals(that.bron) &&
+                sen.equals(that.sen) &&
+                glod.equals(that.glod) &&
+                higiena.equals(that.higiena) &&
+                pragnienie.equals(that.pragnienie) &&
+                smok.equals(that.smok) &&
+                poziom.equals(that.poziom) &&
+                polozenie.equals(that.polozenie);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login,
+                haslo,
+                nick,
+                klasaPostaci,
+                zloteMonety,
+                doswiadczenie,
+                wyglad,
+                plec,
+                drewno,
+                grudkaGliny,
+                grudkaZelaza,
+                worekZboza,
+                deski,
+                cegly,
+                sztabkaZelaza,
+                chleb,
+                helm,
+                zbroja,
+                buty,
+                rekawice,
+                amulet,
+                tarcza,
+                bron,
+                sen,
+                glod,
+                higiena,
+                pragnienie,
+                smok,
+                poziom,
+                polozenie);
     }
 }

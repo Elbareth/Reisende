@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO UWAGA ManyToOne!!!
 @Entity
@@ -55,5 +56,20 @@ public class Czytelnik {
                 ", tytul=" + tytul +
                 ", czytelnik=" + czytelnik +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Czytelnik czytelnik1 = (Czytelnik) o;
+        return tytul.equals(czytelnik1.tytul) &&
+                czytelnik.equals(czytelnik1.czytelnik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tytul,
+                czytelnik);
     }
 }

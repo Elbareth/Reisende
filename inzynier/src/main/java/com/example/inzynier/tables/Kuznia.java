@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO WAGA ManyToOne!!!
 @Entity
@@ -130,5 +131,32 @@ public class Kuznia {
                 ", klasa='" + klasa + '\'' +
                 ", opis='" + opis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kuznia kuznia = (Kuznia) o;
+        return sprzedajacy.equals(kuznia.sprzedajacy) &&
+                aktualnaCena.equals(kuznia.aktualnaCena) &&
+                czyStala.equals(kuznia.czyStala) &&
+                iloscLicytujacych.equals(kuznia.iloscLicytujacych) &&
+                nazwa.equals(kuznia.nazwa) &&
+                plik.equals(kuznia.plik) &&
+                klasa.equals(kuznia.klasa) &&
+                opis.equals(kuznia.opis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sprzedajacy,
+                aktualnaCena,
+                czyStala,
+                iloscLicytujacych,
+                nazwa,
+                plik,
+                klasa,
+                opis);
     }
 }

@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_ksiazki")
@@ -62,5 +63,22 @@ public class Ksiazki {
                 ", tresc='" + tresc + '\'' +
                 ", doswiadczenia=" + doswiadczenia +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ksiazki ksiazki = (Ksiazki) o;
+        return nazwa.equals(ksiazki.nazwa) &&
+                tresc.equals(ksiazki.tresc) &&
+                doswiadczenia.equals(ksiazki.doswiadczenia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                tresc,
+                doswiadczenia);
     }
 }

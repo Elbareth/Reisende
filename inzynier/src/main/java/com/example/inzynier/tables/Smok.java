@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_smok")
@@ -90,5 +91,28 @@ public class Smok {
                 ", punktyZycia=" + punktyZycia +
                 ", plik='" + plik + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Smok smok = (Smok) o;
+        return wlasciciel.equals(smok.wlasciciel) &&
+                uzytkownik.equals(smok.uzytkownik) &&
+                imie.equals(smok.imie) &&
+                gatunek.equals(smok.gatunek) &&
+                punktyZycia.equals(smok.punktyZycia) &&
+                plik.equals(smok.plik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                uzytkownik,
+                imie,
+                gatunek,
+                punktyZycia,
+                plik);
     }
 }

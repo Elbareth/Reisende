@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
 //TODO UWAGA MantToOne!!!
 @Entity
@@ -103,5 +104,26 @@ public class Wiadomosci {
                 ", tresc='" + tresc + '\'' +
                 ", data=" + data +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Wiadomosci that = (Wiadomosci) o;
+        return nadawca.equals(that.nadawca) &&
+                odbiorca.equals(that.odbiorca) &&
+                tytul.equals(that.tytul) &&
+                tresc.equals(that.tresc) &&
+                data.equals(that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nadawca,
+                odbiorca,
+                tytul,
+                tresc,
+                data);
     }
 }

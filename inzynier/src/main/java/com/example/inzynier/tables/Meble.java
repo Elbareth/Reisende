@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 @Table(name = "d_meble")
@@ -125,5 +126,34 @@ public class Meble {
                 ", higiena=" + higiena +
                 ", doswiadczenia=" + doswiadczenia +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meble meble = (Meble) o;
+        return nazwa.equals(meble.nazwa) &&
+                plik.equals(meble.plik) &&
+                kategoria.equals(meble.kategoria) &&
+                cena.equals(meble.cena) &&
+                glod.equals(meble.glod) &&
+                sen.equals(meble.sen) &&
+                pragnienie.equals(meble.pragnienie) &&
+                higiena.equals(meble.higiena) &&
+                doswiadczenia.equals(meble.doswiadczenia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                plik,
+                kategoria,
+                cena,
+                glod,
+                sen,
+                pragnienie,
+                higiena,
+                doswiadczenia);
     }
 }

@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO Stworz dialog postaci
 //TODO Uwaga ManyToOne!!!
@@ -67,5 +68,22 @@ public class DialogPostaci {
                 ", postac=" + postac +
                 ", tekst='" + tekst + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DialogPostaci that = (DialogPostaci) o;
+        return nazwaQuesta.equals(that.nazwaQuesta) &&
+                postac.equals(that.postac) &&
+                tekst.equals(that.tekst);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwaQuesta,
+                postac,
+                tekst);
     }
 }

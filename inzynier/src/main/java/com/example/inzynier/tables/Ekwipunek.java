@@ -2,6 +2,7 @@ package com.example.inzynier.tables;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 //TODO OneToOne nie shared key!!!
 @Entity
@@ -77,5 +78,24 @@ public class Ekwipunek {
                 ", plik='" + plik + '\'' +
                 ", opis='" + opis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ekwipunek ekwipunek = (Ekwipunek) o;
+        return wlasciciel.equals(ekwipunek.wlasciciel) &&
+                nazwa.equals(ekwipunek.nazwa) &&
+                plik.equals(ekwipunek.plik) &&
+                opis.equals(ekwipunek.opis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                nazwa,
+                plik,
+                opis);
     }
 }
