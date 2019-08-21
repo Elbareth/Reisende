@@ -19,6 +19,7 @@ public class UzytkownikService {
     private UzytkownikAssembler uzytkownikAssembler;
 
     public UzytkownikDTO findByLogin(String login){
+        if(!uzytkownikRepositories.findByLogin(login).isPresent()) throw new EntityNotFoundException("There is no user with this login");
         return uzytkownikAssembler.toDto(uzytkownikRepositories.findById(login).get());
     }
     public Boolean isUserExist(String login, String haslo){
@@ -36,6 +37,7 @@ public class UzytkownikService {
     }
     @Transactional
     public UzytkownikDTO update(String login, UzytkownikDTO uzytkownikDTO){
+        if(!uzytkownikRepositories.findByLogin(login).isPresent()) throw new EntityNotFoundException("There is no user with this login");
         Uzytkownik user = uzytkownikRepositories.getOne(login);
         uzytkownikAssembler.updateEntity(user,uzytkownikDTO);
         return uzytkownikAssembler.toDto(user);
