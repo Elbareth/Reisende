@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class ZbrojaDTO {
     private String nazwa;
     private Integer punktyAtaku;
@@ -98,5 +100,32 @@ public class ZbrojaDTO {
                 ", klasa='" + klasa + '\'' +
                 ", typ='" + typ + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ZbrojaDTO zbrojaDTO = (ZbrojaDTO) o;
+        return nazwa.equals(zbrojaDTO.nazwa) &&
+                punktyAtaku.equals(zbrojaDTO.punktyAtaku) &&
+                punktyObrony.equals(zbrojaDTO.punktyObrony) &&
+                wymaganyPoziom.equals(zbrojaDTO.wymaganyPoziom) &&
+                punktyDoswiadczenia.equals(zbrojaDTO.punktyDoswiadczenia) &&
+                plik.equals(zbrojaDTO.plik) &&
+                klasa.equals(zbrojaDTO.klasa) &&
+                typ.equals(zbrojaDTO.typ);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                punktyAtaku,
+                punktyObrony,
+                wymaganyPoziom,
+                punktyDoswiadczenia,
+                plik,
+                klasa,
+                typ);
     }
 }

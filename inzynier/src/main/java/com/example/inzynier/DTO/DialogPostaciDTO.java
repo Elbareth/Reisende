@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class DialogPostaciDTO {
     private Integer id;
     private String nazwaQuesta;
@@ -52,5 +54,22 @@ public class DialogPostaciDTO {
                 ", postac=" + postac +
                 ", tekst='" + tekst + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DialogPostaciDTO that = (DialogPostaciDTO) o;
+        return nazwaQuesta.equals(that.nazwaQuesta) &&
+                postac.equals(that.postac) &&
+                tekst.equals(that.tekst);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwaQuesta,
+                postac,
+                tekst);
     }
 }

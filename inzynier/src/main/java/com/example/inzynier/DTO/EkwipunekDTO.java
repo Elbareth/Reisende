@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class EkwipunekDTO {
     private Integer id;
     private UzytkownikDTO wlasciciel;
@@ -63,5 +65,24 @@ public class EkwipunekDTO {
                 ", plik='" + plik + '\'' +
                 ", opis='" + opis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EkwipunekDTO that = (EkwipunekDTO) o;
+        return wlasciciel.equals(that.wlasciciel) &&
+                nazwa.equals(that.nazwa) &&
+                plik.equals(that.plik) &&
+                opis.equals(that.opis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                nazwa,
+                plik,
+                opis);
     }
 }

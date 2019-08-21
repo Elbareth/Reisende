@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class MebleDTO {
     private String nazwa;
     private String plik;
@@ -109,5 +111,34 @@ public class MebleDTO {
                 ", higiena=" + higiena +
                 ", doswiadczenia=" + doswiadczenia +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MebleDTO mebleDTO = (MebleDTO) o;
+        return nazwa.equals(mebleDTO.nazwa) &&
+                plik.equals(mebleDTO.plik) &&
+                kategoria.equals(mebleDTO.kategoria) &&
+                cena.equals(mebleDTO.cena) &&
+                glod.equals(mebleDTO.glod) &&
+                sen.equals(mebleDTO.sen) &&
+                pragnienie.equals(mebleDTO.pragnienie) &&
+                higiena.equals(mebleDTO.higiena) &&
+                doswiadczenia.equals(mebleDTO.doswiadczenia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                plik,
+                kategoria,
+                cena,
+                glod,
+                sen,
+                pragnienie,
+                higiena,
+                doswiadczenia);
     }
 }

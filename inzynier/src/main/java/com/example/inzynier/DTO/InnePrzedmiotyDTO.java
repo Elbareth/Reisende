@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class InnePrzedmiotyDTO {
     private String nazwa;
     private Float cena;
@@ -54,5 +56,24 @@ public class InnePrzedmiotyDTO {
                 ", plik='" + plik + '\'' +
                 ", opis='" + opis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InnePrzedmiotyDTO that = (InnePrzedmiotyDTO) o;
+        return nazwa.equals(that.nazwa) &&
+                cena.equals(that.cena) &&
+                plik.equals(that.plik) &&
+                opis.equals(that.opis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                cena,
+                plik,
+                opis);
     }
 }

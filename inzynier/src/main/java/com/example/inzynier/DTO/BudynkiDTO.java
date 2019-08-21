@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class BudynkiDTO {
     private String nazwa;
     private String polozenie;
@@ -53,5 +55,24 @@ public class BudynkiDTO {
                 ", wymiary='" + wymiary + '\'' +
                 ", plik='" + plik + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BudynkiDTO that = (BudynkiDTO) o;
+        return nazwa.equals(that.nazwa) &&
+                polozenie.equals(that.polozenie) &&
+                wymiary.equals(that.wymiary) &&
+                plik.equals(that.plik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                polozenie,
+                wymiary,
+                plik);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class DomekDTO {
     private String wlasciciel;
     private String pomieszczenia;
@@ -295,5 +297,68 @@ public class DomekDTO {
                 ", barek='" + barek + '\'' +
                 ", podloga='" + podloga + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DomekDTO domekDTO = (DomekDTO) o;
+        return wlasciciel.equals(domekDTO.wlasciciel) &&
+                pomieszczenia.equals(domekDTO.pomieszczenia) &&
+                okna.equals(domekDTO.okna) &&
+                drzwi.equals(domekDTO.drzwi) &&
+                lozko.equals(domekDTO.lozko) &&
+                wanna.equals(domekDTO.wanna) &&
+                umywalka.equals(domekDTO.umywalka) &&
+                toaeta.equals(domekDTO.toaeta) &&
+                szafki.equals(domekDTO.szafki) &&
+                zlew.equals(domekDTO.zlew) &&
+                kuchenka.equals(domekDTO.kuchenka) &&
+                lodowka.equals(domekDTO.lodowka) &&
+                szafa.equals(domekDTO.szafa) &&
+                obraz.equals(domekDTO.obraz) &&
+                dywany.equals(domekDTO.dywany) &&
+                kominki.equals(domekDTO.kominki) &&
+                kwiaty.equals(domekDTO.kwiaty) &&
+                wazony.equals(domekDTO.wazony) &&
+                trofea.equals(domekDTO.trofea) &&
+                kojec.equals(domekDTO.kojec) &&
+                krzesla.equals(domekDTO.krzesla) &&
+                fotele.equals(domekDTO.fotele) &&
+                sofa.equals(domekDTO.sofa) &&
+                stoly.equals(domekDTO.stoly) &&
+                barek.equals(domekDTO.barek) &&
+                podloga.equals(domekDTO.podloga);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                pomieszczenia,
+                okna,
+                drzwi,
+                lozko,
+                wanna,
+                umywalka,
+                toaeta,
+                szafki,
+                zlew,
+                kuchenka,
+                lodowka,
+                szafa,
+                obraz,
+                dywany,
+                kominki,
+                kwiaty,
+                wazony,
+                trofea,
+                kojec,
+                krzesla,
+                fotele,
+                sofa,
+                stoly,
+                barek,
+                podloga);
     }
 }

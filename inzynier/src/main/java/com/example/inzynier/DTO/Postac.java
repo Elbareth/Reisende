@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class Postac {
     private String left;
     private String top;
@@ -34,5 +36,20 @@ public class Postac {
                 "left='" + left + '\'' +
                 ", top='" + top + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Postac postac = (Postac) o;
+        return left.equals(postac.left) &&
+                top.equals(postac.top);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(left,
+                top);
     }
 }

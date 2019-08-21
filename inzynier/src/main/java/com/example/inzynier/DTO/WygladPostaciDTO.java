@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class WygladPostaciDTO {
     private Integer id;
     private String nazwa;
@@ -63,5 +65,24 @@ public class WygladPostaciDTO {
                 ", plik='" + plik + '\'' +
                 ", kategoria='" + kategoria + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WygladPostaciDTO that = (WygladPostaciDTO) o;
+        return nazwa.equals(that.nazwa) &&
+                klasa.equals(that.klasa) &&
+                plik.equals(that.plik) &&
+                kategoria.equals(that.kategoria);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                klasa,
+                plik,
+                kategoria);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class UzytkownikRejestracjaDTO {
     private String login;
     private String haslo;
@@ -71,6 +73,27 @@ public class UzytkownikRejestracjaDTO {
                 ", klasaPostaci='" + klasaPostaci + '\'' +
                 ", plec=" + plec +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UzytkownikRejestracjaDTO that = (UzytkownikRejestracjaDTO) o;
+        return login.equals(that.login) &&
+                haslo.equals(that.haslo) &&
+                nick.equals(that.nick) &&
+                klasaPostaci.equals(that.klasaPostaci) &&
+                plec.equals(that.plec);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login,
+                haslo,
+                nick,
+                klasaPostaci,
+                plec);
     }
 }
 

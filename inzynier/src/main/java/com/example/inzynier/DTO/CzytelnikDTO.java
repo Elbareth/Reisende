@@ -3,6 +3,8 @@ package com.example.inzynier.DTO;
 import com.example.inzynier.tables.Ksiazki;
 import com.example.inzynier.tables.Uzytkownik;
 
+import java.util.Objects;
+
 public class CzytelnikDTO {
     private Integer id;
     private KsiazkiDTO tytul;
@@ -44,5 +46,20 @@ public class CzytelnikDTO {
                 ", tytul=" + tytul +
                 ", czytelnik=" + czytelnik +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CzytelnikDTO that = (CzytelnikDTO) o;
+        return tytul.equals(that.tytul) &&
+                czytelnik.equals(that.czytelnik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tytul,
+                czytelnik);
     }
 }

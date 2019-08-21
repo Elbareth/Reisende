@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class SmokDTO {
     private String wlasciciel;
     private String imie;
@@ -64,5 +66,26 @@ public class SmokDTO {
                 ", punktyZycia=" + punktyZycia +
                 ", plik='" + plik + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SmokDTO smokDTO = (SmokDTO) o;
+        return wlasciciel.equals(smokDTO.wlasciciel) &&
+                imie.equals(smokDTO.imie) &&
+                gatunek.equals(smokDTO.gatunek) &&
+                punktyZycia.equals(smokDTO.punktyZycia) &&
+                plik.equals(smokDTO.plik);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wlasciciel,
+                imie,
+                gatunek,
+                punktyZycia,
+                plik);
     }
 }

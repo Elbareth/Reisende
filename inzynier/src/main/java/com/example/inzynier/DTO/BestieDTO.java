@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class BestieDTO {
     private Integer id;
     private String nazwa;
@@ -63,5 +65,24 @@ public class BestieDTO {
                 ", polozenie='" + polozenie + '\'' +
                 ", wymiary='" + wymiary + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BestieDTO bestieDTO = (BestieDTO) o;
+        return nazwa.equals(bestieDTO.nazwa) &&
+                plik.equals(bestieDTO.plik) &&
+                polozenie.equals(bestieDTO.polozenie) &&
+                wymiary.equals(bestieDTO.wymiary);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nazwa,
+                plik,
+                polozenie,
+                wymiary);
     }
 }

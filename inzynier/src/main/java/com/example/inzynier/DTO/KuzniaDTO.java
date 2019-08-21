@@ -1,5 +1,7 @@
 package com.example.inzynier.DTO;
 
+import java.util.Objects;
+
 public class KuzniaDTO {
     private Integer id;
     private UzytkownikDTO sprzedajacy;
@@ -107,5 +109,32 @@ public class KuzniaDTO {
                 ", klasa='" + klasa + '\'' +
                 ", opis='" + opis + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KuzniaDTO kuzniaDTO = (KuzniaDTO) o;
+        return sprzedajacy.equals(kuzniaDTO.sprzedajacy) &&
+                aktualnaCena.equals(kuzniaDTO.aktualnaCena) &&
+                czyStala.equals(kuzniaDTO.czyStala) &&
+                iloscLicytujacych.equals(kuzniaDTO.iloscLicytujacych) &&
+                nazwa.equals(kuzniaDTO.nazwa) &&
+                plik.equals(kuzniaDTO.plik) &&
+                klasa.equals(kuzniaDTO.klasa) &&
+                opis.equals(kuzniaDTO.opis);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sprzedajacy,
+                aktualnaCena,
+                czyStala,
+                iloscLicytujacych,
+                nazwa,
+                plik,
+                klasa,
+                opis);
     }
 }

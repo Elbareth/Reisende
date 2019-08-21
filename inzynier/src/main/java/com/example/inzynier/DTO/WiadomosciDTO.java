@@ -1,9 +1,7 @@
 package com.example.inzynier.DTO;
 
-import com.example.inzynier.tables.Uzytkownik;
-
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Objects;
 
 public class WiadomosciDTO {
     private Integer id;
@@ -91,5 +89,26 @@ public class WiadomosciDTO {
                 ", tresc='" + tresc + '\'' +
                 ", data=" + data +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WiadomosciDTO that = (WiadomosciDTO) o;
+        return nadawca.equals(that.nadawca) &&
+                odbiorca.equals(that.odbiorca) &&
+                tytul.equals(that.tytul) &&
+                tresc.equals(that.tresc) &&
+                data.equals(that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nadawca,
+                odbiorca,
+                tytul,
+                tresc,
+                data);
     }
 }
