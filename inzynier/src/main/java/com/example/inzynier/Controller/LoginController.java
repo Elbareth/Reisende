@@ -24,7 +24,7 @@ public class LoginController{
     }
 
     @PostMapping(value ="/logowanie", consumes = "multipart/form-data", produces = { "application/json", "application/xml" })
-    public ModelAndView logowanie(@ModelAttribute("uzytkownik") UzytkownikDTO uzytkownikDTO, HttpSession sesja, ModelMap model, HttpServletResponse response , HttpServletRequest request){
+    public ModelAndView logowanie(@ModelAttribute("uzytkownik") UzytkownikDTO uzytkownikDTO, HttpSession sesja, ModelMap model){
         String shaszowaneHaslo = null;
         shaszowaneHaslo = hash.hashMyPassword(uzytkownikDTO.getHaslo(), shaszowaneHaslo);
         if(uzytkownikService.isUserExist(uzytkownikDTO.getLogin(), shaszowaneHaslo)){

@@ -25,7 +25,7 @@ public class RejestracjaController {
         return new ModelAndView("/rejestracja", "uzytkownik", new UzytkownikRejestracjaDTO());
     }
     @PostMapping(value = "/register", consumes = "multipart/form-data", produces = { "application/json", "application/xml" })
-    public ModelAndView register(@ModelAttribute("uzytkownik") UzytkownikRejestracjaDTO uzytkownikRejestracjaDTO, HttpSession sesja, ModelMap model, HttpServletResponse response){
+    public ModelAndView register(@ModelAttribute("uzytkownik") UzytkownikRejestracjaDTO uzytkownikRejestracjaDTO, ModelMap model){
         UzytkownikDTO user;
         if(uzytkownikService.isThisLoginInUse(uzytkownikRejestracjaDTO.getLogin())){
             model.put("error","Wybrany login jest juz zajety");
@@ -66,6 +66,7 @@ public class RejestracjaController {
                      1,
                      "1x1");
             uzytkownikService.create(user);
+            //TODO Dodaj domek
         }
         return new ModelAndView("login", "uzytkownik", user);
     }
