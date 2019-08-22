@@ -32,7 +32,7 @@ public class WiadomoscController {
         }
         final UzytkownikDTO uzytkownikTmp = uzytkownikService.findByLogin(sesja.getAttribute("login").toString());
         List<WiadomosciDTO> wiadomosciList = wiadomosciService.findByOdbiorca(uzytkownikTmp);
-        ModelAndView modelAndView = new ModelAndView("wiadomosci.index","wiadomosciList",wiadomosciList);
+        ModelAndView modelAndView = new ModelAndView("wiadomosci.index");
         return createPagination(wiadomosciList, modelAndView, page);
     }
 
@@ -43,7 +43,7 @@ public class WiadomoscController {
         }
         final UzytkownikDTO uzytkownikTmp = uzytkownikService.findByLogin(sesja.getAttribute("login").toString());
         List<WiadomosciDTO> wiadomosciList = wiadomosciService.findByNadawca(uzytkownikTmp);
-        ModelAndView modelAndView = new ModelAndView("wiadomosciNadawca.index","wiadomosciList",wiadomosciList);
+        ModelAndView modelAndView = new ModelAndView("wiadomosciNadawca.index");
         return createPagination(wiadomosciList, modelAndView, page);
     }
 
@@ -88,6 +88,10 @@ public class WiadomoscController {
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
+        if(!uzytkownikRepositories.findByLogin(odbiorca).isPresent()){
+            modelMap.put("error","Podany odbiorca nie istnieje");
+            return new ModelAndView("napiszWiadomosc.index","wiadomosc",new WiadomosciDTO());
+        }
         WiadomosciDTO wiadomosciDTO = new WiadomosciDTO();
         wiadomosciDTO.setOdbiorca(odbiorca);
         modelMap.put("wiadomoscTmp",wiadomosciDTO);
@@ -109,17 +113,17 @@ public class WiadomoscController {
 
     private ModelAndView createPagination(List<WiadomosciDTO> wiadomosciList, ModelAndView modelAndView, Integer page){
         PagedListHolder<WiadomosciDTO> pagedListHolder = new PagedListHolder<>(wiadomosciList); // tworzymy pagelistholder z nasza lista uzytkownikow
-        pagedListHolder.setPageSize(15);
+        pagedListHolder.setPageSize(10);
         modelAndView.addObject("maxPages", pagedListHolder.getPageCount()); // znajdujemy maksymalna liczbe naszych uzytkownikow
         if(page==null || page < 1 || page > pagedListHolder.getPageCount())page=1; // w przypadku gdy nie rozpoznajemy strony wracamy n strone pierwsza
         modelAndView.addObject("page", page); // i dodajemy ja do naszego modelAndView
         if(page == null || page < 1 || page > pagedListHolder.getPageCount()){
             pagedListHolder.setPage(0);
-            modelAndView.addObject("uzytkownikLista", pagedListHolder.getPageList());
+            modelAndView.addObject("wiadomosciList", pagedListHolder.getPageList());
         }
         else if(page <= pagedListHolder.getPageCount()) {
             pagedListHolder.setPage(page-1);
-            modelAndView.addObject("uzytkownikLista", pagedListHolder.getPageList());
+            modelAndView.addObject("wiadomosciList", pagedListHolder.getPageList());
         }
         return modelAndView;
     }
