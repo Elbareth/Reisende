@@ -1,7 +1,9 @@
 package com.example.inzynier.BasicService;
 
 import com.example.inzynier.DTO.UzytkownikDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PoborMonet {
 
     public UzytkownikDTO poborMonet(Integer ile, UzytkownikDTO uzytkownikDTO){

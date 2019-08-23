@@ -1,9 +1,12 @@
 package com.example.inzynier.BasicService;
 
+import org.springframework.stereotype.Component;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+@Component
 public class HashPassword {
     public String hashMyPassword(String password, String shaszowaneHaslo){
         try{ // haslo hszujemy by bylo bezpieczne. W bazie sa juz shaszowane hasla
