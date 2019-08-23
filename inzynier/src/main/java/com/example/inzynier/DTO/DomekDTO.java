@@ -59,6 +59,9 @@ public class DomekDTO {
         this.podloga = podloga;
     }
 
+    public DomekDTO() {
+    }
+
     public String getWlasciciel() {
         return wlasciciel;
     }
