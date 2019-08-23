@@ -58,9 +58,9 @@ public class WiadomoscControllerTest {
     @Test
     public void getListaOdbiorca() {
         ModelAndView model = new ModelAndView("wiadomosci.index");
-        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
+        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
         model.addObject("page",1);
-        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
+        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
         Assertions.assertThat(wiadomoscController.getListaOdbiorca(1,sesja).toString()).isEqualTo(model.toString());
     }
 
@@ -86,9 +86,9 @@ public class WiadomoscControllerTest {
     public void getListNadawca() {
         ModelAndView model = new ModelAndView("wiadomosciNadawca.index");
         Uzytkownik tmp = uzytkownikRepositories.findByLogin("Admin").get();
-        model.addObject("maxPages",wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(tmp).size()/11+1);
+        model.addObject("maxPages",wiadomosciRepositories.findAllByNadawcaOrderByDataDesc(tmp).size()/11+1);
         model.addObject("page",1);
-        model.addObject("wiadomosciList", wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(tmp)).subList(0,10));
+        model.addObject("wiadomosciList", wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataDesc(tmp)).subList(0,10));
         Assertions.assertThat(wiadomoscController.getListNadawca(1,sesja).toString()).isEqualTo(model.toString());
     }
 
@@ -199,9 +199,9 @@ public class WiadomoscControllerTest {
     @Test
     public void wyslijWiadomosc() {
         ModelAndView model = new ModelAndView("wiadomosci.index");
-        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
+        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
         model.addObject("page",1);
-        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
+        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
         Assertions.assertThat(
                 wiadomoscController
                         .wyslijWiadomosc(wiadomosciDTO, sesja, new ModelMap())
@@ -302,9 +302,9 @@ public class WiadomoscControllerTest {
     @Test
     public void wyslijRE() {
         ModelAndView model = new ModelAndView("wiadomosci.index");
-        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
+        model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
         model.addObject("page",1);
-        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
+        model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
         Assertions.assertThat(
                 wiadomoscController
                         .wyslijRE("Admin", wiadomosciDTO, sesja, new ModelMap())

@@ -80,12 +80,12 @@ public class WiadomosciServiceTest {
 
     @Test
     public void findByNadawca() {
-        Assertions.assertThat(wiadomosciService.findByNadawca(uzytkownikDTO)).isEqualTo(wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO))));
+        Assertions.assertThat(wiadomosciService.findByNadawca(uzytkownikDTO)).isEqualTo(wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByNadawcaOrderByDataDesc(uzytkownikAssembler.toEntity(uzytkownikDTO))));
     }
 
     @Test
     public void findByOdbiorca() {
-        Assertions.assertThat(wiadomosciService.findByOdbiorca(uzytkownikDTO)).isEqualTo(wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO))));
+        Assertions.assertThat(wiadomosciService.findByOdbiorca(uzytkownikDTO)).isEqualTo(wiadomosciAssembler.toDto(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikAssembler.toEntity(uzytkownikDTO))));
     }
 
     @Test
