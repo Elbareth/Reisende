@@ -21,10 +21,10 @@ public class WiadomosciService {
     private WiadomosciAssembler wiadomosciAssembler;
 
     public List<WiadomosciDTO> findByNadawca(UzytkownikDTO uzytkownikDTO){
-        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
+        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByNadawcaOrderByDataDesc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
     }
     public List<WiadomosciDTO> findByOdbiorca(UzytkownikDTO uzytkownikDTO){
-        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataAsc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
+        return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikAssembler.toEntity(uzytkownikDTO)));
     }
     public WiadomosciDTO findById(Integer id){
         return wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findById(id).get());

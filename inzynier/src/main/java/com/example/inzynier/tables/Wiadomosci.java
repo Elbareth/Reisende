@@ -37,6 +37,7 @@ public class Wiadomosci {
             @NotNull String tytul,
             @NotNull String tresc,
             @NotNull LocalDate data) {
+        System.out.println(nadawca);
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;

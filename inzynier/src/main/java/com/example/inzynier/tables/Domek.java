@@ -95,6 +95,9 @@ public class Domek {
         this.podloga = podloga;
     }
 
+    public Domek() {
+    }
+
     public String getWlasciciel() {
         return wlasciciel;
     }
