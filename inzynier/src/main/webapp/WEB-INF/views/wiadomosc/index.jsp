@@ -31,7 +31,7 @@
             </c:forEach>
             </table>
             <div id="pagination">
-                <c:url value="/wiadomosci" var="prev">
+                <c:url value="/wiadomosc" var="prev">
                     <c:param name="page" value="${page-1}"/>
                 </c:url>
                 <c:if test="${page > 1}">
@@ -44,14 +44,14 @@
                             <h3><span>${i.index}</span></h3>
                         </c:when>
                         <c:otherwise>
-                            <c:url value="/wiadomosci" var="url">
+                            <c:url value="/wiadomosc" var="url">
                                 <c:param name="page" value="${i.index}"/>
                             </c:url>
                             <h3><a href='<c:out value="${url}" />'>${i.index}</a></h3>
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
-                <c:url value="/wiadomosci" var="next">
+                <c:url value="/wiadomosc" var="next">
                     <c:param name="page" value="${page + 1}"/>
                 </c:url>
                 <c:if test="${page + 1 <= maxPages}">
