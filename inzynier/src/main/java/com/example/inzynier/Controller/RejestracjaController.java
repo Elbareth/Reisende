@@ -1,8 +1,10 @@
 package com.example.inzynier.Controller;
 
 import com.example.inzynier.BasicService.HashPassword;
+import com.example.inzynier.DTO.DomekDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.DTO.UzytkownikRejestracjaDTO;
+import com.example.inzynier.Service.DomekService;
 import com.example.inzynier.Service.UzytkownikService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import javax.servlet.http.HttpSession;
 public class RejestracjaController {
     @Autowired
     private UzytkownikService uzytkownikService;
+    private DomekService domekService;
     private HashPassword hash = new HashPassword();
     @GetMapping("/zarejestruj")
     public ModelAndView zarejestruj(){
@@ -66,7 +69,33 @@ public class RejestracjaController {
                      1,
                      "1x1");
             uzytkownikService.create(user);
-            //TODO Dodaj domek
+            DomekDTO domekDTO = new DomekDTO(user.getLogin(),
+                    "20x20",
+                    "BialeOkno-100x5",
+                    "ProsteDrzwi-100x190",
+                    "SlomianeLozko-20x20",
+                    "brak",
+                    "brak",
+                    "Wiadro-150x50",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "DziuraWZiemi-150x150",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak",
+                    "brak");
+            domekService.create(domekDTO);
         }
         return new ModelAndView("login", "uzytkownik", user);
     }
