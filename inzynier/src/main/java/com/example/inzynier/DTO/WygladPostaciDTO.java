@@ -16,6 +16,9 @@ public class WygladPostaciDTO {
         this.kategoria = kategoria;
     }
 
+    public WygladPostaciDTO() {
+    }
+
     public Integer getId() {
         return id;
     }
