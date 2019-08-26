@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="/resources/main.css">
         <link href="https://fonts.googleapis.com/css?family=Metal+Mania&display=swap" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://unpkg.com/konva@4.0.5/konva.min.js"></script>
         <meta http-equiv="Refresh" content="60">
         <script>
             function dragAndDrop(furniture){
@@ -30,23 +31,25 @@
                         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
                         furniture.hidden = false;
                         if (!elemBelow) return;
-                        let droppableBelow = elemBelow.parentElement.parentElement.parentElement.parentElement.firstChild.firstChild('.droppable');
+                        let droppableBelow = $(this).closest(elemBelow);
                         console.log(droppableBelow);
                         console.log(currentDroppable);
                         if (currentDroppable != droppableBelow) {
                             if (currentDroppable) { // null when we were not over a droppable before this event
-                                enterDroppable(currentDroppable);
-                                console.log("null");
+                                enterDroppable(currentDroppable[0]);
                             }
                             currentDroppable = droppableBelow;
                             if (currentDroppable) { // null if we're not coming over a droppable now
                                 // (maybe just left the droppable)
-                                elem.style.background = 'red';
+                                currentDroppable[0].style.background = 'red';
                                 furniture.ondragstart = function() {
                                     return true;
                                 };
-                                console.log("not null");
                             }
+                            furniture.ondragstart = function() {
+                                return false;
+                            };
+                            currentDroppable[0].style.background = 'none';
                         }
                     }
 

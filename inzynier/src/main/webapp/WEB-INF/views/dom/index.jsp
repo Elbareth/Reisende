@@ -6,7 +6,7 @@
         <div class="main">
             <div class="domek">
                 <div class="my-custom-scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                    <div class="innerHome" id="drop" class="droppable">
+                    <div class="innerHome" id="drop" ondrop="drag_drop(event)" ondragover="return false">
                         <image style = "position: relative; left: 0; top: 0; visibility: visible;" src="/resources/image.jpg"/>
                         <image style = "position: absolute; left: ${pomieszczenia.x}; top: ${pomieszczenia.y}; z-index: 15; visibility: visible;" src="/resources/pom.png"/>
                     </div>
@@ -37,42 +37,42 @@
                     <div style="background-color: rgba(255,255,255,0.5);">
                          <div id="Dom" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/pom.png" id="room"/>
+                                <img src="/resources/pom.png" id="room" draggable="true"/>
                             </div>
                          </div>
                          <div id="Kuchnia" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/Health.contrast-white.ico" id="kuchnia"/>
+                                <img src="/resources/Health.contrast-white.ico" id="kuchnia" draggable="true" class="furniture" ondragstart="drag_start(event)" ondragend="drag_end(event)"/>
                                 <script>
                                     var furniture = document.getElementById("kuchnia");
-                                    dragAndDrop(furniture);
+                                    //dragAndDrop(furniture);
                                 </script>
                             </div>
                          </div>
                          <div id="Sypialnia" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/Health.contrast-white.ico" id="sypialnia"/>
+                                <img src="/resources/Health.contrast-white.ico" id="sypialnia" draggable="true" class="furniture" ondragstart="drag_start(event)" ondragend="drag_end(event)"/>
                                 <script>
                                     var furniture = document.getElementById("sypialnia");
-                                    dragAndDrop(furniture);
+                                    //dragAndDrop(furniture);
                                 </script>
                             </div>
                          </div>
                          <div id="Lazienka" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/Health.contrast-white.ico" id="lazienka"/>
+                                <img src="/resources/Health.contrast-white.ico" id="lazienka" draggable="true" class="furniture" ondragstart="drag_start(event)" ondragend="drag_end(event)"/>
                                 <script>
                                     var furniture = document.getElementById("lazienka");
-                                    dragAndDrop(furniture);
+                                    //dragAndDrop(furniture);
                                 </script>
                             </div>
                          </div>
                          <div id="Dodatki" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/Health.contrast-white.ico" id="dodatki"/>
+                                <img src="/resources/Health.contrast-white.ico" id="dodatki" draggable="true" class="furniture" ondragstart="drag_start(event)" ondragend="drag_end(event)"/>
                                 <script>
                                     var furniture = document.getElementById("dodatki");
-                                    dragAndDrop(furniture);
+                                    //dragAndDrop(furniture);
                                 </script>
                             </div>
                          </div>
@@ -91,6 +91,25 @@
                         }
                         document.getElementById(animName).style.display = "block";
                         evt.currentTarget.className += " w3-red";
+                    }
+                </script>
+                <script>
+                    function _(id){
+                       return document.getElementById(id);
+                    }
+                    var droppedIn = false;
+                    function drag_drop(event) {
+                        event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+                        var elem_id = event.dataTransfer.getData("text");
+                        event.target.appendChild( _(elem_id) );
+                        droppedIn = true;
+                    }
+                    function drag_start(event) {
+                        event.dataTransfer.dropEffect = "move";
+                        event.dataTransfer.setData("text", event.target.getAttribute('id') );
+                    }
+                    function drag_end(event) {
+                    	droppedIn = false;
                     }
                 </script>
             </div>
