@@ -68,6 +68,63 @@
                 };
             }
         </script>
+        <script>
+            function draged(name){
+                var dragElement = document.getElementById(name);
+                var dropElementOgrod = document.getElementById("ogrod");
+                var dropElementDom = document.getElementById("dom");
+                var x;
+                var y;
+
+                dragElement.onmousedown = async function(event){
+                    x = event.clientX;
+                    y = event.clientY;
+                }
+
+                dragElement.ondragstart = function(event){
+                    var dropItem = event.dataTransfer.setData('key',event.target.id);
+                    dropElementOgrod.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/image.jpg")';
+                    dropElementDom.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/pom.png")';
+                }
+
+                dragElement.ondragover = function(event){
+                    event.preventDefault();
+                }
+                dropElementOgrod.ondragover = function(event){
+                    var dropItem = event.dataTransfer.getData('key');
+                    event.preventDefault();
+                }
+                dropElementOgrod.ondrop = function(event){
+                    var dropItem = event.dataTransfer.getData('key');
+                    event.preventDefault();
+                    dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
+                    dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
+                    var myNewElement = document.createElement('img');
+                    myNewElement.src = dragElement.src;
+                    myNewElement.style.top = 30;
+                    myNewElement.style.left = 30;
+                    myNewElement.style.position = 'absolute';
+                    dropElementOgrod.appendChild(myNewElement);
+                }
+                dropElementDom.ondragover = function(event){
+                    var dropItem = event.dataTransfer.getData('key');
+                    event.preventDefault();
+                }
+                dropElementDom.ondrop = function(event){
+                    var dropItem = event.dataTransfer.getData('key');
+                    event.preventDefault();
+                    dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
+                    dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
+                    var myNewElement = document.createElement('img');
+                    myNewElement.src = dragElement.src;
+                    myNewElement.style.top = y;
+                    myNewElement.style.left = x;
+                    console.log(x+" "+y);
+                    myNewElement.style.position = 'absolute';
+                    dropElementDom.appendChild(myNewElement);
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="menu">
