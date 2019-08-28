@@ -14,6 +14,7 @@
             <c:url value="/wyglad" var="prev">
             <c:param name="page" value="${page-1}"/>
             </c:url>
+            <div class="pagination" style="display: inline-block;">
             <c:if test="${page > 1}">
                 <h3><a href='<c:out value="${prev}" />' class="pn prev"><<</a></h3>
             </c:if>
@@ -30,6 +31,8 @@
             <c:if test="${page + 1 <= maxPages}">
                 <h3><a href='<c:out value="${next}" />' class="pn next">>></a></h3>
             </c:if>
+            </div>
+            <br/>
             <input type="submit" value="Zapisz"/>
         </s:form>
     </div>
