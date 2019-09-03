@@ -45,7 +45,6 @@
                                 <img src="/resources/Health.contrast-white.ico" id="kuchnia" draggable="true" class="furniture"/>
                                 <script>
                                     var furniture = document.getElementById("kuchnia");
-                                    //dragAndDrop(furniture);
                                     draged("kuchnia");
                                 </script>
                             </div>
@@ -55,7 +54,6 @@
                                 <img src="/resources/Health.contrast-white.ico" id="sypialnia" draggable="true" class="furniture"/>
                                 <script>
                                     var furniture = document.getElementById("sypialnia");
-                                    //dragAndDrop(furniture);
                                     draged("sypialnia");
                                 </script>
                             </div>
@@ -65,7 +63,6 @@
                                 <img src="/resources/Health.contrast-white.ico" id="lazienka" draggable="true" class="furniture"/>
                                 <script>
                                     var furniture = document.getElementById("lazienka");
-                                    //dragAndDrop(furniture);
                                     draged("lazienka");
                                 </script>
                             </div>
@@ -75,7 +72,6 @@
                                 <img src="/resources/Health.contrast-white.ico" id="dodatki" draggable="true" class="furniture"/>
                                 <script>
                                     var furniture = document.getElementById("dodatki");
-                                    //dragAndDrop(furniture);
                                     draged("dodatki");
                                 </script>
                             </div>

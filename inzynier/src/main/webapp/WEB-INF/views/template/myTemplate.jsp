@@ -11,80 +11,19 @@
         <script src="https://unpkg.com/konva@4.0.5/konva.min.js"></script>
         <meta http-equiv="Refresh" content="60">
         <script>
-            function dragAndDrop(furniture){
-                let currentDroppable = null;
-                furniture.onmousedown = function(event){
-                    let shiftX = event.clientX - furniture.getBoundingClientRect().left;
-                    let shiftY = event.clientY - furniture.getBoundingClientRect().top;
-                    furniture.style.position = 'absolute';
-                    furniture.style.zIndex = 1000;
-                    document.body.append(furniture);
-
-                    function moveAt(pageX, pageY) {
-                        furniture.style.left = pageX - shiftX + 'px';
-                        furniture.style.top = pageY - shiftY + 'px';
-                    }
-
-                    function onMouseMove(event){
-                        moveAt(event.pageX, event.pageY);
-                        furniture.hidden = true;
-                        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-                        furniture.hidden = false;
-                        if (!elemBelow) return;
-                        let droppableBelow = $(this).closest(elemBelow);
-                        console.log(droppableBelow);
-                        console.log(currentDroppable);
-                        if (currentDroppable != droppableBelow) {
-                            if (currentDroppable) { // null when we were not over a droppable before this event
-                                enterDroppable(currentDroppable[0]);
-                            }
-                            currentDroppable = droppableBelow;
-                            if (currentDroppable) { // null if we're not coming over a droppable now
-                                // (maybe just left the droppable)
-                                currentDroppable[0].style.background = 'red';
-                                furniture.ondragstart = function() {
-                                    return true;
-                                };
-                            }
-                            furniture.ondragstart = function() {
-                                return false;
-                            };
-                            currentDroppable[0].style.background = 'none';
-                        }
-                    }
-
-                    document.addEventListener('mousemove', onMouseMove);
-                    furniture.onmouseup = function() {
-                        document.removeEventListener('mousemove', onMouseMove);
-                        furniture.onmouseup = null;
-                    };
-                };
-                function enterDroppable(elem) {
-                    elem.style.background = 'green';
-                    console.log("null when we were not over a droppable before this event");
-                }
-                furniture.ondragstart = function() {
-                    return false;
-                };
-            }
-        </script>
-        <script>
             function draged(name){
                 var dragElement = document.getElementById(name);
                 var dropElementOgrod = document.getElementById("ogrod");
                 var dropElementDom = document.getElementById("dom");
-                var x;
-                var y;
-
-                dragElement.onmousedown = async function(event){
-                    x = event.clientX;
-                    y = event.clientY;
-                }
+                var array = document.getElementsByClassName("meble");
 
                 dragElement.ondragstart = function(event){
                     var dropItem = event.dataTransfer.setData('key',event.target.id);
                     dropElementOgrod.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/image.jpg")';
                     dropElementDom.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/pom.png")';
+                    for(i = 0; i<array.length;i++){
+                        array[i].style.backgroundImage = 'linear-gradient(rgba(204,0,0,.5), rgba(204,0,0,.5)), url("/resources/Health.contrast-white.ico")';
+                    }
                 }
 
                 dragElement.ondragover = function(event){
@@ -96,15 +35,37 @@
                 }
                 dropElementOgrod.ondrop = function(event){
                     var dropItem = event.dataTransfer.getData('key');
+                    console.log(dropItem.class);
                     event.preventDefault();
                     dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
                     dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
-                    var myNewElement = document.createElement('img');
-                    myNewElement.src = dragElement.src;
-                    myNewElement.style.top = 30;
-                    myNewElement.style.left = 30;
-                    myNewElement.style.position = 'absolute';
-                    dropElementOgrod.appendChild(myNewElement);
+                    var allRight = true;
+                    for(i = 0; i<array.length;i++){
+                        array[i].style.backgroundImage = 'url("/resources/Health.contrast-white.ico")';
+                        console.log(parseInt(array[i].style.left)+330);
+                        var tmp1 = parseInt(array[i].style.left) + array[i].width +330;
+                        console.log(tmp1);
+                        console.log(event.pageX);
+                        console.log(parseInt(array[i].style.top)+90);
+                        var tmp2 = parseInt(array[i].style.top) + array[i].height+90;
+                        console.log(tmp2);
+                        console.log(event.pageY);
+                        console.log(" ");
+                        if(array[i].style.left >= event.pageX && (parseInt(array[i].style.left) + array[i].width) <=  event.pageX && array[i].style.top >= event.pageY && (parseInt(array[i].style.top) + array[i].height) <= event.pageY){
+                            array[i].style.backgroundImage = 'linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)), url("/resources/Health.contrast-white.ico")';
+                            allRight = false;
+                            break;
+                        }
+                    }
+                    if(array.length == 0 || allRight){
+                        var myNewElement = document.createElement('img');
+                        myNewElement.setAttribute("class", "meble");
+                        myNewElement.src = dragElement.src;
+                        myNewElement.style.top = event.pageY-300;
+                        myNewElement.style.left = event.pageX-900;
+                        myNewElement.style.position = 'absolute';
+                        dropElementOgrod.appendChild(myNewElement);
+                    }
                 }
                 dropElementDom.ondragover = function(event){
                     var dropItem = event.dataTransfer.getData('key');
@@ -115,11 +76,15 @@
                     event.preventDefault();
                     dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
                     dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
+                    for(i = 0; i<array.length;i++){
+                        array[i].style.backgroundImage = 'url("/resources/Health.contrast-white.ico")';
+                    }
                     var myNewElement = document.createElement('img');
+                    myNewElement.setAttribute("class", "meble");
                     myNewElement.src = dragElement.src;
-                    myNewElement.style.top = y;
-                    myNewElement.style.left = x;
-                    console.log(x+" "+y);
+                    myNewElement.style.top = event.pageY-90;
+                    myNewElement.style.left = event.pageX-330;
+                    console.log(event.pageX+" "+event.pageY);
                     myNewElement.style.position = 'absolute';
                     dropElementDom.appendChild(myNewElement);
                 }
