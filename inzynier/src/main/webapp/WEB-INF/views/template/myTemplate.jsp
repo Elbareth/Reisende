@@ -14,13 +14,14 @@
             function draged(name){
                 var dragElement = document.getElementById(name);
                 var dropElementOgrod = document.getElementById("ogrod");
-                var dropElementDom = document.getElementById("dom");
                 var array = document.getElementsByClassName("meble");
+                var usun = document.getElementById("usun");
+                var xStart;
+                var yStart;
 
                 dragElement.ondragstart = function(event){
                     var dropItem = event.dataTransfer.setData('key',event.target.id);
                     dropElementOgrod.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/image.jpg")';
-                    dropElementDom.style.backgroundImage = 'linear-gradient(rgba(0,153,51,.5), rgba(0,153,51,.5)), url("/resources/pom.png")';
                     for(i = 0; i<array.length;i++){
                         array[i].style.backgroundImage = 'linear-gradient(rgba(204,0,0,.5), rgba(204,0,0,.5)), url("/resources/Health.contrast-white.ico")';
                     }
@@ -29,64 +30,55 @@
                 dragElement.ondragover = function(event){
                     event.preventDefault();
                 }
+
+                dropElementOgrod.ondragstart = function(event){
+                    xStart = event.pageX - 425;
+                    yStart = event.pageY - 70;
+                }
+
                 dropElementOgrod.ondragover = function(event){
                     var dropItem = event.dataTransfer.getData('key');
                     event.preventDefault();
                 }
                 dropElementOgrod.ondrop = function(event){
                     var dropItem = event.dataTransfer.getData('key');
-                    console.log(dropItem.class);
                     event.preventDefault();
                     dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
-                    dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
                     var allRight = true;
                     for(i = 0; i<array.length;i++){
                         array[i].style.backgroundImage = 'url("/resources/Health.contrast-white.ico")';
-                        console.log(parseInt(array[i].style.left)+330);
-                        var tmp1 = parseInt(array[i].style.left) + array[i].width +330;
-                        console.log(tmp1);
-                        console.log(event.pageX);
-                        console.log(parseInt(array[i].style.top)+90);
-                        var tmp2 = parseInt(array[i].style.top) + array[i].height+90;
-                        console.log(tmp2);
-                        console.log(event.pageY);
-                        console.log(" ");
-                        if(array[i].style.left >= event.pageX && (parseInt(array[i].style.left) + array[i].width) <=  event.pageX && array[i].style.top >= event.pageY && (parseInt(array[i].style.top) + array[i].height) <= event.pageY){
-                            array[i].style.backgroundImage = 'linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)), url("/resources/Health.contrast-white.ico")';
+                        if((parseInt(array[i].style.left)) <= (event.pageX - 425) && (parseInt(array[i].style.left) + array[i].width) >= (event.pageX - 425) && (parseInt(array[i].style.top)) <= (event.pageY - 100) && (parseInt(array[i].style.top) + array[i].height) >= (event.pageY - 100)){
                             allRight = false;
                             break;
+                        }
+                    }
+                    if(dropItem == "" ){
+                        for(i = 0; i< array.length; i++){
+                            if((parseInt(array[i].style.left)) <= xStart && (parseInt(array[i].style.left) + array[i].width) >= xStart && (parseInt(array[i].style.top)) <= yStart && (parseInt(array[i].style.top) + array[i].height) >= yStart){
+                                array[i].remove();
+                            }
                         }
                     }
                     if(array.length == 0 || allRight){
                         var myNewElement = document.createElement('img');
                         myNewElement.setAttribute("class", "meble");
+                        myNewElement.setAttribute("id", array.length);
                         myNewElement.src = dragElement.src;
-                        myNewElement.style.top = event.pageY-300;
-                        myNewElement.style.left = event.pageX-900;
+                        myNewElement.style.top = event.pageY - 100;
+                        myNewElement.style.left = event.pageX - 440;
                         myNewElement.style.position = 'absolute';
                         dropElementOgrod.appendChild(myNewElement);
                     }
                 }
-                dropElementDom.ondragover = function(event){
+
+                usun.ondragenter = function(event){
                     var dropItem = event.dataTransfer.getData('key');
                     event.preventDefault();
-                }
-                dropElementDom.ondrop = function(event){
-                    var dropItem = event.dataTransfer.getData('key');
-                    event.preventDefault();
-                    dropElementDom.style.backgroundImage = 'url("/resources/pom.png")';
-                    dropElementOgrod.style.backgroundImage = 'url("/resources/image.jpg")';
-                    for(i = 0; i<array.length;i++){
-                        array[i].style.backgroundImage = 'url("/resources/Health.contrast-white.ico")';
+                    for(i = 0; i< array.length; i++){
+                        if((parseInt(array[i].style.left)) <= xStart && (parseInt(array[i].style.left) + array[i].width) >= xStart && (parseInt(array[i].style.top)) <= yStart && (parseInt(array[i].style.top) + array[i].height) >= yStart){
+                            array[i].remove();
+                        }
                     }
-                    var myNewElement = document.createElement('img');
-                    myNewElement.setAttribute("class", "meble");
-                    myNewElement.src = dragElement.src;
-                    myNewElement.style.top = event.pageY-90;
-                    myNewElement.style.left = event.pageX-330;
-                    console.log(event.pageX+" "+event.pageY);
-                    myNewElement.style.position = 'absolute';
-                    dropElementDom.appendChild(myNewElement);
                 }
             }
         </script>

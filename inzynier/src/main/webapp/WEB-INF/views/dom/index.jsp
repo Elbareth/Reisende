@@ -5,12 +5,10 @@
     <body>
         <div class="main">
             <div class="domek">
-                <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                    <div class="innerHome" id="drop" ondragover="return false">
-                        <div class="ogrod" id= "ogrod" style = "position: relative; left: 0; top: 0; visibility: visible; height: 500px; background-image: url('/resources/image.jpg');"> </div>
-                        <div class="dom" id= "dom" style = "position: absolute; left: ${pomieszczenia.x}; top: ${pomieszczenia.y}; z-index: 15; visibility: visible; height: 200px; width: 200px; background-image: url('/resources/pom.png');"></div>
-                    </div>
+                <div class="innerHome" id="drop" ondragover="return false">
+                   <div class="ogrod" id= "ogrod" style = "position: relative; left: 0; top: 0; visibility: visible; height: 500px; background-image: url('/resources/image.jpg');  background-repeat: no-repeat;"> </div>
                 </div>
+                <div id="usun" style="width: 370px; height: 100px; background-image: url('/resources/usun.png');  background-repeat: no-repeat;"></div>
                 <script>
                     function hide(drag){
                         var e = document.getElementById(drag);
@@ -28,18 +26,12 @@
                 <input type="submit" value="VV" onclick="return hide('drag')">
                 <div class="drag" id ="drag" style="display:none; background-color: rgba(255,255,255,0.5);">
                     <div class="w3-bar w3-black w3-card" style="width:750px; height: 50px;">
-                      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Dom')">Dom</button>
                       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Kuchnia')">Kuchnia</button>
                       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Sypialnia')">Sypialnia</button>
                       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Lazienka')">Lazienka</button>
                       <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Dodatki')">Dodatki</button>
                     </div>
                     <div style="background-color: rgba(255,255,255,0.5);">
-                         <div id="Dom" class="w3-container pokoje w3-animate-opacity" style="display:none">
-                            <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
-                                <img src="/resources/pom.png" id="room" draggable="true"/>
-                            </div>
-                         </div>
                          <div id="Kuchnia" class="w3-container pokoje w3-animate-opacity" style="display:none">
                             <div class="scrollbar my-custom-scrollbar-primary" style="height: 400px;">
                                 <img src="/resources/Health.contrast-white.ico" id="kuchnia" draggable="true" class="furniture"/>
