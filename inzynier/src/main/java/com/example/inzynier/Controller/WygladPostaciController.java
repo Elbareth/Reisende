@@ -35,7 +35,7 @@ public class WygladPostaciController {
         if(sesja.getAttribute("login")==null){
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
-        List<WygladPostaciDTO> lista = wygladPostaciAssembler.toDto(wygladPostaciService.findAll());
+        List<WygladPostaciDTO> lista = wygladPostaciService.findAll();
         modelMap.put("lista",lista);
         UzytkownikDTO uzytkownikDTO = uzytkownikService.findByLogin((String) sesja.getAttribute("login"));
         ModelAndView modelAndView = new ModelAndView("wyglad.index", "lista", lista);
@@ -70,5 +70,14 @@ public class WygladPostaciController {
         uzytkownikService.update((String) sesja.getAttribute("login"), uzytkownikDTO);
         return getWygladPostaci(wygladPostaciService.findByPlik(plik).getId(),sesja, new ModelMap());
     }
-    //TODO odbior dla zbroi
+
+    @GetMapping("/zbroja")
+    public ModelAndView getZbroja(HttpSession sesja){
+        if(sesja.getAttribute("login")==null){
+            return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
+        }
+        UzytkownikDTO uzytkownikDTO = uzytkownikService.findByLogin((String) sesja.getAttribute("login"));
+        return  new ModelAndView("zbroja.index","uzytkownik", uzytkownikDTO);
+    }
+
 }

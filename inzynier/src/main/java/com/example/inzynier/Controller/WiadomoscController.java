@@ -53,6 +53,8 @@ public class WiadomoscController {
             return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
         }
         final WiadomosciDTO wiadomosciDTO = wiadomosciService.findById(id);
+        wiadomosciDTO.setCzyPrzeczytane(true); // czytamy wiadomosc
+        wiadomosciService.update(id, wiadomosciDTO);
         return new ModelAndView("otworzWiadomosc.index", "wiadomosc",wiadomosciDTO);
     }
 
@@ -132,6 +134,7 @@ public class WiadomoscController {
         String login = sesja.getAttribute("login").toString();
         wiadomosc.setNadawca(login);
         wiadomosc.setData(LocalDate.now());
+        wiadomosc.setCzyPrzeczytane(false); // na poczatku gdy tworzymy wiadomosc nie jest ona przeczytna przez odbiorca
         wiadomosciService.createWiadomosc(wiadomosc);
     }
 }

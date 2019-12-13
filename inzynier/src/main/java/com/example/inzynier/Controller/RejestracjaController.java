@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
 public class RejestracjaController {
     @Autowired
     private UzytkownikService uzytkownikService;
+    @Autowired
     private DomekService domekService;
     private HashPassword hash = new HashPassword();
     @GetMapping("/zarejestruj")
@@ -67,34 +68,34 @@ public class RejestracjaController {
                      100,
                      "brak",
                      1,
-                     "1x1");
+                     "tlo6.jpg-1300x800");
             uzytkownikService.create(user);
             DomekDTO domekDTO = new DomekDTO(user.getLogin(),
                     "20x20",
                     "BialeOkno-100x5",
                     "ProsteDrzwi-100x190",
                     "SlomianeLozko-20x20",
-                    "brak",
-                    "brak",
+                    "",
+                    "",
                     "Wiadro-150x50",
-                    "brak",
-                    "brak",
-                    "brak",
+                    "",
+                    "",
+                    "",
                     "DziuraWZiemi-150x150",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak",
-                    "brak");
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "");
             domekService.create(domekDTO);
         }
         return new ModelAndView("login", "uzytkownik", user);
