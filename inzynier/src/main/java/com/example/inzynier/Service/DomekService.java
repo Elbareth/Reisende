@@ -7,6 +7,8 @@ import com.example.inzynier.tables.Domek;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class DomekService {
     @Autowired
@@ -20,6 +22,7 @@ public class DomekService {
     public DomekDTO create(DomekDTO domekDTO){
         return domekAssembler.toDto(domekRepositories.save(domekAssembler.toEntity(domekDTO)));
     }
+    @Transactional
     public DomekDTO update(String wlasciciel, DomekDTO domekDTO){
         Domek domek = domekRepositories.getOne(wlasciciel);
         domekAssembler.updateEntity(domek, domekDTO);
