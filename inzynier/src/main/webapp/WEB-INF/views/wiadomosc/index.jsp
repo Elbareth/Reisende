@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java"%>
+<%@ page contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -18,16 +19,32 @@
                     <td><h3>*****Usun*****</h3></td>
                 </tr>
             <c:forEach var="element" items="${wiadomosciList}" varStatus="status">
-               <tr>
-                    <td><h3>${status.index+1}</h3></td>
-                    <td><h3>${wiadomosciList[status.index].nadawca}</h3></td>
-                    <td><h3><a href="/otworz/${wiadomosciList[status.index].id}">${wiadomosciList[status.index].tytul}</a></h3></td>
-                    <td><h3>${wiadomosciList[status.index].data}</h3></td>
-                    <td><h3><a href="/odpiszWiadomosc/${wiadomosciList[status.index].nadawca}">Odpisz</a></h3></td>
-                    <td><h3><form action="/delete/odbiorca/${wiadomosciList[status.index].id}" method="post">
-                        <button type="submit"><img src="/resources/delete1.png"/></button>
-                    </form></h3></td>
-               </tr>
+                <c:choose>
+                    <c:when test="${wiadomosciList[status.index].czyPrzeczytane eq 'false'}">
+                       <tr style="background-color: green;">
+                            <td><h3>${status.index+1}</h3></td>
+                            <td><h3>${wiadomosciList[status.index].nadawca}</h3></td>
+                            <td><h3><a href="/otworz/${wiadomosciList[status.index].id}">${wiadomosciList[status.index].tytul}</a></h3></td>
+                            <td><h3>${wiadomosciList[status.index].data}</h3></td>
+                            <td><h3><a href="/odpiszWiadomosc/${wiadomosciList[status.index].nadawca}">Odpisz</a></h3></td>
+                            <td><h3><form action="/delete/odbiorca/${wiadomosciList[status.index].id}" method="post">
+                                <button type="submit"><img src="/resources/delete1.png"/></button>
+                            </form></h3></td>
+                       </tr>
+                    </c:when>
+                    <c:otherwise>
+                        <tr>
+                            <td><h3>${status.index+1}</h3></td>
+                            <td><h3>${wiadomosciList[status.index].nadawca}</h3></td>
+                            <td><h3><a href="/otworz/${wiadomosciList[status.index].id}">${wiadomosciList[status.index].tytul}</a></h3></td>
+                            <td><h3>${wiadomosciList[status.index].data}</h3></td>
+                            <td><h3><a href="/odpiszWiadomosc/${wiadomosciList[status.index].nadawca}">Odpisz</a></h3></td>
+                            <td><h3><form action="/delete/odbiorca/${wiadomosciList[status.index].id}" method="post">
+                                <button type="submit"><img src="/resources/delete1.png"/></button>
+                            </form></h3></td>
+                        </tr>
+                    </c:otherwise>
+                </c:choose>
             </c:forEach>
             </table>
             <div id="pagination">

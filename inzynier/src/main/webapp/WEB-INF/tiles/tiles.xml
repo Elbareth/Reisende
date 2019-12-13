@@ -9,8 +9,26 @@
     <definition name="mapa.index" extends="myTemplate">
         <put-attribute name="content" value="/WEB-INF/views/maps/index.jsp" />
     </definition>
+    <definition name="zadania.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/zadania.jsp" />
+    </definition>
+    <definition name="targ.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/targ.jsp" />
+    </definition>
+    <definition name="zbrojownia.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/zbrojownia.jsp" />
+    </definition>
+    <definition name="licytujZbroje.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/licytujZbroje.jsp" />
+    </definition>
+    <definition name="wystawZbroje.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/wystawZbroje.jsp" />
+    </definition>
     <definition name="wyglad.index" extends="myTemplate">
         <put-attribute name="content" value="/WEB-INF/views/wyglad/index.jsp" />
+    </definition>
+    <definition name="zbroja.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/wyglad/indexZbroja.jsp" />
     </definition>
     <definition name="dom.index" extends="myTemplate">
         <put-attribute name="content" value="/WEB-INF/views/dom/index.jsp" />
