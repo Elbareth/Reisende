@@ -10,7 +10,9 @@ import java.util.List;
 @Component
 public class BudynkiAssembler {
     public BudynkiDTO toDto(Budynki budynki){
-        return new BudynkiDTO(budynki.getNazwa(), budynki.getPolozenie(), budynki.getWymiary(), budynki.getPlik());
+        String [] plansza = budynki.getPolozenie().split("-");
+        String [] wymiar = plansza[1].split("x");
+        return new BudynkiDTO(budynki.getNazwa(), plansza[0], wymiar[0], wymiar[1], budynki.getWymiary(), budynki.getPlik());
     }
     public List<BudynkiDTO> toDto(List<Budynki> listaBudynki){
         List<BudynkiDTO> listaBudynkiDto = new ArrayList<BudynkiDTO>();
@@ -20,7 +22,7 @@ public class BudynkiAssembler {
         return listaBudynkiDto;
     }
     public Budynki toEntity(BudynkiDTO budynkiDTO){
-        return new Budynki(budynkiDTO.getNazwa(), budynkiDTO.getPolozenie(), budynkiDTO.getWymiary(), budynkiDTO.getPlik());
+        return new Budynki(budynkiDTO.getNazwa(), budynkiDTO.getPlansza()+"-"+budynkiDTO.getPolozenieX()+"x"+budynkiDTO.getPolozenieY(), budynkiDTO.getWymiary(), budynkiDTO.getPlik());
     }
     public List<Budynki> toEntity(List<BudynkiDTO> listaBudynkiDto){
         List<Budynki> listaBudynki = new ArrayList<Budynki>();

@@ -19,6 +19,16 @@ public class WygladPostaciAssembler {
         });
         return listaWygladPostaciDto;
     }
+    public WygladPostaciDTO toDtoWithId(WygladPostaci wygladPostaci){
+        return new WygladPostaciDTO(wygladPostaci.getId(), wygladPostaci.getNazwa(), wygladPostaci.getKlasa(), wygladPostaci.getPlik(), wygladPostaci.getKategoria());
+    }
+    public List<WygladPostaciDTO> toDtoWithId(List<WygladPostaci> listaWygladPostaci){
+        List<WygladPostaciDTO> listaWygladPostaciDto = new ArrayList<>();
+        listaWygladPostaci.forEach(param ->{
+            listaWygladPostaciDto.add(toDtoWithId(param));
+        });
+        return listaWygladPostaciDto;
+    }
     public WygladPostaci toEntity(WygladPostaciDTO wygladPostaciDTO){
         return new WygladPostaci(wygladPostaciDTO.getNazwa(), wygladPostaciDTO.getKlasa(), wygladPostaciDTO.getPlik(), wygladPostaciDTO.getKategoria());
     }

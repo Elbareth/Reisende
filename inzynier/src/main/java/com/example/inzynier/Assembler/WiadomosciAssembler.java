@@ -20,7 +20,8 @@ public class WiadomosciAssembler {
                 wiadomosci.getOdbiorca().getLogin(),
                 wiadomosci.getTytul(),
                 wiadomosci.getTresc(),
-                wiadomosci.getData());
+                wiadomosci.getData(),
+                wiadomosci.getCzyPrzeczytane());
     }
 
     public List<WiadomosciDTO> toDto(List<Wiadomosci> listaWiadomosci){
@@ -37,7 +38,8 @@ public class WiadomosciAssembler {
                 wiadomosci.getOdbiorca().getLogin(),
                 wiadomosci.getTytul(),
                 wiadomosci.getTresc(),
-                wiadomosci.getData());
+                wiadomosci.getData(),
+                wiadomosci.getCzyPrzeczytane());
     }
 
     public List<WiadomosciDTO> toDtoWithId(List<Wiadomosci> listaWiadomosci){
@@ -54,7 +56,8 @@ public class WiadomosciAssembler {
                 uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getOdbiorca())),
                 wiadomosciDTO.getTytul(),
                 wiadomosciDTO.getTresc(),
-                wiadomosciDTO.getData());
+                wiadomosciDTO.getData(),
+                wiadomosciDTO.getCzyPrzeczytane());
     }
 
     public List<Wiadomosci> toEntity(List<WiadomosciDTO> listaWiadomosciDto){
@@ -63,5 +66,14 @@ public class WiadomosciAssembler {
             listaWiadomosci.add(toEntity(param));
         });
         return listaWiadomosci;
+    }
+
+    public void updateEntity(Wiadomosci wiadomosci, WiadomosciDTO wiadomosciDTO){
+        wiadomosci.setNadawca(uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getNadawca())));
+        wiadomosci.setOdbiorca(uzytkownikAssembler.toEntity(uzytkownikService.findByLogin(wiadomosciDTO.getOdbiorca())));
+        wiadomosci.setData(wiadomosciDTO.getData());
+        wiadomosci.setTytul(wiadomosciDTO.getTytul());
+        wiadomosci.setTresc(wiadomosciDTO.getTresc());
+        wiadomosci.setCzyPrzeczytane(wiadomosciDTO.getCzyPrzeczytane());
     }
 }

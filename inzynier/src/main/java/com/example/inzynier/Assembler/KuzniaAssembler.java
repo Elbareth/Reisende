@@ -1,7 +1,10 @@
 package com.example.inzynier.Assembler;
 
 import com.example.inzynier.DTO.KuzniaDTO;
+import com.example.inzynier.Repositories.UzytkownikRepositories;
+import com.example.inzynier.Repositories.ZbrojaRepositories;
 import com.example.inzynier.tables.Kuznia;
+import com.example.inzynier.tables.Uzytkownik;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +14,15 @@ import java.util.List;
 @Component
 public class KuzniaAssembler {
     @Autowired
-    private UzytkownikAssembler uzytkownikAssembler;
+    private UzytkownikRepositories uzytkownikRepositories;
     @Autowired
-    private ZbrojaAssembler zbrojaAssembler;
+    private ZbrojaRepositories zbrojaRepositories;
     public KuzniaDTO toDto(Kuznia kuznia){
-        return new KuzniaDTO(uzytkownikAssembler.toDto(kuznia.getSprzedajacy()), kuznia.getAktualnaCena(), kuznia.getCzyStala(), kuznia.getIloscLicytujacych(), zbrojaAssembler.toDto(kuznia.getNazwa()), kuznia.getPlik(), kuznia.getKlasa(), kuznia.getOpis());
+        String login = null;
+        if(!(kuznia.getKupujacy() == null)){
+            login = kuznia.getKupujacy().getLogin();
+        }
+        return new KuzniaDTO(kuznia.getSprzedajacy().getLogin(), login, kuznia.getAktualnaCena(), kuznia.getCzyStala(), kuznia.getIloscLicytujacych(), kuznia.getNazwa().getNazwa(), kuznia.getPlik(), kuznia.getKlasa(), kuznia.getOpis(), kuznia.getDataZakonczenia());
     }
     public List<KuzniaDTO> toDto(List<Kuznia> listaKuznia){
         List<KuzniaDTO> listaKuzniaDto = new ArrayList<>();
@@ -24,8 +31,26 @@ public class KuzniaAssembler {
         });
         return listaKuzniaDto;
     }
+    public KuzniaDTO toDtoWithID(Kuznia kuznia){
+        String login = null;
+        if(!(kuznia.getKupujacy() == null)){
+            login = kuznia.getKupujacy().getLogin();
+        }
+        return new KuzniaDTO(kuznia.getId(), kuznia.getSprzedajacy().getLogin(), login, kuznia.getAktualnaCena(), kuznia.getCzyStala(), kuznia.getIloscLicytujacych(), kuznia.getNazwa().getNazwa(), kuznia.getPlik(), kuznia.getKlasa(), kuznia.getOpis(), kuznia.getDataZakonczenia());
+    }
+    public List<KuzniaDTO> toDtoWithID(List<Kuznia> listaKuznia){
+        List<KuzniaDTO> listaKuzniaDto = new ArrayList<>();
+        listaKuznia.forEach(param ->{
+            listaKuzniaDto.add(toDtoWithID(param));
+        });
+        return listaKuzniaDto;
+    }
     public Kuznia toEntity(KuzniaDTO kuzniaDTO){
-        return new Kuznia(uzytkownikAssembler.toEntity(kuzniaDTO.getSprzedajacy()), kuzniaDTO.getAktualnaCena(), kuzniaDTO.getCzyStala(), kuzniaDTO.getIloscLicytujacych(), zbrojaAssembler.toEntity(kuzniaDTO.getNazwa()), kuzniaDTO.getPlik(), kuzniaDTO.getKlasa(), kuzniaDTO.getOpis());
+        Uzytkownik uzytkownik = null;
+        if(uzytkownikRepositories.findByLogin(kuzniaDTO.getKupujacy()).isPresent()){
+            uzytkownik = uzytkownikRepositories.findByLogin(kuzniaDTO.getKupujacy()).get();
+        }
+        return new Kuznia(uzytkownikRepositories.findByLogin(kuzniaDTO.getSprzedajacy()).get(), uzytkownik, kuzniaDTO.getAktualnaCena(), kuzniaDTO.getCzyStala(), kuzniaDTO.getIloscLicytujacych(), zbrojaRepositories.findByNazwa(kuzniaDTO.getNazwa()).get(), kuzniaDTO.getPlik(), kuzniaDTO.getKlasa(), kuzniaDTO.getOpis(), kuzniaDTO.getDataZakonczenia());
     }
     public List<Kuznia> toEntity(List<KuzniaDTO> listaKuzniaDto){
         List<Kuznia> listaKuznia = new ArrayList<>();
@@ -34,7 +59,15 @@ public class KuzniaAssembler {
         });
         return listaKuznia;
     }
-    public void updateEntity(){
-        //TODO
+    public void updateEntity(Kuznia kuznia, KuzniaDTO kuzniaDTO){
+        kuznia.setSprzedajacy(uzytkownikRepositories.findByLogin(kuzniaDTO.getSprzedajacy()).get());
+        kuznia.setKupujacy(uzytkownikRepositories.findByLogin(kuzniaDTO.getKupujacy()).get());
+        kuznia.setAktualnaCena(kuzniaDTO.getAktualnaCena());
+        kuznia.setCzyStala(kuzniaDTO.getCzyStala());
+        kuznia.setIloscLicytujacych(kuzniaDTO.getIloscLicytujacych());
+        kuznia.setKlasa(kuzniaDTO.getKlasa());
+        kuznia.setNazwa(zbrojaRepositories.findByNazwa(kuzniaDTO.getNazwa()).get());
+        kuznia.setOpis(kuzniaDTO.getOpis());
+        kuznia.setPlik(kuzniaDTO.getPlik());
     }
 }
