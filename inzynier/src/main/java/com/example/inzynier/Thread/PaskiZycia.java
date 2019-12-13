@@ -17,7 +17,7 @@ public class PaskiZycia implements Runnable {
         long lastTime = System.currentTimeMillis();
         while(true){
             long test = System.currentTimeMillis();
-            if(test - lastTime >=  3600000){ // TODO przekierowanie do odp strony
+            if(test - lastTime >=  3600000){
                 List<UzytkownikDTO> all = uzytkownikService.findAll();
                 for(int i=0;i<all.size();i++){
                     all.get(i).setHigiena(all.get(i).getHigiena()-2);
