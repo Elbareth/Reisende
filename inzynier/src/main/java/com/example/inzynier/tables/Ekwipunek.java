@@ -12,8 +12,8 @@ public class Ekwipunek {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotNull
-    @OneToOne
-    @JoinColumn(name="login")
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "wlasciciel", referencedColumnName = "login")
     private Uzytkownik wlasciciel;
     @NotNull
     private String nazwa;
@@ -27,6 +27,9 @@ public class Ekwipunek {
         this.nazwa = nazwa;
         this.plik = plik;
         this.opis = opis;
+    }
+
+    public Ekwipunek() {
     }
 
     public Integer getId() {

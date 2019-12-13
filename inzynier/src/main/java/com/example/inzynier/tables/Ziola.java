@@ -26,6 +26,9 @@ public class Ziola {
         this.plik = plik;
     }
 
+    public Ziola() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

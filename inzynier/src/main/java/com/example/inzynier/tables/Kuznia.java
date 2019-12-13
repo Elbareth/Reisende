@@ -1,10 +1,12 @@
 package com.example.inzynier.tables;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-//TODO WAGA ManyToOne!!!
 @Entity
 @Table(name = "d_kuznia")
 public class Kuznia {
@@ -12,9 +14,12 @@ public class Kuznia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="login")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="sprzedajacy", referencedColumnName = "login")
     private Uzytkownik sprzedajacy;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="kupujacy", referencedColumnName = "login")
+    private Uzytkownik kupujacy;
     @NotNull
     @Column(name = "aktualna_cena")
     private Float aktualnaCena;
@@ -34,9 +39,14 @@ public class Kuznia {
     private String klasa;
     @NotNull
     private String opis;
+    @NotNull
+    @Column(name = "data_zakonczenia")
+    @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
+    private LocalDateTime dataZakonczenia;
 
-    public Kuznia(@NotNull Uzytkownik sprzedajacy, @NotNull Float aktualnaCena, @NotNull Boolean czyStala, @NotNull Integer iloscLicytujacych, @NotNull Zbroja nazwa, @NotNull String plik, @NotNull String klasa, @NotNull String opis) {
+    public Kuznia(@NotNull Uzytkownik sprzedajacy, @NotNull Uzytkownik kupujacy, @NotNull Float aktualnaCena, @NotNull Boolean czyStala, @NotNull Integer iloscLicytujacych, @NotNull Zbroja nazwa, @NotNull String plik, @NotNull String klasa, @NotNull String opis, @NotNull LocalDateTime dataZakonczenia) {
         this.sprzedajacy = sprzedajacy;
+        this.kupujacy = kupujacy;
         this.aktualnaCena = aktualnaCena;
         this.czyStala = czyStala;
         this.iloscLicytujacych = iloscLicytujacych;
@@ -44,6 +54,10 @@ public class Kuznia {
         this.plik = plik;
         this.klasa = klasa;
         this.opis = opis;
+        this.dataZakonczenia = dataZakonczenia;
+    }
+
+    public Kuznia() {
     }
 
     public Integer getId() {
@@ -118,11 +132,28 @@ public class Kuznia {
         this.opis = opis;
     }
 
+    public LocalDateTime getDataZakonczenia() {
+        return dataZakonczenia;
+    }
+
+    public void setDataZakonczenia(LocalDateTime dataZakonczenia) {
+        this.dataZakonczenia = dataZakonczenia;
+    }
+
+    public Uzytkownik getKupujacy() {
+        return kupujacy;
+    }
+
+    public void setKupujacy(Uzytkownik kupujacy) {
+        this.kupujacy = kupujacy;
+    }
+
     @Override
     public String toString() {
         return "Kuznia{" +
                 "id=" + id +
                 ", sprzedajacy=" + sprzedajacy +
+                ", kupujacy=" + kupujacy +
                 ", aktualnaCena=" + aktualnaCena +
                 ", czyStala=" + czyStala +
                 ", iloscLicytujacych=" + iloscLicytujacych +
@@ -130,33 +161,29 @@ public class Kuznia {
                 ", plik='" + plik + '\'' +
                 ", klasa='" + klasa + '\'' +
                 ", opis='" + opis + '\'' +
+                ", dataZakonczenia=" + dataZakonczenia +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Kuznia)) return false;
         Kuznia kuznia = (Kuznia) o;
-        return sprzedajacy.equals(kuznia.sprzedajacy) &&
-                aktualnaCena.equals(kuznia.aktualnaCena) &&
-                czyStala.equals(kuznia.czyStala) &&
-                iloscLicytujacych.equals(kuznia.iloscLicytujacych) &&
-                nazwa.equals(kuznia.nazwa) &&
-                plik.equals(kuznia.plik) &&
-                klasa.equals(kuznia.klasa) &&
-                opis.equals(kuznia.opis);
+        return getSprzedajacy().equals(kuznia.getSprzedajacy()) &&
+                getKupujacy().equals(kuznia.getKupujacy()) &&
+                getAktualnaCena().equals(kuznia.getAktualnaCena()) &&
+                getCzyStala().equals(kuznia.getCzyStala()) &&
+                getIloscLicytujacych().equals(kuznia.getIloscLicytujacych()) &&
+                getNazwa().equals(kuznia.getNazwa()) &&
+                getPlik().equals(kuznia.getPlik()) &&
+                getKlasa().equals(kuznia.getKlasa()) &&
+                getOpis().equals(kuznia.getOpis()) &&
+                getDataZakonczenia().equals(kuznia.getDataZakonczenia());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sprzedajacy,
-                aktualnaCena,
-                czyStala,
-                iloscLicytujacych,
-                nazwa,
-                plik,
-                klasa,
-                opis);
+        return Objects.hash(getSprzedajacy(), getKupujacy(), getAktualnaCena(), getCzyStala(), getIloscLicytujacych(), getNazwa(), getPlik(), getKlasa(), getOpis(), getDataZakonczenia());
     }
 }

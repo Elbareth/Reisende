@@ -43,6 +43,9 @@ public class Zbroja {
         this.typ = typ;
     }
 
+    public Zbroja() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

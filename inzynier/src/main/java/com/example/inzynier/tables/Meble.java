@@ -41,6 +41,8 @@ public class Meble {
         this.doswiadczenia = doswiadczenia;
     }
 
+    public Meble(){}
+
     public String getNazwa() {
         return nazwa;
     }

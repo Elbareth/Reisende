@@ -29,6 +29,9 @@ public class Eliksir {
         this.przepis = przepis;
     }
 
+    public Eliksir() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

@@ -13,11 +13,11 @@ public class Questy {
     private Integer id;
     @NotNull
     @ManyToOne
-    @JoinColumn(name="imie")
+    @JoinColumn(name="postac", referencedColumnName = "imie")
     private Postac postac;
     @NotNull
     @ManyToOne
-    @JoinColumn(name="login")
+    @JoinColumn(name="wykonujacy", referencedColumnName = "login")
     private Uzytkownik wykonujacy;
     @NotNull
     @Column(name = "nowe_zadanie")
@@ -37,6 +37,9 @@ public class Questy {
         this.tresc = tresc;
         this.nagroda = nagroda;
         this.czyWykonane = czyWykonane;
+    }
+
+    public Questy() {
     }
 
     public Integer getId() {

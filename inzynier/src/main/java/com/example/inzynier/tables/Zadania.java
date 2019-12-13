@@ -15,7 +15,7 @@ public class Zadania {
     private String tresc;
     @NotNull
     @ManyToOne
-    @JoinColumn(name="imie")
+    @JoinColumn(name="postac", referencedColumnName = "imie")
     private Postac postac;
     @NotNull
     private String nagroda;
@@ -25,6 +25,9 @@ public class Zadania {
         this.tresc = tresc;
         this.postac = postac;
         this.nagroda = nagroda;
+    }
+
+    public Zadania() {
     }
 
     public String getNazwa() {

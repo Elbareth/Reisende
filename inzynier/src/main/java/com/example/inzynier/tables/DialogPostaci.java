@@ -16,8 +16,8 @@ public class DialogPostaci {
     @Column(name="nazwa_questa")
     private String nazwaQuesta;
     @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "imie")
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "postac", referencedColumnName = "imie")
     private Postac postac;
     @NotNull
     private String tekst;
@@ -26,6 +26,9 @@ public class DialogPostaci {
         this.nazwaQuesta = nazwaQuesta;
         this.postac = postac;
         this.tekst = tekst;
+    }
+
+    public DialogPostaci() {
     }
 
     public Integer getId() {

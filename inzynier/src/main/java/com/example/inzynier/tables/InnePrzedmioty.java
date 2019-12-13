@@ -26,6 +26,9 @@ public class InnePrzedmioty {
         this.opis = opis;
     }
 
+    public InnePrzedmioty() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

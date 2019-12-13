@@ -26,6 +26,9 @@ public class Budynki {
         this.plik = plik;
     }
 
+    public Budynki() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

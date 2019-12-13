@@ -23,6 +23,9 @@ public class Postac {
         this.plik = plik;
     }
 
+    public Postac() {
+    }
+
     public String getImie() {
         return imie;
     }

@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
-//TODO UWAGA MantToOne!!!
 @Entity
 @Table(name = "d_wiadomosci")
 public class Wiadomosci {
@@ -30,19 +29,23 @@ public class Wiadomosci {
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.uuuu, HH:mm")
     private LocalDate data;
+    @NotNull
+    @Column(name = "czy_przeczytane")
+    private Boolean czyPrzeczytane;
 
     public Wiadomosci(
             @NotNull Uzytkownik nadawca,
             @NotNull Uzytkownik odbiorca,
             @NotNull String tytul,
             @NotNull String tresc,
-            @NotNull LocalDate data) {
-        System.out.println(nadawca);
+            @NotNull LocalDate data,
+            @NotNull Boolean czyPrzeczytane) {
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
         this.tresc = tresc;
         this.data = data;
+        this.czyPrzeczytane = czyPrzeczytane;
     }
 
     public Wiadomosci(){}
@@ -95,6 +98,14 @@ public class Wiadomosci {
         this.data = data;
     }
 
+    public Boolean getCzyPrzeczytane() {
+        return czyPrzeczytane;
+    }
+
+    public void setCzyPrzeczytane(Boolean czyPrzeczytane) {
+        this.czyPrzeczytane = czyPrzeczytane;
+    }
+
     @Override
     public String toString() {
         return "Wiadomosci{" +
@@ -104,6 +115,7 @@ public class Wiadomosci {
                 ", tytul='" + tytul + '\'' +
                 ", tresc='" + tresc + '\'' +
                 ", data=" + data +
+                ", czyPrzeczytane=" + czyPrzeczytane +
                 '}';
     }
 
@@ -116,7 +128,8 @@ public class Wiadomosci {
                 odbiorca.equals(that.odbiorca) &&
                 tytul.equals(that.tytul) &&
                 tresc.equals(that.tresc) &&
-                data.equals(that.data);
+                data.equals(that.data) &&
+                czyPrzeczytane.equals(that.czyPrzeczytane);
     }
 
     @Override
@@ -125,6 +138,7 @@ public class Wiadomosci {
                 odbiorca,
                 tytul,
                 tresc,
-                data);
+                data,
+                czyPrzeczytane);
     }
 }
