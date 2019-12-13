@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.WygladPostaciAssembler;
 import com.example.inzynier.DTO.WygladPostaciDTO;
 import com.example.inzynier.tables.WygladPostaci;
 import org.assertj.core.api.Assertions;

@@ -1,6 +1,7 @@
-package com.example.inzynier.Controller;
+package com.example.inzynier.java.com.example.inzynier.Controller;
 
 import com.example.inzynier.Assembler.UzytkownikAssembler;
+import com.example.inzynier.Controller.RejestracjaController;
 import com.example.inzynier.DTO.UzytkownikRejestracjaDTO;
 import com.example.inzynier.Repositories.UzytkownikRepositories;
 import org.assertj.core.api.Assertions;
@@ -57,7 +58,7 @@ public class RejestracjaControllerTest {
     }
 
     @Test
-    public void register() {
+    public void register() { //TODO
         uzytkownikDTO.setLogin("Nowy");
         Assertions.assertThat(
                 rejestracjaController.register(

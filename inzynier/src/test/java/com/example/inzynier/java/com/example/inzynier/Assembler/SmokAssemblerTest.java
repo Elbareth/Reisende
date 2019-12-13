@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.SmokAssembler;
 import com.example.inzynier.DTO.SmokDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.tables.Smok;

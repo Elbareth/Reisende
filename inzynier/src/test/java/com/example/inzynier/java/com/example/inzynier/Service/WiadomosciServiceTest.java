@@ -1,10 +1,11 @@
-package com.example.inzynier.Service;
+package com.example.inzynier.java.com.example.inzynier.Service;
 
 import com.example.inzynier.Assembler.UzytkownikAssembler;
 import com.example.inzynier.Assembler.WiadomosciAssembler;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.DTO.WiadomosciDTO;
 import com.example.inzynier.Repositories.WiadomosciRepositories;
+import com.example.inzynier.Service.WiadomosciService;
 import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;
 import org.junit.Before;
@@ -73,7 +74,7 @@ public class WiadomosciServiceTest {
                 "brak",
                 1,
                 "1x1");
-        wiadomosciDTO = new WiadomosciDTO(1,"Admin","Admin7","Wiadomosc", "Wiadomosc Wiadomosc Wiadomosc", LocalDate.of(2012,12,21));
+        wiadomosciDTO = new WiadomosciDTO(1,"Admin","Admin7","Wiadomosc", "Wiadomosc Wiadomosc Wiadomosc", LocalDate.of(2012,12,21), false);
         flyway.clean();
         flyway.migrate();
     }
@@ -95,7 +96,7 @@ public class WiadomosciServiceTest {
 
     @Test
     public void createWiadomosc() {
-        WiadomosciDTO tmp = new WiadomosciDTO("Admin","Admin","WiadomoscX", "Wiadomosc Wiadomosc Wiadomosc", LocalDate.of(2012,12,22));
+        WiadomosciDTO tmp = new WiadomosciDTO("Admin","Admin","WiadomoscX", "Wiadomosc Wiadomosc Wiadomosc", LocalDate.of(2012,12,22), true);
         Assertions.assertThat(wiadomosciService.createWiadomosc(tmp)).isEqualTo(tmp);
     }
 

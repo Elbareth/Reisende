@@ -1,0 +1,10 @@
+INSERT INTO d_meble VALUES('WiadroZgabka',	'gabkaWiadro.png',	'Wanna',	20,	0,	0,	0,	10,	10);
+INSERT INTO d_meble VALUES('DrewnianaWanna',	'drewnianaWanna.png',	'Wanna',	100,	0,	0,	0,	20,	50);
+INSERT INTO d_meble VALUES('StaryPrysznic',	'staryPrysznic.png',	'Wanna',	150,	0,	0,	0,	30,	70);
+INSERT INTO d_meble VALUES('Prysznic',	'prysznic.png',	'Wanna',	170,	0,	0,	0,	40,	100);
+INSERT INTO d_meble VALUES('StaraWanna',	'staraWanna.png',	'Wanna',	200,	0,	0,	0,	50,	150);
+INSERT INTO d_meble VALUES('BialaOkraglaWanna',	'bialaWanna.png',	'Wanna',	220,	0,	0,	0,	60,	170);
+INSERT INTO d_meble VALUES('NiebieskaWanna',	'niebieskaWanna.png',	'Wanna',	250,	0,	0,	0,	70,	200);
+INSERT INTO d_meble VALUES('WannaProstokatna',	'prostokatnaWanna.png',	'Wanna',	270,	0,	0,	0,	80,	230);
+INSERT INTO d_meble VALUES('WannaZNozkami',	'nozkiWanna.png',	'Wanna',	300,	0,	0,	0,	90,	250);
+INSERT INTO d_meble VALUES('ZlotaWanna',	'zlotaWanna.png',	'Wanna',	330,	0,	0,	0,	100,	300);

@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.ZiolaAssembler;
 import com.example.inzynier.DTO.ZiolaDTO;
 import com.example.inzynier.tables.Ziola;
 import org.assertj.core.api.Assertions;
@@ -29,8 +30,14 @@ public class ZiolaAssemblerTest {
 
     @Before
     public void init(){
-        ziola = new Ziola("Jaskolcze ziele","1x1","...","jaskolcze.png");
-        ziolaDTO = new ZiolaDTO("Jaskolcze ziele","1x1","...","jaskolcze.png");
+        List<String> str = new ArrayList<>();
+        str.add("tlo7.jpg");
+        str.add("tlo8.jpg");
+        List<Integer> intg = new ArrayList<>();
+        intg.add(1);
+        intg.add(2);
+        ziola = new Ziola("Jaskolcze ziele","tlo7.jpg-1x1;tlo8.jpg-2x2","...","jaskolcze.png");
+        ziolaDTO = new ZiolaDTO("Jaskolcze ziele",str, intg, intg,"...","jaskolcze.png");
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(ziola);

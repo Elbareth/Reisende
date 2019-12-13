@@ -1,5 +1,6 @@
-package com.example.inzynier.Controller;
+package com.example.inzynier.java.com.example.inzynier.Controller;
 
+import com.example.inzynier.Controller.WylogujController;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;

@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.PostacAssembler;
 import com.example.inzynier.DTO.PostacDTO;
 import com.example.inzynier.tables.Postac;
 import org.assertj.core.api.Assertions;
@@ -29,8 +30,8 @@ public class PostacAssemblerTest {
 
     @Before
     public void init(){
-        postac = new Postac("Loki","1x1","loki.png");
-        postacDTO = new PostacDTO("Loki","1x1","loki.png");
+        postac = new Postac("Loki","tlo7.jpg-1x1","loki.png");
+        postacDTO = new PostacDTO("Loki","tlo7.jpg", 1,1,"loki.png");
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(postac);

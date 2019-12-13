@@ -1,5 +1,6 @@
-package com.example.inzynier.Controller;
+package com.example.inzynier.java.com.example.inzynier.Controller;
 
+import com.example.inzynier.Controller.MapaController;
 import com.example.inzynier.DTO.Postac;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.Service.UzytkownikService;
@@ -80,7 +81,7 @@ public class MapaControllerTest {
                 mapaController.aktualizuj(
                         sesja,
                         new ModelMap(),
-                        new Postac("2","5")).toString())
+                        new Postac("tlo6.jpg","2","5")).toString())
                 .isEqualTo(
                         new ModelAndView(
                                 "mapa.index",
@@ -96,7 +97,7 @@ public class MapaControllerTest {
                     mapaController.aktualizuj(
                             sesja,
                             new ModelMap(),
-                            new Postac("2","5")).toString())
+                            new Postac("tlo6.jpg","2","5")).toString())
                     .isEqualTo(
                             new ModelAndView(
                                     "login",

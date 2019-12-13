@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.QuestyAssembler;
 import com.example.inzynier.DTO.PostacDTO;
 import com.example.inzynier.DTO.QuestyDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;
@@ -66,7 +67,7 @@ public class QuestyAssemblerTest {
                 1,
                 "1x1");
         questy = new Questy(postac, uzytkownik, "pierscien Angulara","...","Zloto",false);
-        PostacDTO postacDTO = new PostacDTO("Loki","1x1","loki.png");
+        PostacDTO postacDTO = new PostacDTO("Loki","tlo7.jpg",1,1,"loki.png");
         UzytkownikDTO uzytkownikDTO = new UzytkownikDTO(
                 "Admin",
                 "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f",
@@ -98,7 +99,7 @@ public class QuestyAssemblerTest {
                 "brak",
                 1,
                 "1x1");
-        questyDTO = new QuestyDTO(postacDTO, uzytkownikDTO, "pierscien Angulara","...","Zloto",false);
+        questyDTO = new QuestyDTO("Loki", "Admin", "pierscien Angulara","...","Zloto",false);
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(questy);

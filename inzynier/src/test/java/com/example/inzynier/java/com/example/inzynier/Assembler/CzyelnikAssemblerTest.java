@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.CzyelnikAssembler;
 import com.example.inzynier.DTO.CzytelnikDTO;
 import com.example.inzynier.DTO.KsiazkiDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;

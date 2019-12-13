@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.UzytkownikAssembler;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.tables.Uzytkownik;
 import org.assertj.core.api.Assertions;

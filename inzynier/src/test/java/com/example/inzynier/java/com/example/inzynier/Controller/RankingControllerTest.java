@@ -1,6 +1,7 @@
-package com.example.inzynier.Controller;
+package com.example.inzynier.java.com.example.inzynier.Controller;
 
 import com.example.inzynier.Assembler.UzytkownikAssembler;
+import com.example.inzynier.Controller.RankingController;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.Repositories.UzytkownikRepositories;
 import org.assertj.core.api.Assertions;
@@ -51,7 +52,7 @@ public class RankingControllerTest {
                 "uzytkownikLista",
                 uzytkownikAssembler.toDto(
                         uzytkownikRepositories.findAll().subList(15,21)));
-        model.addObject("maxPages", (int) uzytkownikRepositories.findAll().size()/15 + 1);
+        model.addObject("maxPages", uzytkownikRepositories.findAll().size()/15 + 1);
         model.addObject("page", 2); // i dodajemy ja do naszego modelAndView
         Assertions.assertThat(
                 rankingController.getRanking(

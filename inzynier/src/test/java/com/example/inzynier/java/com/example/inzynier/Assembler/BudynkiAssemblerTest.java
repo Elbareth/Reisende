@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.BudynkiAssembler;
 import com.example.inzynier.DTO.BudynkiDTO;
 import com.example.inzynier.tables.Budynki;
 import org.assertj.core.api.Assertions;
@@ -29,8 +30,8 @@ public class BudynkiAssemblerTest {
 
     @Before
     public void init(){
-        budynki = new Budynki("Tartak","1x1","50x20","tartak.png");
-        budynkiDTO = new BudynkiDTO("Tartak","1x1","50x20","tartak.png");
+        budynki = new Budynki("Tartak","tlo1.jpg-1x1","50x20","tartak.png");
+        budynkiDTO = new BudynkiDTO("Tartak","tlo1.jpg","1","1","50x20","tartak.png");
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(budynki);

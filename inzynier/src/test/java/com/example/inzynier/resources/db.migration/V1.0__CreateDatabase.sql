@@ -26,7 +26,7 @@ CREATE TABLE d_dialog_postaci (
     id INT NOT NULL AUTO_INCREMENT,
     nazwa_questa VARCHAR(50) NOT NULL,
     postac VARCHAR(50) NOT NULL,
-    tekst VARCHAR(200) NOT NULL,
+    tekst VARCHAR(1000) NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -86,7 +86,7 @@ INSERT INTO d_eliksir VALUES ('EliksirMadrosci',	300.0,	'eliksirMadrosci.png',	'
 INSERT INTO d_eliksir VALUES ('EliksirWielosokowy',	200.00,	'eliksirWielosokowy.png',	'Ten eliksir spowoduje kompletna zmiane Twojego wygladu',	'sliaz10,redestptasi20');
 INSERT INTO d_eliksir VALUES ('EliksirWitalnosci',	100.00,	'eliksirWitalnosci.png',	'Ten eliksir spowoduje ze calkowicie przestaniesz byc zmeczony. Laduje pasek snu na max',	'jagody10');
 INSERT INTO d_eliksir VALUES ('EliksirZdrowia',	200.00,	'eliksirZdrowia.png',	'Ten eliksir spowoduje ze plaga, ktora nawiedzila Twoja wioske kompletnie zniknie i wszyscy chorzy na nia ludzie zostana uleczeni',	'rumianek10,lawenda5,szalwia15');
-INSERT INTO d_eliksir VALUES ('KremWiedzmy',	300.00,	'kremWiedzmy.png',	'Ta masc jest niezbedna kazdej czarownicy. Zapewnia dobry nastroj i niesamowita zabawe',	'czerwonymuchomor10,niebieskigrzyk15');
+INSERT INTO d_eliksir VALUES ('KremWiedzmy',	300.00,	'kremWiedzmy.png',	'Ta masc jest niezbedna kazdej czarownicy. Zapewnia dobry nastroj i niesamowita zabawe',	'czerwonymuchomor10,niebieskigrzyb15');
 INSERT INTO d_eliksir VALUES ('PlynneZloto',	300.00,	'plynneZloto.png',	'Ten eliksir zapewni Ci szybki przyplyw gotowki. Spowoduje, ze do Twojego mieszka przybedzie 500 sztuk zlota',	'lwiapaszczka50,mlecz5,lawenda10');
 
 CREATE TABLE d_inne_przedmioty(
@@ -198,6 +198,7 @@ Dbaj o potrzeby swoje i swojego smoka!',	100);
 CREATE TABLE d_kuznia(
     id INT NOT NULL AUTO_INCREMENT,
     sprzedajacy VARCHAR(50) NOT NULL,
+    kupujacy VARCHAR(50),
     aktualna_cena DECIMAL(6,2) NOT NULL,
     czy_stala BIT(1) NOT NULL,
     ilosc_licytujacych INT NOT NULL,
@@ -205,6 +206,7 @@ CREATE TABLE d_kuznia(
     plik VARCHAR(50) NOT NULL,
     klasa VARCHAR(50) NOT NULL,
     opis VARCHAR(200) NOT NULL,
+    data_zakonczenia DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -526,7 +528,7 @@ INSERT INTO d_zadania VALUES('Suknia slubna', 'Nazbieraj odpowienie kwiaty i zpa
 INSERT INTO d_zadania VALUES('Tajemniczy pierscien', 'Pierscien Andvariego jest bardzo cenny. Wszystko co zostanie nim dotchniete natychmiast zamienia sie w zloto. Andvari nie chce oddac do za darmo. Mozesz zaplacic mu 1000 sztuk zlota lub go zabic.', 'Andvari', '1000Doswiadczenia');
 INSERT INTO d_zadania VALUES('Wampir', 'Na starym cmentarzystku zadomowil sie wampir. Od tej pory nikt nie czuje sie bezpiecznie. Pozbadz sie go a czeka Cie sowiata zaplata', 'Burmistrz', '1000Doswiadczenia,1PelerynaWampira');
 INSERT INTO d_zadania VALUES('Wandale w lesie', 'Podrozni przybywajacy do naszego baru wydaja sie zaniepokojeni. Okazalo sie, ze w naszym lesie grasuja wandale: smieca i podpalaja drzewa,napadaja na podroznych. Pozbadz sie ich', 'Lesnik', '100Doswiadczenia,1Luneta');
-INSERT INTO d_zadania VALUES('Wilki w Lesie', 'W lesie grasuja wilki, ktore zjadaja zwierzeta hodowlane i strasza podroznych. Przez nie nasza wioska upada! Pomoz w pozbyciu sie ich', 'Burmistrz Miasta', '100Doswiadczenia,100Zlota');
+INSERT INTO d_zadania VALUES('Wilki w Lesie', 'W lesie grasuja wilki, ktore zjadaja zwierzeta hodowlane i strasza podroznych. Przez nie nasza wioska upada! Pomoz w pozbyciu sie ich', 'Burmistrz', '100Doswiadczenia,100Zlota');
 INSERT INTO d_zadania VALUES('Wspaniala kolekcja', 'W naszej wiosce mieszka znany na caly swiat kolekcjoner! Ma najwieksza na swiecie kolekcje lalek. Pomoz mu poszerzyc ja o kolejna sztuke', 'Kolekcjoner', '10Doswiadczenia,100Zlota');
 INSERT INTO d_zadania VALUES('Zagadka', 'Loki moze dla Ciebie zdobyc Palantir ale musisz odpowiedziec na jego prosta zagadke', 'Loki', '10Doswiadczenia,1Palantir');
 INSERT INTO d_zadania VALUES('Zaginiony Mjonir', 'Thor zaginal Mjonir. Niedlugo pozniej dostal list od Thryma-to on go ukradl. W ramach okupu chce slub z piekna Freya. Moze by tak przebrac Thora za panne mloda? Zdobadz suknie slubna', 'Thor', '100Doswiadczenia');

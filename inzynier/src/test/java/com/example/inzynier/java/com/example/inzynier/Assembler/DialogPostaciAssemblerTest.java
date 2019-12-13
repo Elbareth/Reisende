@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.DialogPostaciAssembler;
 import com.example.inzynier.DTO.DialogPostaciDTO;
 import com.example.inzynier.DTO.PostacDTO;
 import com.example.inzynier.tables.DialogPostaci;
@@ -33,8 +34,8 @@ public class DialogPostaciAssemblerTest {
     public void init(){
         Postac postac = new Postac("Thor","1x1","thor.png");
         dialogPostaci = new DialogPostaci("Mlot Thora",postac,"...");
-        PostacDTO postacDTO = new PostacDTO("Thor","1x1","thor.png");
-        dialogPostaciDTO = new DialogPostaciDTO("Mlot Thora",postacDTO,"...");
+        PostacDTO postacDTO = new PostacDTO("Thor","tlo7.png",1,1,"thor.png");
+        dialogPostaciDTO = new DialogPostaciDTO("Mlot Thora","Thor","...");
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(dialogPostaci);

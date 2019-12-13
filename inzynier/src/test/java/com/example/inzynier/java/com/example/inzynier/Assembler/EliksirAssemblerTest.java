@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.EliksirAssembler;
 import com.example.inzynier.DTO.EliksirDTO;
 import com.example.inzynier.tables.Eliksir;
 import org.assertj.core.api.Assertions;

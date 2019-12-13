@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.InnePrzedmiotyAssembler;
 import com.example.inzynier.DTO.InnePrzedmiotyDTO;
 import com.example.inzynier.tables.InnePrzedmioty;
 import org.assertj.core.api.Assertions;

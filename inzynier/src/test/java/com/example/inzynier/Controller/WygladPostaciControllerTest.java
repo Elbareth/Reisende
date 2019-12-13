@@ -1,7 +1,5 @@
-package com.example.inzynier.java.com.example.inzynier.BasicService;
+package com.example.inzynier.Controller;
 
-import com.example.inzynier.BasicService.HashPassword;
-import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,13 +12,12 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HashPasswordTest {
+public class WygladPostaciControllerTest {
 
     @Autowired
-    protected Flyway flyway;
-
+    private WygladPostaciController wygladPostaciController;
     @Autowired
-    private HashPassword hash;
+    private Flyway flyway;
 
     @Before
     public void init(){
@@ -29,8 +26,26 @@ public class HashPasswordTest {
     }
 
     @Test
-    public void hashMyPassword() {
-        String shashowaneHaslo = null;
-        Assertions.assertThat(hash.hashMyPassword("Admin",shashowaneHaslo)).isEqualTo("87639401321364826396195642631510383779176952804949321024754455897071731039599");
+    public void getWygladPostaci() {
+    }
+
+    @Test
+    public void getWygladPostaciCantLogin() {
+    }
+
+    @Test
+    public void saveWyglad() {
+    }
+
+    @Test
+    public void saveWygladCantLogin() {
+    }
+
+    @Test
+    public void getZbroja() {
+    }
+
+    @Test
+    public void getZbrojaCantLogin() {
     }
 }

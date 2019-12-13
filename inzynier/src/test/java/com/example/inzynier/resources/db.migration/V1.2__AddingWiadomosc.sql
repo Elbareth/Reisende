@@ -5,5 +5,6 @@ CREATE TABLE d_wiadomosci(
     tytul VARCHAR(50) NOT NULL,
     tresc VARCHAR(1000) NOT NULL,
     data DATETIME NOT NULL,
+    czy_przeczytane BOOLEAN NOT NULL,
     PRIMARY KEY(id)
 );

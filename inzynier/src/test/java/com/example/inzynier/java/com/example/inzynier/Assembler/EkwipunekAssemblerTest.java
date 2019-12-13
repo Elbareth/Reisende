@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.EkwipunekAssembler;
 import com.example.inzynier.DTO.EkwipunekDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.tables.Ekwipunek;

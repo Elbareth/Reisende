@@ -1,6 +1,7 @@
-package com.example.inzynier.Controller;
+package com.example.inzynier.java.com.example.inzynier.Controller;
 
 import com.example.inzynier.Assembler.WiadomosciAssembler;
+import com.example.inzynier.Controller.WiadomoscController;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.DTO.WiadomosciDTO;
 import com.example.inzynier.Repositories.UzytkownikRepositories;
@@ -50,7 +51,7 @@ public class WiadomoscControllerTest {
     @Before
     public void init(){
         sesja.setAttribute("login", "Admin");
-        wiadomosciDTO = new WiadomosciDTO("Admin","Admin","Tytul","...", LocalDate.of(2017,7,2));
+        wiadomosciDTO = new WiadomosciDTO("Admin","Admin","Tytul","...", LocalDate.of(2017,7,2), true);
         flyway.clean();
         flyway.migrate();
     }
@@ -201,11 +202,12 @@ public class WiadomoscControllerTest {
         ModelAndView model = new ModelAndView("wiadomosci.index");
         model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
         model.addObject("page",1);
+        String tmp = wiadomoscController
+                .wyslijWiadomosc(wiadomosciDTO, sesja, new ModelMap())
+                .toString();
         model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
         Assertions.assertThat(
-                wiadomoscController
-                        .wyslijWiadomosc(wiadomosciDTO, sesja, new ModelMap())
-                        .toString()
+                tmp
         )
                 .isEqualTo(
                         model
@@ -304,11 +306,12 @@ public class WiadomoscControllerTest {
         ModelAndView model = new ModelAndView("wiadomosci.index");
         model.addObject("maxPages",wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get()).size()/11+1);
         model.addObject("page",1);
+        String tmp = wiadomoscController
+                .wyslijRE("Admin", wiadomosciDTO, sesja, new ModelMap())
+                .toString();
         model.addObject("wiadomosciList",wiadomosciAssembler.toDtoWithId(wiadomosciRepositories.findAllByOdbiorcaOrderByDataDesc(uzytkownikRepositories.findByLogin("Admin").get())).subList(0,10));
         Assertions.assertThat(
-                wiadomoscController
-                        .wyslijRE("Admin", wiadomosciDTO, sesja, new ModelMap())
-                        .toString()
+                tmp
         )
                 .isEqualTo(
                         model.toString());

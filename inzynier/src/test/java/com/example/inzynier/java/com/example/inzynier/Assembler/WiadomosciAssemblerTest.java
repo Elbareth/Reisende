@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.WiadomosciAssembler;
 import com.example.inzynier.DTO.WiadomosciDTO;
 import com.example.inzynier.tables.Uzytkownik;
 import com.example.inzynier.tables.Wiadomosci;
@@ -96,9 +97,9 @@ public class WiadomosciAssemblerTest {
                 "brak",
                 1,
                 "1x1");
-        wiadomosci = new Wiadomosci(nadawca, odbiorca, "tytul","...", LocalDate.of(2012,12,22));
-        wiadomosciDTO = new WiadomosciDTO("Admin", "Admin", "tytul","...", LocalDate.of(2012,12,22));
-        wiadomosciDTO2 = new WiadomosciDTO(1,"Admin", "Admin", "tytul","...", LocalDate.of(2012,12,22));
+        wiadomosci = new Wiadomosci(nadawca, odbiorca, "tytul","...", LocalDate.of(2012,12,22), true);
+        wiadomosciDTO = new WiadomosciDTO("Admin", "Admin", "tytul","...", LocalDate.of(2012,12,22), true);
+        wiadomosciDTO2 = new WiadomosciDTO(1,"Admin", "Admin", "tytul","...", LocalDate.of(2012,12,22), true);
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         listDto2 = new ArrayList<>();

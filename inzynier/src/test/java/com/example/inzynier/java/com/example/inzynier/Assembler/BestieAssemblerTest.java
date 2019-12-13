@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.BestieAssembler;
 import com.example.inzynier.DTO.BestieDTO;
 import com.example.inzynier.tables.Bestie;
 import org.assertj.core.api.Assertions;

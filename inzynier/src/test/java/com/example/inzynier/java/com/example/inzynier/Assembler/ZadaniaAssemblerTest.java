@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.ZadaniaAssembler;
 import com.example.inzynier.DTO.PostacDTO;
 import com.example.inzynier.DTO.ZadaniaDTO;
 import com.example.inzynier.tables.Postac;
@@ -33,8 +34,8 @@ public class ZadaniaAssemblerTest {
     public void init(){
         Postac postac = new Postac("Thor","1x1","thor.png");
         zadania = new Zadania("Mlot Thora","...",postac,"Zloto");
-        PostacDTO postacDTO = new PostacDTO("Thor","1x1","thor.png");
-        zadaniaDTO = new ZadaniaDTO("Mlot Thora","...",postacDTO,"Zloto");
+        PostacDTO postacDTO = new PostacDTO("Thor","tlo7.jpg",1,1,"thor.png");
+        zadaniaDTO = new ZadaniaDTO("Mlot Thora","...","Thor","Zloto");
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(zadania);

@@ -1,5 +1,6 @@
-package com.example.inzynier.BasicService;
+package com.example.inzynier.java.com.example.inzynier.BasicService;
 
+import com.example.inzynier.BasicService.PoborMonet;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;

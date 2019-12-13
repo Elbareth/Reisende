@@ -1,5 +1,6 @@
-package com.example.inzynier.Assembler;
+package com.example.inzynier.java.com.example.inzynier.Assembler;
 
+import com.example.inzynier.Assembler.KuzniaAssembler;
 import com.example.inzynier.DTO.KuzniaDTO;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.DTO.ZbrojaDTO;
@@ -14,6 +15,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.time.LocalDateTime;
 import java.util.*;
 
 @RunWith(SpringRunner.class)
@@ -65,7 +68,7 @@ public class KuzniaAssemblerTest {
                 1,
                 "1x1");
         Zbroja zbroja = new Zbroja("Mlot Thora", 20,10,10,50,"mlot.png","wszystkieKlasy","bron");
-        kuznia = new Kuznia(uzytkownik, 20.0f, false, 2, zbroja,"mlot.png","wszystkieKlasy","...");
+        kuznia = new Kuznia(uzytkownik, null, 20.0f, false, 2, zbroja,"mlot.png","wszystkieKlasy","...", LocalDateTime.now().plusDays(2));
         UzytkownikDTO uzytkownikDto = new UzytkownikDTO(
                 "Admin",
                 "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f",
@@ -98,7 +101,7 @@ public class KuzniaAssemblerTest {
                 1,
                 "1x1");
         ZbrojaDTO zbrojaDTO = new ZbrojaDTO("Mlot Thora", 20,10,10,50,"mlot.png","wszystkieKlasy","bron");
-        kuzniaDTO = new KuzniaDTO(uzytkownikDto, 20.0f, false, 2, zbrojaDTO,"mlot.png","wszystkieKlasy","...");
+        kuzniaDTO = new KuzniaDTO(uzytkownikDto.getLogin(), null, 20.0f, false, 2, zbrojaDTO.getNazwa(),"mlot.png","wszystkieKlasy","...", LocalDateTime.now().plusDays(2));
         list = new ArrayList<>();
         listDto = new ArrayList<>();
         list.add(kuznia);

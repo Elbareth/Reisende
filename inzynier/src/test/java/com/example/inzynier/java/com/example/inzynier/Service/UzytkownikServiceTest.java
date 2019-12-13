@@ -1,8 +1,9 @@
-package com.example.inzynier.Service;
+package com.example.inzynier.java.com.example.inzynier.Service;
 
 import com.example.inzynier.Assembler.UzytkownikAssembler;
 import com.example.inzynier.DTO.UzytkownikDTO;
 import com.example.inzynier.Repositories.UzytkownikRepositories;
+import com.example.inzynier.Service.UzytkownikService;
 import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;
 import org.junit.Before;

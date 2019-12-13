@@ -1,4 +1,4 @@
-package com.example.inzynier;
+package com.example.inzynier.java.com.example.inzynier;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
