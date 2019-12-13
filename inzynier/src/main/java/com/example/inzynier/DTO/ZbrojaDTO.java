@@ -24,6 +24,9 @@ public class ZbrojaDTO {
         this.typ = typ;
     }
 
+    public ZbrojaDTO() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }

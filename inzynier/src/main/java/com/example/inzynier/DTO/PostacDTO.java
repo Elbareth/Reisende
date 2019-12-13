@@ -4,13 +4,20 @@ import java.util.Objects;
 
 public class PostacDTO {
     private String imie;
-    private String polozenie;
+    private String plansza;
+    private Integer polozenieX;
+    private Integer polozenieY;
     private String plik;
 
-    public PostacDTO(String imie, String polozenie, String plik) {
+    public PostacDTO(String imie, String plansza, Integer polozenieX, Integer polozenieY, String plik) {
         this.imie = imie;
-        this.polozenie = polozenie;
+        this.plansza = plansza;
+        this.polozenieX = polozenieX;
+        this.polozenieY = polozenieY;
         this.plik = plik;
+    }
+
+    public PostacDTO() {
     }
 
     public String getImie() {
@@ -21,12 +28,20 @@ public class PostacDTO {
         this.imie = imie;
     }
 
-    public String getPolozenie() {
-        return polozenie;
+    public Integer getPolozenieX() {
+        return polozenieX;
     }
 
-    public void setPolozenie(String polozenie) {
-        this.polozenie = polozenie;
+    public void setPolozenieX(Integer polozenieX) {
+        this.polozenieX = polozenieX;
+    }
+
+    public Integer getPolozenieY() {
+        return polozenieY;
+    }
+
+    public void setPolozenieY(Integer polozenieY) {
+        this.polozenieY = polozenieY;
     }
 
     public String getPlik() {
@@ -37,11 +52,21 @@ public class PostacDTO {
         this.plik = plik;
     }
 
+    public String getPlansza() {
+        return plansza;
+    }
+
+    public void setPlansza(String plansza) {
+        this.plansza = plansza;
+    }
+
     @Override
     public String toString() {
         return "PostacDTO{" +
                 "imie='" + imie + '\'' +
-                ", polozenie='" + polozenie + '\'' +
+                ", plansza='" + plansza + '\'' +
+                ", polozenieX=" + polozenieX +
+                ", polozenieY=" + polozenieY +
                 ", plik='" + plik + '\'' +
                 '}';
     }
@@ -49,17 +74,17 @@ public class PostacDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof PostacDTO)) return false;
         PostacDTO postacDTO = (PostacDTO) o;
-        return imie.equals(postacDTO.imie) &&
-                polozenie.equals(postacDTO.polozenie) &&
-                plik.equals(postacDTO.plik);
+        return getImie().equals(postacDTO.getImie()) &&
+                getPlansza().equals(postacDTO.getPlansza()) &&
+                getPolozenieX().equals(postacDTO.getPolozenieX()) &&
+                getPolozenieY().equals(postacDTO.getPolozenieY()) &&
+                getPlik().equals(postacDTO.getPlik());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imie,
-                polozenie,
-                plik);
+        return Objects.hash(getImie(), getPlansza(), getPolozenieX(), getPolozenieY(), getPlik());
     }
 }

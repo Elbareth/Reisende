@@ -5,14 +5,17 @@ import java.util.Objects;
 public class ZadaniaDTO {
     private String nazwa;
     private String tresc;
-    private PostacDTO postac;
+    private String postac;
     private String nagroda;
 
-    public ZadaniaDTO(String nazwa, String tresc, PostacDTO postac, String nagroda) {
+    public ZadaniaDTO(String nazwa, String tresc, String postac, String nagroda) {
         this.nazwa = nazwa;
         this.tresc = tresc;
         this.postac = postac;
         this.nagroda = nagroda;
+    }
+
+    public ZadaniaDTO() {
     }
 
     public String getNazwa() {
@@ -31,11 +34,11 @@ public class ZadaniaDTO {
         this.tresc = tresc;
     }
 
-    public PostacDTO getPostac() {
+    public String getPostac() {
         return postac;
     }
 
-    public void setPostac(PostacDTO postac) {
+    public void setPostac(String postac) {
         this.postac = postac;
     }
 

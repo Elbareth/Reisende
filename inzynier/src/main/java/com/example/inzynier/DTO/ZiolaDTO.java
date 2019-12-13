@@ -1,19 +1,26 @@
 package com.example.inzynier.DTO;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ZiolaDTO {
     private String nazwa;
-    private String polozenie;
+    private List<String> plansza;
+    private List<Integer> polozenieX;
+    private List<Integer> polozenieY;
     private String opis;
     private String plik;
 
-
-    public ZiolaDTO(String nazwa, String polozenie, String opis, String plik) {
+    public ZiolaDTO(String nazwa, List<String> plansza, List<Integer> polozenieX, List<Integer> polozenieY, String opis, String plik) {
         this.nazwa = nazwa;
-        this.polozenie = polozenie;
+        this.plansza = plansza;
+        this.polozenieX = polozenieX;
+        this.polozenieY = polozenieY;
         this.opis = opis;
         this.plik = plik;
+    }
+
+    public ZiolaDTO() {
     }
 
     public String getNazwa() {
@@ -24,12 +31,28 @@ public class ZiolaDTO {
         this.nazwa = nazwa;
     }
 
-    public String getPolozenie() {
-        return polozenie;
+    public List<String> getPlansza() {
+        return plansza;
     }
 
-    public void setPolozenie(String polozenie) {
-        this.polozenie = polozenie;
+    public void setPlansza(List<String> plansza) {
+        this.plansza = plansza;
+    }
+
+    public List<Integer> getPolozenieX() {
+        return polozenieX;
+    }
+
+    public void setPolozenieX(List<Integer> polozenieX) {
+        this.polozenieX = polozenieX;
+    }
+
+    public List<Integer> getPolozenieY() {
+        return polozenieY;
+    }
+
+    public void setPolozenieY(List<Integer> polozenieY) {
+        this.polozenieY = polozenieY;
     }
 
     public String getOpis() {
@@ -52,7 +75,9 @@ public class ZiolaDTO {
     public String toString() {
         return "ZiolaDTO{" +
                 "nazwa='" + nazwa + '\'' +
-                ", polozenie='" + polozenie + '\'' +
+                ", plansza=" + plansza +
+                ", polozenieX=" + polozenieX +
+                ", polozenieY=" + polozenieY +
                 ", opis='" + opis + '\'' +
                 ", plik='" + plik + '\'' +
                 '}';
@@ -61,19 +86,18 @@ public class ZiolaDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof ZiolaDTO)) return false;
         ZiolaDTO ziolaDTO = (ZiolaDTO) o;
-        return nazwa.equals(ziolaDTO.nazwa) &&
-                polozenie.equals(ziolaDTO.polozenie) &&
-                opis.equals(ziolaDTO.opis) &&
-                plik.equals(ziolaDTO.plik);
+        return getNazwa().equals(ziolaDTO.getNazwa()) &&
+                getPlansza().equals(ziolaDTO.getPlansza()) &&
+                getPolozenieX().equals(ziolaDTO.getPolozenieX()) &&
+                getPolozenieY().equals(ziolaDTO.getPolozenieY()) &&
+                getOpis().equals(ziolaDTO.getOpis()) &&
+                getPlik().equals(ziolaDTO.getPlik());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nazwa,
-                polozenie,
-                opis,
-                plik);
+        return Objects.hash(getNazwa(), getPlansza(), getPolozenieX(), getPolozenieY(), getOpis(), getPlik());
     }
 }

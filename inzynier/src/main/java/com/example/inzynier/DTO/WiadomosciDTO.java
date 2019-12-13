@@ -10,23 +10,26 @@ public class WiadomosciDTO {
     private String tytul;
     private String tresc;
     private LocalDate data;
+    private Boolean czyPrzeczytane;
 
 
-    public WiadomosciDTO(String nadawca, String odbiorca, String tytul, String tresc, LocalDate data) {
+    public WiadomosciDTO(String nadawca, String odbiorca, String tytul, String tresc, LocalDate data, Boolean czyPrzeczytane) {
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
         this.tresc = tresc;
         this.data = data;
+        this.czyPrzeczytane = czyPrzeczytane;
     }
 
-    public WiadomosciDTO(Integer id, String nadawca, String odbiorca, String tytul, String tresc, LocalDate data) {
+    public WiadomosciDTO(Integer id, String nadawca, String odbiorca, String tytul, String tresc, LocalDate data, Boolean czyPrzeczytane) {
         this.id = id;
         this.nadawca = nadawca;
         this.odbiorca = odbiorca;
         this.tytul = tytul;
         this.tresc = tresc;
         this.data = data;
+        this.czyPrzeczytane = czyPrzeczytane;
     }
 
     public WiadomosciDTO(){}
@@ -79,6 +82,14 @@ public class WiadomosciDTO {
         this.data = data;
     }
 
+    public Boolean getCzyPrzeczytane() {
+        return czyPrzeczytane;
+    }
+
+    public void setCzyPrzeczytane(Boolean czyPrzeczytane) {
+        this.czyPrzeczytane = czyPrzeczytane;
+    }
+
     @Override
     public String toString() {
         return "WiadomosciDTO{" +
@@ -88,6 +99,7 @@ public class WiadomosciDTO {
                 ", tytul='" + tytul + '\'' +
                 ", tresc='" + tresc + '\'' +
                 ", data=" + data +
+                ", czyPrzeczytane=" + czyPrzeczytane +
                 '}';
     }
 
@@ -100,7 +112,8 @@ public class WiadomosciDTO {
                 odbiorca.equals(that.odbiorca) &&
                 tytul.equals(that.tytul) &&
                 tresc.equals(that.tresc) &&
-                data.equals(that.data);
+                data.equals(that.data) &&
+                czyPrzeczytane.equals(that.czyPrzeczytane);
     }
 
     @Override
@@ -109,6 +122,7 @@ public class WiadomosciDTO {
                 odbiorca,
                 tytul,
                 tresc,
-                data);
+                data,
+                czyPrzeczytane);
     }
 }

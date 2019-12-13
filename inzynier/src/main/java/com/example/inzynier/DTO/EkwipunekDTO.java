@@ -16,6 +16,17 @@ public class EkwipunekDTO {
         this.opis = opis;
     }
 
+    public EkwipunekDTO(Integer id, UzytkownikDTO wlasciciel, String nazwa, String plik, String opis) {
+        this.id = id;
+        this.wlasciciel = wlasciciel;
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.opis = opis;
+    }
+
+    public EkwipunekDTO() {
+    }
+
     public Integer getId() {
         return id;
     }

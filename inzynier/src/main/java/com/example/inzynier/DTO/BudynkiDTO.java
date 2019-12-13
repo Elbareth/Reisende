@@ -4,15 +4,22 @@ import java.util.Objects;
 
 public class BudynkiDTO {
     private String nazwa;
-    private String polozenie;
+    private String plansza;
+    private String polozenieX;
+    private String polozenieY;
     private String wymiary;
     private String plik;
 
-    public BudynkiDTO(String nazwa, String polozenie, String wymiary, String plik) {
+    public BudynkiDTO(String nazwa, String plansza, String polozenieX, String polozenieY, String wymiary, String plik) {
         this.nazwa = nazwa;
-        this.polozenie = polozenie;
+        this.plansza = plansza;
+        this.polozenieX = polozenieX;
+        this.polozenieY = polozenieY;
         this.wymiary = wymiary;
         this.plik = plik;
+    }
+
+    public BudynkiDTO() {
     }
 
     public String getNazwa() {
@@ -23,12 +30,28 @@ public class BudynkiDTO {
         this.nazwa = nazwa;
     }
 
-    public String getPolozenie() {
-        return polozenie;
+    public String getPlansza() {
+        return plansza;
     }
 
-    public void setPolozenie(String polozenie) {
-        this.polozenie = polozenie;
+    public void setPlansza(String plansza) {
+        this.plansza = plansza;
+    }
+
+    public String getPolozenieX() {
+        return polozenieX;
+    }
+
+    public void setPolozenieX(String polozenieX) {
+        this.polozenieX = polozenieX;
+    }
+
+    public String getPolozenieY() {
+        return polozenieY;
+    }
+
+    public void setPolozenieY(String polozenieY) {
+        this.polozenieY = polozenieY;
     }
 
     public String getWymiary() {
@@ -51,7 +74,9 @@ public class BudynkiDTO {
     public String toString() {
         return "BudynkiDTO{" +
                 "nazwa='" + nazwa + '\'' +
-                ", polozenie='" + polozenie + '\'' +
+                ", plansza='" + plansza + '\'' +
+                ", polozenieX='" + polozenieX + '\'' +
+                ", polozenieY='" + polozenieY + '\'' +
                 ", wymiary='" + wymiary + '\'' +
                 ", plik='" + plik + '\'' +
                 '}';
@@ -60,19 +85,18 @@ public class BudynkiDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof BudynkiDTO)) return false;
         BudynkiDTO that = (BudynkiDTO) o;
-        return nazwa.equals(that.nazwa) &&
-                polozenie.equals(that.polozenie) &&
-                wymiary.equals(that.wymiary) &&
-                plik.equals(that.plik);
+        return getNazwa().equals(that.getNazwa()) &&
+                getPlansza().equals(that.getPlansza()) &&
+                getPolozenieX().equals(that.getPolozenieX()) &&
+                getPolozenieY().equals(that.getPolozenieY()) &&
+                getWymiary().equals(that.getWymiary()) &&
+                getPlik().equals(that.getPlik());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nazwa,
-                polozenie,
-                wymiary,
-                plik);
+        return Objects.hash(getNazwa(), getPlansza(), getPolozenieX(), getPolozenieY(), getWymiary(), getPlik());
     }
 }

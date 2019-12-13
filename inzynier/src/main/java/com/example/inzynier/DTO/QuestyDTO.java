@@ -4,20 +4,33 @@ import java.util.Objects;
 
 public class QuestyDTO {
     private Integer id;
-    private PostacDTO postac;
-    private UzytkownikDTO wykonujacy;
+    private String postac;
+    private String wykonujacy;
     private String noweZadanie;
     private String tresc;
     private String nagroda;
     private Boolean czyWykonane;
 
-    public QuestyDTO(PostacDTO postac, UzytkownikDTO wykonujacy, String noweZadanie, String tresc, String nagroda, Boolean czyWykonane) {
+    public QuestyDTO(Integer id, String postac, String wykonujacy, String noweZadanie, String tresc, String nagroda, Boolean czyWykonane) {
+        this.id = id;
         this.postac = postac;
         this.wykonujacy = wykonujacy;
         this.noweZadanie = noweZadanie;
         this.tresc = tresc;
         this.nagroda = nagroda;
         this.czyWykonane = czyWykonane;
+    }
+
+    public QuestyDTO(String postac, String wykonujacy, String noweZadanie, String tresc, String nagroda, Boolean czyWykonane) {
+        this.postac = postac;
+        this.wykonujacy = wykonujacy;
+        this.noweZadanie = noweZadanie;
+        this.tresc = tresc;
+        this.nagroda = nagroda;
+        this.czyWykonane = czyWykonane;
+    }
+
+    public QuestyDTO() {
     }
 
     public Integer getId() {
@@ -28,19 +41,19 @@ public class QuestyDTO {
         this.id = id;
     }
 
-    public PostacDTO getPostac() {
+    public String getPostac() {
         return postac;
     }
 
-    public void setPostac(PostacDTO postac) {
+    public void setPostac(String postac) {
         this.postac = postac;
     }
 
-    public UzytkownikDTO getWykonujacy() {
+    public String getWykonujacy() {
         return wykonujacy;
     }
 
-    public void setWykonujacy(UzytkownikDTO wykonujacy) {
+    public void setWykonujacy(String wykonujacy) {
         this.wykonujacy = wykonujacy;
     }
 

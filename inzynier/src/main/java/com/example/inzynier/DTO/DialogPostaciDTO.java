@@ -5,13 +5,23 @@ import java.util.Objects;
 public class DialogPostaciDTO {
     private Integer id;
     private String nazwaQuesta;
-    private PostacDTO postac;
+    private String postac;
     private String tekst;
 
-    public DialogPostaciDTO(String nazwaQuesta, PostacDTO postac, String tekst) {
+    public DialogPostaciDTO(String nazwaQuesta, String postac, String tekst) {
         this.nazwaQuesta = nazwaQuesta;
         this.postac = postac;
         this.tekst = tekst;
+    }
+
+    public DialogPostaciDTO(Integer id, String nazwaQuesta, String postac, String tekst) {
+        this.id = id;
+        this.nazwaQuesta = nazwaQuesta;
+        this.postac = postac;
+        this.tekst = tekst;
+    }
+
+    public DialogPostaciDTO() {
     }
 
     public Integer getId() {
@@ -30,11 +40,11 @@ public class DialogPostaciDTO {
         this.nazwaQuesta = nazwaQuesta;
     }
 
-    public PostacDTO getPostac() {
+    public String getPostac() {
         return postac;
     }
 
-    public void setPostac(PostacDTO postac) {
+    public void setPostac(String postac) {
         this.postac = postac;
     }
 

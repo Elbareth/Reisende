@@ -9,6 +9,14 @@ public class WygladPostaciDTO {
     private String plik;
     private String kategoria;
 
+    public WygladPostaciDTO(Integer id, String nazwa, String klasa, String plik, String kategoria) {
+        this.id = id;
+        this.nazwa = nazwa;
+        this.klasa = klasa;
+        this.plik = plik;
+        this.kategoria = kategoria;
+    }
+
     public WygladPostaciDTO(String nazwa, String klasa, String plik, String kategoria) {
         this.nazwa = nazwa;
         this.klasa = klasa;

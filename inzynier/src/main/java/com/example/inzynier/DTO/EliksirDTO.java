@@ -17,6 +17,9 @@ public class EliksirDTO {
         this.przepis = przepis;
     }
 
+    public EliksirDTO() {
+    }
+
     public String getNazwa() {
         return nazwa;
     }
