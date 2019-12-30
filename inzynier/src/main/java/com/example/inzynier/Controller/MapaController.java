@@ -44,6 +44,10 @@ public class MapaController {
     private InnePrzedmiotyService innePrzedmiotyService;
     @Autowired
     private EliksirService eliksirService;
+    @Autowired
+    private DialogService dialogService;
+    @Autowired
+    private BestieService bestieService;
     private static Integer INDEXDIALOGU = 0;
     private static String DIALOGREMEMBER = null;
     @GetMapping("/maps")
@@ -62,6 +66,7 @@ public class MapaController {
         modelMap.put("lewo",pozycja[0]);
         modelMap.put("gora",pozycja[1]);
         modelMap.put("rosliny", ziolaService.findByPlansza(plansza[0]));
+        modelMap.put("bestie", bestieService.findByPlansza(plansza[0]));
         DomekDTO domek = domekService.findByWlasciciel(login);
         List<WyswietlMebleDTO> wyswietlMebleDTOList = new ArrayList<>();
         domekController.wyswietlMeble(domek, wyswietlMebleDTOList);
@@ -185,7 +190,7 @@ public class MapaController {
     @PostMapping("/maps/dialog")
     public ModelAndView dialog(@RequestBody DialogDTO dialogDTO, HttpSession sesja, ModelMap modelMap){
         if(sesja.getAttribute("login")==null){
-            return new ModelAndView("login","uzytkownik",new UzytkownikDTO());
+            return new ModelAndView("login","uzytkownik",uzytkownikService.findByLogin((String) sesja.getAttribute("login")));
         }
         //Przypdaek gdy dialog juz byl odtwarzany
         //Przypadek gdy dopiero zaczynamy rozmowe
@@ -196,9 +201,9 @@ public class MapaController {
         List<ZadaniaDTO> zadaniaDTO = zadaniaService.findByPostac(postacDTO.getImie());
         final ZadaniaDTO[] mojeZadanie = {new ZadaniaDTO()};
         zadaniaDTO.forEach( it ->{
-            List<QuestyDTO> mojeQuesty =  questyService.findByNoweZadanieAndWykonujacyAndCzyWykonane(it.getNazwa(), login,false);
+            List<QuestyDTO> mojeQuesty =  questyService.findByNoweZadanieAndWykonujacyAndCzyWykonane(it.getNazwa()+"-"+(INDEXDIALOGU - 1), login,false);
             if(mojeQuesty.size() > 0){
-                mojeZadanie[0] = zadaniaService.findByNazwa(mojeQuesty.get(0).getNoweZadanie());
+                mojeZadanie[0] = zadaniaService.findByNazwa(mojeQuesty.get(0).getNoweZadanie().replace("-"+(INDEXDIALOGU - 1), ""));
             }
             else mojeZadanie[0] = zadaniaDTO.get(0);
         });
@@ -245,6 +250,9 @@ public class MapaController {
             questyService.create(questyDTO);
             INDEXDIALOGU++;
         }
+        if(!dialogDTO.getDialog().equals("")) {
+            INDEXDIALOGU = dialogService.checkDialog(uzytkownikService.findByLogin(login), modelMap, dialog, dialogDTO.getDialog(), INDEXDIALOGU);
+        }
         return mapa(sesja, modelMap);
     }
     @GetMapping("/zadania")
@@ -276,6 +284,7 @@ public class MapaController {
                 uzytkownikDTO.setHigiena(100);
             }
             uzytkownikService.update(uzytkownikDTO.getLogin(), uzytkownikDTO);
+            INDEXDIALOGU = 0;
 //            if(ekwipunekService.findByWlascicielAndNazwa(uzytkownikDTO, nazwa).size() > 0){
 //                List<EkwipunekDTO> ekwipunekDTO = ekwipunekService.findByWlascicielAndNazwa(uzytkownikDTO, nazwa);
 //                ekwipunekDTO.get(0).setIlosc(ekwipunekDTO.get(0).getIlosc() + 1); // Mamy o jeden wiecej danego przedmitu
@@ -318,7 +327,7 @@ public class MapaController {
         ZiolaDTO ziolaDTO = ziolaService.findByPlik(roslinyDTO.getRoslina());
         EkwipunekDTO ekwipunekDTO = new EkwipunekDTO(
                 uzytkownikService.findByLogin((String)sesja.getAttribute("login")),
-                roslinyDTO.getRoslina(),
+                ziolaService.findByPlik(roslinyDTO.getRoslina()).getNazwa(),
                 ziolaDTO.getPlik(),
                 ziolaDTO.getOpis());
         ekwipunekService.create(ekwipunekDTO);
