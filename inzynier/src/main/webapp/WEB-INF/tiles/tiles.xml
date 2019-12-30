@@ -9,6 +9,15 @@
     <definition name="mapa.index" extends="myTemplate">
         <put-attribute name="content" value="/WEB-INF/views/maps/index.jsp" />
     </definition>
+    <definition name="gra.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/gra.jsp" />
+    </definition>
+    <definition name="ksiazka.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/ksiazka.jsp" />
+    </definition>
+    <definition name="eliksir.index" extends="myTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/maps/eliksir.jsp" />
+    </definition>
     <definition name="zadania.index" extends="myTemplate">
         <put-attribute name="content" value="/WEB-INF/views/maps/zadania.jsp" />
     </definition>

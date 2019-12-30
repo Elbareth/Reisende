@@ -5,6 +5,7 @@
 <%@ page import="com.example.inzynier.BasicService.PozycjaPostaci" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <body>
     <div class="main" id ="main">
         <div class="map">
@@ -26,10 +27,16 @@
                         <button onclick="wDomu('${listOnClick[status.index].plik}')" id ="${listOnClick[status.index].plik}" ><img src="/resources/${listOnClick[status.index].plik}" style="position: absolute; left: ${listOnClick[status.index].polozenieX}; top: ${listOnClick[status.index].polozenieY};"></button>
                     </c:forEach>
                     <c:forEach var="element" items="${listaPostaci}" varStatus="status">
-                        <button onclick="dialog('${listaPostaci[status.index].plik}')" id ="${listaPostaci[status.index].plik}" ><img src="/resources/${listaPostaci[status.index].plik}" style="position: absolute; left: ${listaPostaci[status.index].polozenieX}; top: ${listaPostaci[status.index].polozenieY};"></button>
+                        <button onclick="dialog('${listaPostaci[status.index].plik}', '')" id ="${listaPostaci[status.index].plik}" ><img src="/resources/${listaPostaci[status.index].plik}" style="position: absolute; left: ${listaPostaci[status.index].polozenieX}px; top: ${listaPostaci[status.index].polozenieY}px;"></button>
                         <c:if test="${not empty dialog}">
                             <div class="dymek" style="position: absolute; left: ${listaPostaci[status.index].polozenieX - 500}px; top: ${listaPostaci[status.index].polozenieY - 300}px; background-image: url('/resources/chmurka.png'); height: 500px;  background-repeat: no-repeat;">
-                                <p style="width: 400px; word-wrap: break-word; top: 200px; left: 100px; position: relative;">${dialog}</p>
+                                <c:set var="dialogParts" value="${fn:split(dialog, '/')}" />
+                                <c:forEach var="element2" items="${dialogParts}" varStatus="status2">
+                                    <button onclick="dialog('${listaPostaci[status.index].plik}','${dialogParts[status2.index]}')" style="width: 400px; word-wrap: break-word; top: ${(status2.index + 1) * 100}px; left: 100px; position: relative; font-weight: bold;">${dialogParts[status2.index]}</button>
+                                    <c:if test="${listaPostaci[status.index].plik == 'widzmaJagma.png' || listaPostaci[status.index].plik == 'zielarka.png'}">
+                                        <button onclick="window.location.href = 'eliksir';" style="width: 400px; word-wrap: break-word; top: ${(status2.index + 1) * 100}px; left: 100px; position: relative; font-weight: bold;">Ty: Chce uwazyc eliksir</button>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </c:if>
                     </c:forEach>
@@ -37,6 +44,11 @@
                        <c:forEach var="element2" items="${rosliny[status.index].plansza}" varStatus="status2">
                             <img id="${(status.index+1)*(status2.index+1)}" src="/resources/${rosliny[status.index].plik}"  onclick="ziola('${(status.index+1)*(status2.index+1)}', '${rosliny[status.index].plik}')" style="position: absolute; left: ${rosliny[status.index].polozenieX[status2.index]}px; top: ${rosliny[status.index].polozenieY[status2.index]}px;"/>
                        </c:forEach>
+                    </c:forEach>
+                    <c:forEach var="element" items="${bestie}" varStatus="status">
+                        <c:forEach var="element2" items="${bestie[status.index].plansza}" varStatus="status2">
+                            <img id="${(status.index+1)*(status2.index+1)}" src="/resources/${bestie[status.index].plik}"  onclick="alert('bestia');" style="position: absolute; left: ${bestie[status.index].polozenieX[status2.index]}px; top: ${bestie[status.index].polozenieY[status2.index]}px;"/>
+                        </c:forEach>
                     </c:forEach>
                 </div>
             </div>
@@ -58,9 +70,17 @@
                     document.getElementById(index).style.visibility = "visible";
                 },1200000);
             }
-            function dialog(plik){
+            function dialog(plik, dialog){
+                if(dialog == "Ty: Witaj! Chce wypozyczyc ksiazke"){
+                   window.location.href = 'ksiazka';
+                }
+                else if(dialog == "Ty: Tak" && plik == "pokerzysta.png"){
+                    window.location.href = 'gra';
+                }
                 var json = {};
+                console.log(plik);
                 json.postac = plik;
+                json.dialog = dialog;
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', '/maps/dialog');
                 xhr.setRequestHeader("Content-Type", "application/json");
