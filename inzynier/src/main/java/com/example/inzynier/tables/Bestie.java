@@ -17,13 +17,24 @@ public class Bestie {
     @NotNull
     private String polozenie;
     @NotNull
-    private String wymiary;
+    private Integer sila;
 
-    public Bestie(@NotNull String nazwa, @NotNull String plik, @NotNull String polozenie, @NotNull String wymiary) {
+    public Bestie(Integer id, @NotNull String nazwa, @NotNull String plik, @NotNull String polozenie, @NotNull Integer sila) {
+        this.id = id;
         this.nazwa = nazwa;
         this.plik = plik;
         this.polozenie = polozenie;
-        this.wymiary = wymiary;
+        this.sila = sila;
+    }
+
+    public Bestie(@NotNull String nazwa, @NotNull String plik, @NotNull String polozenie, @NotNull Integer sila) {
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.polozenie = polozenie;
+        this.sila = sila;
+    }
+
+    public Bestie() {
     }
 
     public Integer getId() {
@@ -58,12 +69,29 @@ public class Bestie {
         this.polozenie = polozenie;
     }
 
-    public String getWymiary() {
-        return wymiary;
+    public Integer getSila() {
+        return sila;
     }
 
-    public void setWymiary(String wymiary) {
-        this.wymiary = wymiary;
+    public void setSila(Integer sila) {
+        this.sila = sila;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Bestie)) return false;
+        Bestie bestie = (Bestie) o;
+        return getId().equals(bestie.getId()) &&
+                getNazwa().equals(bestie.getNazwa()) &&
+                getPlik().equals(bestie.getPlik()) &&
+                getPolozenie().equals(bestie.getPolozenie()) &&
+                getSila().equals(bestie.getSila());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getNazwa(), getPlik(), getPolozenie(), getSila());
     }
 
     @Override
@@ -73,26 +101,7 @@ public class Bestie {
                 ", nazwa='" + nazwa + '\'' +
                 ", plik='" + plik + '\'' +
                 ", polozenie='" + polozenie + '\'' +
-                ", wymiary='" + wymiary + '\'' +
+                ", sila=" + sila +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bestie bestie = (Bestie) o;
-        return nazwa.equals(bestie.nazwa) &&
-                plik.equals(bestie.plik) &&
-                polozenie.equals(bestie.polozenie) &&
-                wymiary.equals(bestie.wymiary);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nazwa,
-                plik,
-                polozenie,
-                wymiary);
     }
 }

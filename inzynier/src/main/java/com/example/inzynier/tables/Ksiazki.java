@@ -17,10 +17,21 @@ public class Ksiazki {
     @NotNull
     private Integer doswiadczenia;
 
+
+    public Ksiazki(Integer id, @NotNull String nazwa, @NotNull String tresc, @NotNull Integer doswiadczenia) {
+        this.id = id;
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.doswiadczenia = doswiadczenia;
+    }
+
     public Ksiazki(@NotNull String nazwa, @NotNull String tresc, @NotNull Integer doswiadczenia) {
         this.nazwa = nazwa;
         this.tresc = tresc;
         this.doswiadczenia = doswiadczenia;
+    }
+
+    public Ksiazki() {
     }
 
     public Integer getId() {
