@@ -6,7 +6,7 @@ INSERT INTO d_postac VALUES ('Kolekcjoner', 'domKolekcjoneraWnetrze.jpg-488x180'
 INSERT INTO d_postac VALUES ('Lesnik', 'tlo7.jpg-870x200', 'lesnik.png');
 INSERT INTO d_postac VALUES ('Astrolog', 'wiezaAstronomicznaWnetrze.jpg-380x280', 'astrolog.png');
 INSERT INTO d_postac VALUES ('Bibliotekarz', 'bibliotekaWnetrze.jpg-100x255', 'bibliotekarz.png');
-INSERT INTO d_postac VALUES ('Pokaerzysta', 'pubWnetrze.jpg-400x320', 'pokerzytsa.png');
+INSERT INTO d_postac VALUES ('Pokerzysta', 'pubWnetrze.jpg-400x320', 'pokerzytsa.png');
 INSERT INTO d_postac VALUES ('Zielarka', 'chataZielarkiWnetrze.jpg-435x237', 'zielarka.png');
 INSERT INTO d_postac VALUES ('Loki', 'tlo18.jpg-2380x500', 'loki.png');
 INSERT INTO d_postac VALUES ('Andvari', 'jaskiniaWnetrze.jpg-308x260', 'andvari.png');
@@ -18,6 +18,9 @@ INSERT INTO d_postac VALUES ('Chomik', 'tlo19.jpg-1385x150', 'chomik.png');
 INSERT INTO d_postac VALUES ('Malgosia', 'domekMalgosiWnetrze.jpg-370x260', 'malgosia.png');
 INSERT INTO d_postac VALUES ('Thor', 'asgardWnetrze.jpg-330x225', 'thor.png');
 INSERT INTO d_postac VALUES ('Szwaczka', 'krawiecWnetrze.jpg-540x170', 'szwaczka.png');
+INSERT INTO d_postac VALUES ('Mag', 'wiezaCzarodziejaWnetrze.jpg-350x260', 'mag.png');
+INSERT INTO d_postac VALUES ('Thrym', 'tlo19.jpg-1700x666', 'thrym.png');
+INSERT INTO d_postac VALUES ('Wampir', 'kryptaWampiraWnetrze.jpg-200x200', 'wampir.png');
 
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Jagody', 'Wiedzma Jagma', 'Wiedzma Jagma: Witaj wedrowcze! Podejdz blizej musze Ci sie dobrze przyjrzec! Dobrze. Mam dla Ciebie zadanie!');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Jagody', 'Wiedzma Jagma', 'Ty: Na czym ono ma polegac?');
@@ -84,7 +87,7 @@ INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Gra', 'Poker
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Ty: Witaj! Wygladasz na zmartwiona. Moge Ci jakos pomoc?');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Zielarka: Wlascicieto tak. Po mojej ojczyznie szalejej ogromna plaga straszliwej choroby. Chorzy sa zmuszani przez zarazka do podrozy do sasiadujacych krain i tak choroba rozprzestrzenia sie jeszcze szybciej. Ale da sie ja powstrzymac. Musisz mi naziebrac tylko 10 sztuk rumianku, 5 lawendy oraz 15 szalwi. Mozesz to zrobic?');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Ty: Jasne. Lece sie tym zajac/ Nie. Ne bchodzi mnie to');
-INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Ty: Prosze. To ziola dla Ciebie');
+INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Ty: Prosze. To ziola dla Ciebie/(...)');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Ziola', 'Zielarka', 'Zielarka: O dziekuje. Caly swiat bedzie Ci wdziedzny! Oto Twoja zasluzona nagroda');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Wampir', 'Burmistrz', 'Burmistrz: O szukalem Cie po calej krainie! Mam dla Ciebie pilne zlecenie. W gorach mglistych grasuje wampir. Za dnia siedzi w krypcie, a w nocy asa naszych obywateli. Zajmij sie nim, a czeka Cie wspaniala nagroda');
 INSERT INTO d_dialog_postaci (nazwa_questa, postac, tekst) VALUES ('Wampir', 'Burmistrz', 'Ty: Jasne. Juz tam ide/ Moze innym razem');
