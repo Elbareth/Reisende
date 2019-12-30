@@ -1,19 +1,37 @@
 package com.example.inzynier.DTO;
 
+import java.util.List;
 import java.util.Objects;
 
 public class BestieDTO {
     private Integer id;
     private String nazwa;
     private String plik;
-    private String polozenie;
-    private String wymiary;
+    private List<String> plansza;
+    private List<Integer> polozenieX;
+    private List<Integer> polozenieY;
+    private Integer sila;
 
-    public BestieDTO(String nazwa, String plik, String polozenie, String wymiary) {
+    public BestieDTO(Integer id, String nazwa, String plik, List<String> plansza, List<Integer> polozenieX, List<Integer> polozenieY, Integer sila) {
+        this.id = id;
         this.nazwa = nazwa;
         this.plik = plik;
-        this.polozenie = polozenie;
-        this.wymiary = wymiary;
+        this.plansza = plansza;
+        this.polozenieX = polozenieX;
+        this.polozenieY = polozenieY;
+        this.sila = sila;
+    }
+
+    public BestieDTO(String nazwa, String plik, List<String> plansza, List<Integer> polozenieX, List<Integer> polozenieY, Integer sila) {
+        this.nazwa = nazwa;
+        this.plik = plik;
+        this.plansza = plansza;
+        this.polozenieX = polozenieX;
+        this.polozenieY = polozenieY;
+        this.sila = sila;
+    }
+
+    public BestieDTO() {
     }
 
     public Integer getId() {
@@ -40,20 +58,55 @@ public class BestieDTO {
         this.plik = plik;
     }
 
-    public String getPolozenie() {
-        return polozenie;
+    public List<String> getPlansza() {
+        return plansza;
     }
 
-    public void setPolozenie(String polozenie) {
-        this.polozenie = polozenie;
+    public void setPlansza(List<String> plansza) {
+        this.plansza = plansza;
     }
 
-    public String getWymiary() {
-        return wymiary;
+    public List<Integer> getPolozenieX() {
+        return polozenieX;
     }
 
-    public void setWymiary(String wymiary) {
-        this.wymiary = wymiary;
+    public void setPolozenieX(List<Integer> polozenieX) {
+        this.polozenieX = polozenieX;
+    }
+
+    public List<Integer> getPolozenieY() {
+        return polozenieY;
+    }
+
+    public void setPolozenieY(List<Integer> polozenieY) {
+        this.polozenieY = polozenieY;
+    }
+
+    public Integer getSila() {
+        return sila;
+    }
+
+    public void setSila(Integer sila) {
+        this.sila = sila;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BestieDTO)) return false;
+        BestieDTO bestieDTO = (BestieDTO) o;
+        return getId().equals(bestieDTO.getId()) &&
+                getNazwa().equals(bestieDTO.getNazwa()) &&
+                getPlik().equals(bestieDTO.getPlik()) &&
+                getPlansza().equals(bestieDTO.getPlansza()) &&
+                getPolozenieX().equals(bestieDTO.getPolozenieX()) &&
+                getPolozenieY().equals(bestieDTO.getPolozenieY()) &&
+                getSila().equals(bestieDTO.getSila());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getNazwa(), getPlik(), getPlansza(), getPolozenieX(), getPolozenieY(), getSila());
     }
 
     @Override
@@ -62,27 +115,10 @@ public class BestieDTO {
                 "id=" + id +
                 ", nazwa='" + nazwa + '\'' +
                 ", plik='" + plik + '\'' +
-                ", polozenie='" + polozenie + '\'' +
-                ", wymiary='" + wymiary + '\'' +
+                ", plansza=" + plansza +
+                ", polozenieX=" + polozenieX +
+                ", polozenieY=" + polozenieY +
+                ", sila=" + sila +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BestieDTO bestieDTO = (BestieDTO) o;
-        return nazwa.equals(bestieDTO.nazwa) &&
-                plik.equals(bestieDTO.plik) &&
-                polozenie.equals(bestieDTO.polozenie) &&
-                wymiary.equals(bestieDTO.wymiary);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nazwa,
-                plik,
-                polozenie,
-                wymiary);
     }
 }

@@ -8,10 +8,20 @@ public class KsiazkiDTO {
     private String tresc;
     private Integer doswiadczenia;
 
+    public KsiazkiDTO(Integer id, String nazwa, String tresc, Integer doswiadczenia) {
+        this.id = id;
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.doswiadczenia = doswiadczenia;
+    }
+
     public KsiazkiDTO(String nazwa, String tresc, Integer doswiadczenia) {
         this.nazwa = nazwa;
         this.tresc = tresc;
         this.doswiadczenia = doswiadczenia;
+    }
+
+    public KsiazkiDTO() {
     }
 
     public Integer getId() {
