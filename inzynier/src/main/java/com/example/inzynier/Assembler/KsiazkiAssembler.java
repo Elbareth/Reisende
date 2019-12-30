@@ -19,6 +19,16 @@ public class KsiazkiAssembler {
         });
         return listaKsiazkiDTO;
     }
+    public KsiazkiDTO toDtoWithId(Ksiazki ksiazki){
+        return new KsiazkiDTO(ksiazki.getId(), ksiazki.getNazwa(), ksiazki.getTresc(), ksiazki.getDoswiadczenia());
+    }
+    public List<KsiazkiDTO> toDtoWithId(List<Ksiazki> listaKsiazki){
+        List<KsiazkiDTO> listaKsiazkiDTO = new ArrayList<>();
+        listaKsiazki.forEach(param ->{
+            listaKsiazkiDTO.add(toDtoWithId(param));
+        });
+        return listaKsiazkiDTO;
+    }
     public Ksiazki toEntity(KsiazkiDTO ksiazkiDTO){
         return new Ksiazki(ksiazkiDTO.getNazwa(), ksiazkiDTO.getTresc(), ksiazkiDTO.getDoswiadczenia());
     }
