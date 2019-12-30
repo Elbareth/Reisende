@@ -3,7 +3,7 @@ CREATE TABLE d_bestie (
     nazwa VARCHAR(50) NOT NULL,
     plik VARCHAR(50) NOT NULL,
     polozenie VARCHAR(50) NOT NULL,
-    wymiary VARCHAR(50) NOT NULL,
+    sila INT NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE d_ekwipunek(
     wlasciciel VARCHAR(50) NOT NULL,
     nazwa VARCHAR(50) NOT NULL,
     plik VARCHAR(50) NOT NULL,
-    opis VARCHAR(200) NOT NULL,
+    opis VARCHAR(500) NOT NULL,
     PRIMARY KEY(id)
 );
 
